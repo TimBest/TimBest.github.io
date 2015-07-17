@@ -1,72 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#2161A8">
-    <title>404 | Timothy Best</title>
-    <!--<link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.png"> -->
-    <link rel="stylesheet" href="css/foundation.min.css">
-  </head>
-  <body>
-    <div class="row">
-      <div class="large-12 columns">
-        <h1><a href="/">Timothy Best</a></h1>
-        <hr/>
-      </div>
-    </div>
+---
 
-    <div class="row">
-      <div class="large-12 columns text-center">
-        <h3>
-          I am sorry, but the page you are looking for was not found
-        </h3>
-        <a href="/" class="button">
-          Go to the home page
-        </a>
-      </div>
-    </div>
+---
 
-    <footer class="row">
-      <hr/>
-      <div class="large-6 columns">
-        <ul class="inline-list">
-          <li>
-            <a href="mailto:besttimothy1@gmail.com" target="_blank">
-              BestTimothy1@gmail.com
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="large-6 columns">
-        <ul class="inline-list right">
-          <li>
-            <a href="https://www.linkedin.com/pub/timothy-best/58/697/88a" target="_blank"> 
-              <span class="fi-social-linkedin" style="color:#4875B4;"></span>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/TimothyBest" target="_blank">
-              <span class="fi-social-github" style="color:#333333;"></span>
-            </a>
-          </li>
-          <li>
-            <a href="http://stackoverflow.com/users/3272220/timbest" target="_blank">
-              <span class="fi-social-stack-overflow" style="color:#fe7a15;"></span>
-            </a>
-          </li>
-        </ul>
-      </div>      
-    </footer>
+{% include header.html %}
 
-    <script src="js/jquery-1.11.3.min.js"></script>
-    <script src="js/foundation.min.js"></script>
-    <script>
-      /* Initialize Tabs */
-      $(document).foundation({
-        tab: {}
-      });
-    </script>
-  </body>
-</html>
+<div class="row">
+  <div class="large-12 columns text-center">
+    <h3>
+      I am sorry, but the page you are looking for was not found
+    </h3>
+    <a href="/" class="button">
+      Go to the home page
+    </a>
+  </div>
+</div>
+
+{% include footer.html %}
