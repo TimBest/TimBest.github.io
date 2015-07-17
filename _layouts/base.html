@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2161A8">
+    <title>{{ page.title }}</title>
+    <!--<link rel="shortcut icon" type="image/x-icon" href="static/img/favicon.png"> -->
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/foundation-icons.css">
+  </head>
+  <body>
+    <div class="row">
+      <div class="medium-6 columns">
+        <h1><a class="text-black" href="/" >Timothy Best</a></h1>
+      </div>
+      <div class="medium-6 columns">
+        <ul class="tabs right" data-tab role="tablist">
+          <li class="tab-title active" role="presentation">
+            <a href="#about" role="tab" tabindex="0" aria-selected="true" aria-controls="about">
+              About Me
+            </a>
+          </li>
+          <li class="tab-title" role="presentation">
+            <a href="#resume" role="tab" tabindex="0" aria-selected="false" aria-controls="resume">
+              Resume
+            </a>
+          </li>
+          <li class="tab-title" role="presentation">
+            <a href="#projects" role="tab" tabindex="0" aria-selected="false" aria-controls="projects">
+              Projects
+            </a>
+          </li>
+        </ul>
+      </div>
+      <hr/>
+    </div>
+
+    {{ content }}
+
+    <footer class="row">
+      <hr/>
+      <div class="medium-6 columns">
+        <ul class="inline-list">
+          <li>
+            <a href="mailto:besttimothy1@gmail.com" target="_blank">
+              BestTimothy1@gmail.com
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="medium-6 columns">
+        <ul class="inline-list right">
+          <li>
+            <a href="https://www.linkedin.com/pub/timothy-best/58/697/88a" target="_blank">
+              <span class="fi-social-linkedin" style="color:#4875B4;"></span>
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/TimothyBest" target="_blank">
+              <span class="fi-social-github" style="color:#333333;"></span>
+            </a>
+          </li>
+          <li>
+            <a href="http://stackoverflow.com/users/3272220/timbest" target="_blank">
+              <span class="fi-social-stack-overflow" style="color:#fe7a15;"></span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      /* Initialize Tabs */
+      $(document).foundation({
+        tab: {}
+      });
+    </script>
+  </body>
+</html>
