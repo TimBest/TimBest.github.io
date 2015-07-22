@@ -7,6 +7,7 @@ $header-color-dark: darken($header-color, 10%);
 .header {
   background-color: $primary-color;
   color: $header-color;
+  margin-bottom: 20px;
   a, h1, h2, h3, h4, h5, h6 {
     color: $header-color;
   }
