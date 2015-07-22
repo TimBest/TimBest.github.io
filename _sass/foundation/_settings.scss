@@ -109,25 +109,25 @@ $info-color: #152B3C !default;      // cornflower
 
 $base          : #e6c670 !default;// 67%
 
-$white         : lighten( $base, 99% ) !default;// 100%
-$ghost         : lighten( $base, 88% ) !default;// 99%
-$snow          : lighten( $base, 77% ) !default;// 98%
-$vapor         : lighten( $base, 66% ) !default;// 97%
-$white-smoke   : lighten( $base, 55% ) !default;// 96%
-$silver        : lighten( $base, 44% ) !default;// 94%
-$smoke         : lighten( $base, 33% ) !default;// 83%
-$gainsboro     : lighten( $base, 22% ) !default;// 87%
-$iron          : lighten( $base, 11% ) !default;// 80%
+$white         : #FFFFFF !default;
+$ghost         : lighten( $base, 31%  ) !default;
+$snow          : lighten( $base, 30%  ) !default;
+$vapor         : lighten( $base, 29%  ) !default;
+$white-smoke   : lighten( $base, 28%  ) !default;
+$silver        : lighten( $base, 27%  ) !default;
+$smoke         : lighten( $base, 26%  ) !default;
+$gainsboro     : lighten( $base, 20%  ) !default;
+$iron          : lighten( $base, 13%   ) !default;
 //$base          : #e6c670 !default;// 67%
-$aluminum      : darken( $base, 11% ) !default;// 60%
-$jumbo         : darken( $base, 22% ) !default;// 53%
-$monsoon       : darken( $base, 33% ) !default;// 47%
-$steel         : darken( $base, 44% ) !default;// 40%
-$charcoal      : darken( $base, 55% ) !default;// 33%
-$tuatara       : darken( $base, 66% ) !default;// 27%
-$oil           : darken( $base, 77% ) !default;// 20%
-$jet           : darken( $base, 88% ) !default;// 13%
-$black         : darken( $base, 99% ) !default;// 0%
+$aluminum      : darken( $base, 7%   ) !default;
+$jumbo         : darken( $base, 14%   ) !default;
+$monsoon       : darken( $base, 20%  ) !default;
+$steel         : darken( $base, 27%  ) !default;
+$charcoal      : darken( $base, 34%  ) !default;
+$tuatara       : darken( $base, 40%  ) !default;
+$oil           : darken( $base, 47%  ) !default;
+$jet           : darken( $base, 54%  ) !default;
+$black         : #000000 !default;
 
 // We use these as default colors throughout
 
@@ -285,7 +285,7 @@ $black         : darken( $base, 99% ) !default;// 0%
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
 // $hr-border-style: solid;
- $hr-border-color: $secondary-color;
+// $hr-border-color: $gainsboro !default;
 // $hr-margin: rem-calc(20);
 
 // We use these to style lists

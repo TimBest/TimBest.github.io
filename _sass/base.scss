@@ -40,6 +40,71 @@ $header-color-dark: $secondary-color;
   }
 }
 
+.color {
+  height:50px;
+  width:45px;
+  display:inline-block;
+  margin-bottom: -6px;
+}
+#white {
+  background-color: $white;
+}
+#ghost {
+  background-color: $ghost;
+}
+#snow {
+  background-color: $snow;
+}
+#vapor {
+  background-color: $vapor;
+}
+#white-smoke {
+  background-color: $white-smoke;
+}
+#silver {
+  background-color: $silver;
+}
+#smoke {
+  background-color: $smoke;
+}
+#gainsboro {
+  background-color: $gainsboro;
+}
+#iron {
+  background-color: $iron;
+}
+#base {
+  background-color: $base;
+}
+#aluminum {
+  background-color: $aluminum;
+}
+#jumbo {
+  background-color: $jumbo;
+}
+#monsoon {
+  background-color: $monsoon;
+}
+#steel {
+  background-color: $steel;
+}
+#charcoal {
+  background-color: $charcoal;
+}
+#tuatara {
+  background-color: $tuatara;
+}
+#oil {
+  background-color: $oil;
+}
+#jet {
+  background-color: $jet;
+}
+#black {
+  background-color: $black;
+}
+
+
 /* FOOTER */
 footer {
   a {
