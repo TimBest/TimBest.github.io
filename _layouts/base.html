@@ -10,18 +10,19 @@
     <link rel="stylesheet" href="/stylesheets/style.css">
   </head>
   <body>
-    <div class="header row">
-      <div class="medium-12 columns">
-        <h1><a class="text-black" href="/" >Timothy Best</a></h1>
-        <div class="global-nav-right">
-          <ul class="tabs">
-            <li class="tab-title {{ page.about }}"><a href="/">About Me</a></li>
-            <li class="tab-title {{ page.resume }}"><a href="/resume/">Resume</a></li>
-            <li class="tab-title {{ page.projects }}"><a href="/projects/">Projects</a></li>
-          </ul>
+    <div class="header">
+      <div class="row">
+        <div class="medium-12 columns">
+          <h1><a class="text-black" href="/" >Timothy Best</a></h1>
+          <div class="global-nav-right">
+            <ul class="tabs">
+              <li class="tab-title {{ page.about }}"><a class="radius" href="/">About Me</a></li>
+              <li class="tab-title {{ page.resume }}"><a class="radius" href="/resume/">Resume</a></li>
+              <li class="tab-title {{ page.projects }}"><a class="radius" href="/projects/">Projects</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <hr/>
     </div>
 
     {{ content }}

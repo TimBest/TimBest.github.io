@@ -1,3 +1,31 @@
+@import 'foundation/components/global';
+
+
+$header-color: #FFFFDE;
+$header-color-dark: darken($header-color, 10%);
+
+.header {
+  background-color: $primary-color;
+  color: $header-color;
+  a {
+    color: $header-color;
+    &:hover {
+      color: $header-color-dark;
+    }
+  }
+  .tabs {
+    dd,
+    .tab-title {
+      > a {
+        color: $header-color;
+      }
+      &.active a {
+        color: $header-color-dark;
+      }
+    }
+  }
+}
+
 @media only screen and (min-width: 40.063em) {
   .header {
     position: relative;
