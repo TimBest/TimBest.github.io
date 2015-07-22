@@ -1,9 +1,11 @@
 @import 'foundation/components/global';
 
 
-$header-color: #FFFFDE;
-$header-color-dark: darken($header-color, 10%);
+$header-color: $white;
+$header-color-dark: $secondary-color;//darken($header-color, 20%);
 
+
+/* HEADER */
 .header {
   background-color: $primary-color;
   color: $header-color;
@@ -35,5 +37,12 @@ $header-color-dark: darken($header-color, 10%);
       bottom: 8px;
       right: 0px;
     }
+  }
+}
+
+/* FOOTER */
+footer {
+  ul {
+    font-size: 1.3rem;
   }
 }

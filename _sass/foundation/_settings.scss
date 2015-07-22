@@ -95,33 +95,40 @@ $include-html-global-classes: $include-html-classes;
 // $font-weight-normal: normal;
 // $font-weight-bold: bold;
 
-// $white       : #FFFFFF;
-// $ghost       : #FAFAFA;
-// $snow        : #F9F9F9;
-// $vapor       : #F6F6F6;
-// $white-smoke : #F5F5F5;
-// $silver      : #EFEFEF;
-// $smoke       : #EEEEEE;
-// $gainsboro   : #DDDDDD;
-// $iron        : #CCCCCC;
-// $base        : #AAAAAA;
-// $aluminum    : #999999;
-// $jumbo       : #888888;
-// $monsoon     : #777777;
-// $steel       : #666666;
-// $charcoal    : #555555;
-// $tuatara     : #444444;
-// $oil         : #333333;
-// $jet         : #222222;
-// $black       : #000000;
+
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
-// $alert-color: #f04124;
-// $success-color: #43AC6A;
-// $warning-color: #f08a24;
-// $info-color: #a0d3e8;
+$primary-color: #59B390 !default;   // plaza sleep
+$secondary-color: #F0DDAA !default; // white-lilac
+$alert-color: #E47C5D !default;     // cinnabar
+$success-color: #59B390 !default;   // sea-green
+$warning-color: #E32D40 !default;   // carrot
+$info-color: #152B3C !default;      // cornflower
+
+$base          : #e6c670 !default;// 67%
+
+$white         : lighten( $base, 99% ) !default;// 100%
+$ghost         : lighten( $base, 88% ) !default;// 99%
+$snow          : lighten( $base, 77% ) !default;// 98%
+$vapor         : lighten( $base, 66% ) !default;// 97%
+$white-smoke   : lighten( $base, 55% ) !default;// 96%
+$silver        : lighten( $base, 44% ) !default;// 94%
+$smoke         : lighten( $base, 33% ) !default;// 83%
+$gainsboro     : lighten( $base, 22% ) !default;// 87%
+$iron          : lighten( $base, 11% ) !default;// 80%
+//$base          : #e6c670 !default;// 67%
+$aluminum      : darken( $base, 11% ) !default;// 60%
+$jumbo         : darken( $base, 22% ) !default;// 53%
+$monsoon       : darken( $base, 33% ) !default;// 47%
+$steel         : darken( $base, 44% ) !default;// 40%
+$charcoal      : darken( $base, 55% ) !default;// 33%
+$tuatara       : darken( $base, 66% ) !default;// 27%
+$oil           : darken( $base, 77% ) !default;// 20%
+$jet           : darken( $base, 88% ) !default;// 13%
+$black         : darken( $base, 99% ) !default;// 0%
+
+// We use these as default colors throughout
+
 
 // We use these to control various global styles
 // $body-bg: $white;
@@ -468,16 +475,16 @@ $include-html-global-classes: $include-html-classes;
 // $button-bg-color: $primary-color;
 // $button-bg-hover: scale-color($button-bg-color, $lightness: $button-function-factor);
 // $button-border-color: $button-bg-hover;
-// $secondary-button-bg-hover: scale-color($secondary-color, $lightness: $button-function-factor);
-// $secondary-button-border-color: $secondary-button-bg-hover;
+ $secondary-button-bg-hover: scale-color($secondary-color, $lightness: -12%);
+ $secondary-button-border-color: $secondary-button-bg-hover;
 // $success-button-bg-hover: scale-color($success-color, $lightness: $button-function-factor);
 // $success-button-border-color: $success-button-bg-hover;
 // $alert-button-bg-hover: scale-color($alert-color, $lightness: $button-function-factor);
 // $alert-button-border-color: $alert-button-bg-hover;
 // $warning-button-bg-hover: scale-color($warning-color, $lightness: $button-function-factor);
 // $warning-button-border-color: $warning-button-bg-hover;
-// $info-button-bg-hover: scale-color($info-color, $lightness: $button-function-factor);
-// $info-button-border-color: $info-button-bg-hover;
+ $info-button-bg-hover: scale-color($info-color, $lightness: -30%);
+ $info-button-border-color: $info-button-bg-hover;
 
 // We use this to set the default radius used throughout the core.
 // $button-radius: $global-radius;
