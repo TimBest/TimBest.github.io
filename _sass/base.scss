@@ -2,12 +2,12 @@
 
 
 $header-color: $white;
-$header-color-dark: $secondary-color;//darken($header-color, 20%);
+$header-color-dark: $secondary-color;
 
 
 /* HEADER */
 .header {
-  background-color: $primary-color;
+  background-color: $success-color;
   color: $header-color;
   margin-bottom: 20px;
   a, h1, h2, h3, h4, h5, h6 {
@@ -42,6 +42,13 @@ $header-color-dark: $secondary-color;//darken($header-color, 20%);
 
 /* FOOTER */
 footer {
+  a {
+    color: $success-color;
+    &:hover {
+      color: darken($success-color, 10%);
+    }
+  }
+
   ul {
     font-size: 1.3rem;
   }
