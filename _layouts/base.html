@@ -8,6 +8,8 @@
     <title>{{ page.title }}</title>
     <link rel="shortcut icon" type="/image/x-icon" href="/images/favicon.png?v2">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="/scripts/modernizr.js"></script>
+
   </head>
   <body>
     <div class="header">
@@ -59,7 +61,13 @@
       </div>
     </footer>
 
-    <script src="/scripts/jquery-1.11.3.min.js"></script>
+    <script src="/scripts/jquery.js"></script>
+    <script src="/scripts/fastclick.js"></script>
     <script src="/scripts/foundation.min.js"></script>
+    <script type="text/javascript">
+        $(document).foundation();
+</script>
+
+
   </body>
 </html>
