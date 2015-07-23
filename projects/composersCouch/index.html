@@ -20,76 +20,197 @@ projects: active
 
     <hr/>
 
-    <h4>Screenshots</h4>
-
-    <h5>Authentication</h5>
-    <ul class="small-block-grid-4 clearing-thumbs" data-clearing>
-      <li><a href="/images/composers_couch/homescreen.png">
-        <img src="/images/composers_couch/homescreen.png">
-      </a></li>
-      <li><a href="/images/composers_couch/auth_login.png">
-        <img src="/images/composers_couch/auth_login.png">
-      </a></li>
-      <li><a href="/images/composers_couch/auth_signup.png">
-        <img src="/images/composers_couch/auth_signup.png">
-      </a></li>
-      <li><a href="/images/composers_couch/auth_signup_social.png">
-        <img src="/images/composers_couch/auth_signup_social.png">
-      </a></li>
+    <h4>Authentication</h4>
+    <p>
+      'Sign up' and 'Login' terminology was used they are the two most distinct phrases that describe the process.
+      They differ in number of words and the starting letter.
+    </p>
+    <ul class="small-block-grid-1 medium-block-grid-2">
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/homescreen.png">
+            <img src="/images/composers_couch/homescreen.png">
+          </a>
+          <div class="card-section">
+            <p>Homepage contains the 'Sign up' and 'Login' forms. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/auth_login.png">
+            <img src="/images/composers_couch/auth_login.png">
+          </a>
+          <div class="card-section">
+            <p>Users can authenticate through Facebook, Twitter or an email address and password. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/auth_signup.png">
+            <img src="/images/composers_couch/auth_signup.png">
+          </a>
+          <div class="card-section">
+            <p>Zipcode auto filled based on the users IP address. future plans were made to convert zip-code to city and then eventually remove it from the login. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/auth_signup_social.png">
+            <img src="/images/composers_couch/auth_signup_social.png">
+          </a>
+          <div class="card-section">
+            <p>After social authentication users were prompted to give their name and location. </p>
+          </div>
+        </div>
+      </li>
     </ul>
 
-    <h5>Profiles</h5>
-    <p>tumbnails with decriptions<p>
-
-    <h5>Inbox</h5>
-    <ul class="small-block-grid-1 clearing-thumbs" data-clearing>
-      <li><a href="/images/composers_couch/inbox_sent.png">
-        <img src="/images/composers_couch/inbox_sent.png">
-      </a></li>
-    </ul>
-
-    <h5>Calendar</h5>
-    <ul class="small-block-grid-5 clearing-thumbs" data-clearing>
-      <li><a href="/images/composers_couch/calendar_add_show.png">
-        <img src="/images/composers_couch/calendar_add_show.png">
-      </a></li>
-      <li><a href="/images/composers_couch/calendar_day.png">
-        <img src="/images/composers_couch/calendar_day.png">
-      </a></li>
-      <li><a href="/images/composers_couch/calendar_month.png">
-        <img src="/images/composers_couch/calendar_month.png">
-      </a></li>
-      <li><a href="/images/composers_couch/calendar_month_expanded.png">
-        <img src="/images/composers_couch/calendar_month_expanded.png">
-      </a></li>
-      <li><a href="/images/composers_couch/calendar_year.png">
-        <img src="/images/composers_couch/calendar_year.png">
-      </a></li>
-    </ul>
-
-    <h5>Feeds</h5>
-    <p>tumbnails with decriptions<p>
-
-    <h5>Static Pages</h5>
-    <ul class="small-block-grid-4 clearing-thumbs" data-clearing>
-      <li><a href="/images/composers_couch/static_about.png">
-        <img src="/images/composers_couch/static_about.png">
-      </a></li>
-      <li><a href="/images/composers_couch/static_learn_more.png">
-        <img src="/images/composers_couch/static_learn_more.png">
-      </a></li>
-      <li><a href="/images/composers_couch/static_changelog.png">
-        <img src="/images/composers_couch/static_changelog.png">
-      </a></li>
-      <li><a href="/images/composers_couch/static_pipeline.png">
-        <img src="/images/composers_couch/static_pipeline.png">
-      </a></li>
-    </ul>
     <hr/>
 
-    <h4>Extracted django modules</h4>
+    <h4>Inbox</h4>
     <p>
-      List of django models that  might be use full as stand alone django modules
+      The users messages, private requests, public requests and show notifications are managed here.
+    </p>
+    <ul class="small-block-grid-1 medium-block-grid-4">
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/inbox_sent.png">
+            <img src="/images/composers_couch/inbox_sent.png">
+          </a>
+          <div class="card-section">
+            <p>All messages sent and replied to by the user can be seen here.</p>
+          </div>
+        </div>
+      </li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+    <hr/>
+
+    <h4>Calendar</h4>
+    <p>
+      Used to manage confirmed shows and private requests.
+      Shows are exportable.
+    </p>
+    <ul class="small-block-grid-1 medium-block-grid-4">
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/calendar_add_show.png">
+            <img src="/images/composers_couch/calendar_add_show.png">
+          </a>
+          <div class="card-section">
+            <p>Form used to add or edit shows. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/calendar_day.png">
+            <img src="/images/composers_couch/calendar_day.png">
+          </a>
+          <div class="card-section">
+            <p>Single day view. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/calendar_month.png">
+            <img src="/images/composers_couch/calendar_month.png">
+          </a>
+          <div class="card-section">
+            <p>Month view view. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/calendar_month_expanded.png">
+            <img src="/images/composers_couch/calendar_month_expanded.png">
+          </a>
+          <div class="card-section">
+            <p>Expanded days allow for more detail on smaller screen, quick access to artist/venue search, and a create show button with the corresponding date already filled in. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/calendar_year.png">
+            <img src="/images/composers_couch/calendar_year.png">
+          </a>
+          <div class="card-section">
+            <p>Can view the entire year and quickly jump to a month, week, day or single event. </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <h4>Feeds</h4>
+    <p>Coming soon. </p>
+
+    <hr/>
+
+    <h4>Profiles</h4>
+    <p>Coming soon. </p>
+
+    <hr/>
+
+    <h4>Static Pages</h4>
+    <ul class="small-block-grid-1 medium-block-grid-4">
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/static_about.png">
+            <img src="/images/composers_couch/static_about.png">
+          </a>
+          <div class="card-section">
+            <p>Infomation about Composer's Couch. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/static_learn_more.png">
+            <img src="/images/composers_couch/static_learn_more.png">
+          </a>
+          <div class="card-section">
+            <p>Describes the users benefits for joining Composer's Couch. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/static_changelog.png">
+            <img src="/images/composers_couch/static_changelog.png">
+          </a>
+          <div class="card-section">
+            <p>Changelog. </p>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="card">
+          <a href="/images/composers_couch/static_pipeline.png">
+            <img src="/images/composers_couch/static_pipeline.png">
+          </a>
+          <div class="card-section">
+            <p>Catalog of future improvements to be made. </p>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <hr/>
+
+    <h4>Extracted Django modules</h4>
+    <p>
+      List of Django models that  might be use full as stand alone Django modules
     </p>
   </div>
 </div>
