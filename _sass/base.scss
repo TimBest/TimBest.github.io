@@ -39,8 +39,17 @@ $header-color-dark: $secondary-color;
     position: relative;
     .global-nav-right {
       position: absolute;
-      bottom: -35px;
-      left: -10px;
+      bottom: -70px;
+      left: -17px;
+      .tabs {
+        height:55px;
+        width: 328px;
+        .tab-title {
+          a {
+            font-weight:normal;
+          }
+        }
+      }
     }
   }
 }
