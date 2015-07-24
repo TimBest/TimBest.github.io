@@ -277,10 +277,10 @@ $black         : #000000 !default;
 // $code-padding: rem-calc(2) rem-calc(5) rem-calc(1);
 
 // We use these to style anchors
-// $anchor-text-decoration: none;
-// $anchor-text-decoration-hover: none;
-// $anchor-font-color: $primary-color;
-// $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
+ $anchor-text-decoration: none;
+ $anchor-text-decoration-hover: underline;
+ $anchor-font-color: $success-color;
+ $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 
 // We use these to style the <hr> element
 // $hr-border-width: 1px;
@@ -448,23 +448,23 @@ $black         : #000000 !default;
 // $include-html-button-classes: $include-html-classes;
 
 // We use these to build padding for buttons.
-// $button-tny: rem-calc(10);
-// $button-sml: rem-calc(14);
-// $button-med: rem-calc(16);
-// $button-lrg: rem-calc(18);
+ $button-tny: rem-calc(6);
+ $button-sml: rem-calc(10);
+ $button-med: rem-calc(12);
+ $button-lrg: rem-calc(14);
 
 // We use this to control the display property.
 // $button-display: inline-block;
-// $button-margin-bottom: rem-calc(20);
+ $button-margin-bottom: rem-calc(20);
 
 // We use these to control button text styles.
 // $button-font-family: $body-font-family;
 // $button-font-color: $white;
 // $button-font-color-alt: $oil;
-// $button-font-tny: rem-calc(11);
-// $button-font-sml: rem-calc(13);
-// $button-font-med: rem-calc(16);
-// $button-font-lrg: rem-calc(20);
+ $button-font-tny: rem-calc(12);
+ $button-font-sml: rem-calc(15);
+ $button-font-med: rem-calc(18);
+ $button-font-lrg: rem-calc(22);
 // $button-font-weight: $font-weight-normal;
 // $button-font-align: center;
 
