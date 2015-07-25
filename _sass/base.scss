@@ -73,8 +73,27 @@ footer {
     }
   }
 
-  ul {
+  .social-link {
     font-size: 1.3rem;
+    &.fi-social-linkedin {
+      color:#4875B4;
+      &:hover {
+        color: darken(#4875B4, 10%);
+      }
+    }
+    &.fi-social-github {
+      color:#333333;
+      &:hover {
+        color: darken(#333333, 10%);
+      }
+    }
+    &.fi-social-stack-overflow {
+      color:#fe7a15;
+      &:hover {
+        color: darken(#fe7a15, 10%);
+      }
+    }
+
   }
 }
 
