@@ -1,3 +1,17 @@
-.lightSlider {
-  margin-left: 0px;
+#composersCouch {
+  .lightSlider {
+    margin-left: 0px;
+  }
+  .lSGallery {
+    padding: 16px;
+    width:100%;
+  }
+  .screenshot {
+    position: relative;
+    .full-screen {
+      position: absolute;
+      right: 4px;
+      bottom: 4px;
+    }
+  }
 }
