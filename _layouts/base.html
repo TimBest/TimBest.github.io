@@ -64,10 +64,19 @@
     <script src="/scripts/jquery.js"></script>
     <script src="/scripts/fastclick.js"></script>
     <script src="/scripts/foundation.min.js"></script>
+    <script src="/scripts/lightslider.js"></script>
     <script type="text/javascript">
         $(document).foundation();
     </script>
-
+    <script type="text/javascript">
+      $('.lightSlider').lightSlider({
+          gallery: true,
+          item: 1,
+          slideMargin: 20,
+          loop: true,
+          //thumbItem: 9
+      });
+    </script>
 
   </body>
 </html>
