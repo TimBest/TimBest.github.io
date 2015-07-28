@@ -1,10 +1,7 @@
 <li data-thumb="{{ include.url }}">
-  <div class="screenshot">
+  <a href="{{ include.url }}">
     <img src="{{ include.url }}" />
-    <a class="body-font-color" href="{{ include.url }}">
-      <span class="full-screen fi-arrows-out"></span>
-    </a>
-  </div>
+  </a>
   {% if include.caption != "" %}
   <div class="card-divider">
     <p>{{ include.caption }}</p>

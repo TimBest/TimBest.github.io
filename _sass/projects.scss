@@ -6,12 +6,22 @@
     padding: 16px;
     width:100%;
   }
-  .screenshot {
-    position: relative;
-    .full-screen {
+  .lSAction > .lSPrev {
+    left: 0px;
+  }
+  .lSAction > .lSNext {
+    right: 0px;
+  }
+  .lSAction > a {
+    top: 0%;
+    height: 100%;
+    width: 50px;
+    padding: 0px 10px;
+    .control {
       position: absolute;
-      right: 4px;
-      bottom: 4px;
+      text-align: right;
+
+      top: 50%;
     }
   }
 }

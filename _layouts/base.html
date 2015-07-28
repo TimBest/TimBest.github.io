@@ -67,22 +67,19 @@
     <script src="/scripts/lightslider.js"></script>
     <script type="text/javascript">
         $(document).foundation();
-    </script>
-    <script type="text/javascript">
-      $('.lightSlider').lightSlider({
-          //main image
-          adaptiveHeight:true,
-          item: 1,
-          loop: true,
-          slideMargin: 0,
-
-          // gallery
-          gallery: true,
-          thumbItem: 10,
-          galleryMargin: 0,
-          thumbMargin: 5,
-          vThumbWidth: 100,
-      });
+        $('.lightSlider').lightSlider({
+            item: 1, //# of slides to show
+            slideMargin: 0, // spacing between each slide
+            speed: 300, // Transition duration
+            keyPress: true, // keyboard navigation
+            controls: true, // prev/next button display
+            prevHtml: "<h4><span class='control left body-font-color fi-arrow-left'></span></h4>", // custom html for prev control
+            nextHtml: "<h4><span class='control right body-font-color fi-arrow-right'></span></h4>", // custom html for next control
+            adaptiveHeight: true, //Dynamically adjust slider height based on each slide's height
+            gallery: true, // Enable thumbnails gallery
+            galleryMargin: 0, // Spacing between gallery and slide
+            thumbMargin: 5, // Spacing between each thumbnails
+        });
     </script>
 
   </body>
