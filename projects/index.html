@@ -2,22 +2,28 @@
 layout: base
 title: Projects | Timothy Best
 projects: active
-
-composers_couch_description: |
-  A website dedicated to improving how concerts are booked and promoted.
-  Composer's Couch provided the information and tools necessary to make educated decisions when requesting and booking shows.
-Image_to_color_palette_description: |
-  A JavaScript library that takes an image and identifies to 10 most prevalent colors.
-  Future plans include rebuilding the library and adding a function that will turn the prevalent colors into a sensible color scheme.
 ---
 
 <div class="row">
   <div class="large-12 columns">
     <h2>Projects</h2>
+    {% for project in site.data.projects %}
+      <hr/>
 
-    {% include project.html title="COMPOSERS COUCH" description=page.composers_couch_description project_page="/projects/composersCouch/" repo="https://bitbucket.org/composersCouch/composerscouch" %}
-
-    {% include project.html title="IMAGE TO COLOR PALETTE" description=page.Image_to_color_palette_description project_page="/Image_to_Color_Palette/" project_target="target='_blank'" repo="https://github.com/TimothyBest/Image_to_Color_Palette" %}
+      <h4/><a class="body-font-color" href="{{ project.project_page }}">{{ project.title }}</a></h4>
+      <div class="row">
+        <div class="large-4 columns">
+          <img src="{{ project.image_url }}" />
+        </div>
+        <div class="large-8 columns">
+          <p>{{ project.description }}</p>
+        </div>
+      </div>
+      <ul class="inline-list">
+        <li><a href="{{ project.project_page }}" {{ project.project_target }} > PROJECT PAGE</a></li>
+        <li><a href="{{ project.repo }}" target="_blank">{{ project.repo_service }} REPOSITORY</a></li>
+      </ul>
+    {% endfor %}
 
   </div>
 </div>
