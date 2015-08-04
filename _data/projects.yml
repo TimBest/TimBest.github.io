@@ -1,12 +1,13 @@
-- title: COMPOSERS COUCH
-  image_url: /images/favicon.png
+- class: composers-couch
+  image_src: /images/composers_couch/logo.png
   description: |
     A website dedicated to improving how concerts are booked and promoted.
     Composer's Couch provided the information and tools necessary to make educated decisions when requesting and booking shows.
   project_page: /projects/composersCouch/
   repo: https://bitbucket.org/composersCouch/composerscouch
 - title: IMAGE TO COLOR PALETTE
-  image_url: /images/favicon.png
+  class: image-to-color-palette
+  image_src: /images/radio_to_color_palette.png
   description: |
     A JavaScript library that takes an image and identifies to 10 most prevalent colors.
     Future plans include rebuilding the library and adding a function that will turn the prevalent colors into a sensible color scheme.

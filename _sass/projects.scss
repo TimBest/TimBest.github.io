@@ -1,3 +1,13 @@
+@import 'foundation/components/global';
+
+.project {
+  .composers-couch {
+    img {
+      padding:$card-padding;
+      padding-bottom: 0px;
+    }
+  }
+}
 #composersCouch {
   .lightSlider {
     margin-left: 0px;

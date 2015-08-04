@@ -7,23 +7,30 @@ projects: active
 <div class="row">
   <div class="large-12 columns">
     <h2>Projects</h2>
-    {% for project in site.data.projects %}
-      <hr/>
 
-      <h4/><a class="body-font-color" href="{{ project.project_page }}">{{ project.title }}</a></h4>
-      <div class="row">
-        <div class="large-4 columns">
-          <img src="{{ project.image_url }}" />
-        </div>
-        <div class="large-8 columns">
-          <p>{{ project.description }}</p>
+    <hr/>
+
+    <div class="row">
+    {% for project in site.data.projects %}
+      <div class="large-6 columns project">
+        <div class="card {{ project.class }}">
+          <a href="{{ project.project_page }}">
+            <img src="{{ project.image_src }}" />
+          </a>
+          <div class="card-section">
+            {% if project.title %}
+              <h4/><a class="body-font-color" href="{{ project.project_page }}">{{ project.title }}</a></h4>
+            {% endif %}
+            <p>{{ project.description }}</p>
+            <hr/>
+            <ul class="inline-list">
+              <li><a href="{{ project.project_page }}" {{ project.project_target }} > PROJECT PAGE</a></li>
+              <li><a href="{{ project.repo }}" target="_blank">{{ project.repo_service }} REPOSITORY</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-      <ul class="inline-list">
-        <li><a href="{{ project.project_page }}" {{ project.project_target }} > PROJECT PAGE</a></li>
-        <li><a href="{{ project.repo }}" target="_blank">{{ project.repo_service }} REPOSITORY</a></li>
-      </ul>
     {% endfor %}
-
+    </div>
   </div>
 </div>
