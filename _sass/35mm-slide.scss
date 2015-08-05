@@ -1,0 +1,34 @@
+@import 'foundation/components/global';
+
+$slide-background: $gainsboro !default;
+$slide-radius: $global-radius !default;
+$slide-inset-radius: 20px !default;
+$slide-shadow: 0 1px 2px rgba(#000, 0.2) !default;
+$slide-inset-shadow: inset 3px 3px 10px 0 #000000 !default;
+$slide-padding: 2.5rem !default;
+$slide-margin: 0.5rem !default;
+
+.slide-frame {
+  background: $slide-background;
+  box-shadow: $slide-shadow;
+  border-radius: $slide-radius;
+
+  .slide-section {
+    padding: $slide-padding;
+  }
+  .slide-image {
+    position: relative;
+    img {
+      border-radius: $slide-inset-radius;
+    }
+    .shadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-shadow: $slide-inset-shadow;
+      border-radius: $slide-inset-radius;
+      top: 0;
+      left: 0;
+    }
+  }
+}
