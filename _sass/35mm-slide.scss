@@ -2,7 +2,7 @@
 
 $slide-background: $smoke !default;
 $slide-border: 1px solid smartscale($slide-background, 7%) !default;
-$slide-radius: 20px !default;
+$slide-radius: $global-radius !default;
 $slide-inset-radius: 20px !default;
 $slide-shadow: 0 1px 2px rgba(#000, 0.2) !default;
 $slide-inset-shadow: 1px 2px 4px 1px rgba(#000, 0.2) inset !default;
@@ -13,7 +13,6 @@ $slide-margin: 0.5rem !default;
   background: $slide-background;
   box-shadow: $slide-shadow;
   border-radius: $slide-radius;
-  padding: ($slide-padding/2) 0px;
   border: $slide-border;
 
   .slide-section {
