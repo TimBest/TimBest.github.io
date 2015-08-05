@@ -1,24 +1,28 @@
 @import 'foundation/components/global';
 
-$slide-background: $gainsboro !default;
-$slide-radius: $global-radius !default;
+$slide-background: $smoke !default;
+$slide-border: 1px solid smartscale($slide-background, 7%) !default;
+$slide-radius: 20px !default;
 $slide-inset-radius: 20px !default;
 $slide-shadow: 0 1px 2px rgba(#000, 0.2) !default;
-$slide-inset-shadow: inset 3px 3px 10px 0 #000000 !default;
+$slide-inset-shadow: 1px 2px 4px 1px rgba(#000, 0.2) inset !default;
 $slide-padding: 2.5rem !default;
 $slide-margin: 0.5rem !default;
 
-.slide-frame {
+.slide-35mm {
   background: $slide-background;
   box-shadow: $slide-shadow;
   border-radius: $slide-radius;
+  padding: ($slide-padding/2) 0px;
+  border: $slide-border;
 
   .slide-section {
-    padding: $slide-padding;
+    padding: ($slide-padding/2) $slide-padding;
   }
   .slide-image {
     position: relative;
     img {
+      border: $slide-border;
       border-radius: $slide-inset-radius;
     }
     .shadow {
@@ -30,5 +34,37 @@ $slide-margin: 0.5rem !default;
       top: 0;
       left: 0;
     }
+  }
+}
+
+
+.lightSlider {
+  margin-left: 0px;
+}
+.lSGallery {
+  padding: 16px;
+  width:100%;
+}
+.lSAction > .lSPrev {
+  left: 0px;
+  .control {
+    left: 10px;
+  }
+}
+.lSAction > .lSNext {
+  right: 0px;
+  text-align: right;
+  .control {
+    right: 10px;
+  }
+}
+.lSAction > a {
+  top: 0%;
+  height: 100%;
+  width: 50px;
+  padding: 0px 10px;
+  .control {
+    position: absolute;
+    top: 50%;
   }
 }

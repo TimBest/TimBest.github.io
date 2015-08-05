@@ -1,10 +1,14 @@
-<li data-thumb="{{ include.url }}">
-  <a href="{{ include.url }}">
-    <img src="{{ include.url }}" />
-  </a>
-  {% if include.caption != "" %}
-  <div class="card-divider">
+<li class="slide-35mm" data-thumb="{{ include.url }}">
+  <div class="slide-section"></div>
+  <div class="slide-section">
+    <a href="{{ include.url }}">
+      <div class="slide-image">
+        <img src="{{ include.url }}" />
+        <div class="shadow"></div>
+      </div>
+    </a>
+  </div>
+  <div class="slide-section">
     <p>{{ include.caption }}</p>
   </div>
-  {% endif %}
 </li>

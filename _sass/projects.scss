@@ -9,30 +9,3 @@
     padding-bottom: 0px;
   }
 }
-#composersCouch {
-  .lightSlider {
-    margin-left: 0px;
-  }
-  .lSGallery {
-    padding: 16px;
-    width:100%;
-  }
-  .lSAction > .lSPrev {
-    left: 0px;
-  }
-  .lSAction > .lSNext {
-    right: 0px;
-  }
-  .lSAction > a {
-    top: 0%;
-    height: 100%;
-    width: 50px;
-    padding: 0px 10px;
-    .control {
-      position: absolute;
-      text-align: right;
-
-      top: 50%;
-    }
-  }
-}
