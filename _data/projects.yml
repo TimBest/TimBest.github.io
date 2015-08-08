@@ -16,6 +16,10 @@
 - title: 1979 Porsche 924
   class: hobby 1979-porsche-924
   image_src: /images/1979_porsche_924/front.jpg
-  description: |
-    My fist car.
+  description:
   project_page: /projects/1979_porsche_924/
+- title: 1983 Porsche 944
+  class: hobby 1983-porsche-944
+  image_src: /images/1983_porsche_944/side.jpg
+  description:
+  project_page: /projects/1983_porsche_944/
