@@ -23,3 +23,8 @@
   image_src: /images/1983_porsche_944/side.jpg
   description:
   project_page: /projects/1983_porsche_944/
+- title: Chalk Bag
+  class: hobby chalk-bag
+  image_src: /images/chalk_bag/finished.jpeg
+  description:
+  project_page: /projects/chalk_bag/
