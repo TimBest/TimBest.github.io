@@ -5,7 +5,7 @@
     Composer's Couch provided the information and tools necessary to make educated decisions when requesting and booking shows.
   project_page: /projects/composersCouch/
   repo: https://bitbucket.org/composersCouch/composerscouch
-- title: IMAGE TO COLOR PALETTE
+- title: Image To Color Palette
   class: web image-to-color-palette
   image_src: /images/radio_to_color_palette.png
   description: |
@@ -28,3 +28,10 @@
   image_src: /images/chalk_bag/finished.jpeg
   description:
   project_page: /projects/chalk_bag/
+- title: Happy Birthday drchrono
+  class: web happy-birthday-drchrono
+  image_src: /images/drchrono/screenshot.png
+  description: |
+    Doctors using drchrono for their electronic record keeping can sign up with the app to send their patients a happy birthday email or text.
+  project_page: /Happy_Birthday_drchrono/
+  repo: https://github.com/TimothyBest/Happy_Birthday_drchrono
