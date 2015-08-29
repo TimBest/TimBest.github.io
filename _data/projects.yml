@@ -1,9 +1,9 @@
 - class: web composers-couch
-  image_src: /images/composers_couch/logo.png
+  image_src: /images/composers-couch/logo.png
   description: |
     A website dedicated to improving how concerts are booked and promoted.
     Composer's Couch provided the information and tools necessary to make educated decisions when requesting and booking shows.
-  project_page: /projects/composersCouch/
+  project_page: /projects/composers-couch/
   repo: https://bitbucket.org/composersCouch/composerscouch
 - title: Image To Color Palette
   class: web image-to-color-palette
@@ -15,23 +15,22 @@
   repo: https://github.com/TimothyBest/Image_to_Color_Palette
 - title: 1979 Porsche 924
   class: hobby 1979-porsche-924
-  image_src: /images/1979_porsche_924/front.jpg
+  image_src: /images/1979-porsche-924/front.jpg
   description:
-  project_page: /projects/1979_porsche_924/
+  project_page: /projects/1979-porsche-924/
 - title: 1983 Porsche 944
   class: hobby 1983-porsche-944
-  image_src: /images/1983_porsche_944/side.jpg
+  image_src: /images/1983-porsche-944/side.jpg
   description:
-  project_page: /projects/1983_porsche_944/
+  project_page: /projects/1983-porsche-944/
 - title: Chalk Bag
   class: hobby chalk-bag
-  image_src: /images/chalk_bag/finished.jpeg
+  image_src: /images/chalk-bag/finished.jpeg
   description:
-  project_page: /projects/chalk_bag/
-- title: Happy Birthday drchrono
-  class: web happy-birthday-drchrono
+  project_page: /projects/chalk-bag/
+- title: Projects For drchrono
+  class: web drchrono-projects
   image_src: /images/drchrono/screenshot.png
   description: |
-    Doctors using drchrono for their electronic record keeping can sign up with the app to send their patients a happy birthday email or text.
-  project_page: /Happy_Birthday_drchrono/
-  repo: https://github.com/TimothyBest/Happy_Birthday_drchrono
+    Projects I worked on to learn the drchrono API.
+  project_page: /projects/drchrono/
