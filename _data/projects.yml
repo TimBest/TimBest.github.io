@@ -34,3 +34,10 @@
   description: |
     Projects I worked on to learn the drchrono API.
   project_page: /projects/drchrono/
+- title: Django Boilerplate
+  class: web django-boilerplate
+  image_src: /images/leaf.jpg
+  description: |
+    My personal boilerplate for all new Django projects.
+  project_page: https://github.com/TimothyBest/Django_Boilerplate
+  repo: https://github.com/TimothyBest/Django_Boilerplate
