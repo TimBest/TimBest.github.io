@@ -11,58 +11,35 @@
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
   </head>
   <body>
-    <div class="header">
-      <div class="row">
-        <div class="medium-12 columns">
-          <h1><a class="text-black" href="/" >Timothy Best</a></h1>
-          <div class="global-nav-right">
-            <ul class="tabs">
-              <li class="tab-title {{ page.about }}"><a class="radius" href="/">About Me</a></li>
-              <li class="tab-title {{ page.resume }}"><a class="radius" href="/resume/">Resume</a></li>
-              <li class="tab-title {{ page.projects }}"><a class="radius" href="/projects/">Projects</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    <header>
+      <h1><a href="/" >Tim Best</a></h1>
+      <nav>
+        <a class="{{ page.projects }}" href="/projects/">Projects</a>
+        <a class="{{ page.resume }}" href="/resume/">Resume</a>
+      </nav>
+    </header>
 
-    {{ content }}
+    <main>
+      {{ content }}
+    <main>
 
     <footer class="row">
-      <hr/>
-      <div class="medium-6 columns">
-        <ul class="inline-list">
-          <li>
-            <a href="mailto:besttimothy1@gmail.com" target="_blank">
-              BestTimothy1@gmail.com
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="medium-6 columns">
-        <ul class="inline-list right">
-          <li>
-            <a href="https://www.linkedin.com/pub/timothy-best/58/697/88a" target="_blank">
-              <span class="social-link fi-social-linkedin"></span>
-            </a>
-          </li>
-          <li>
-            <a href="https://github.com/TimothyBest" target="_blank">
-              <span class="social-link fi-social-github"></span>
-            </a>
-          </li>
-          <li>
-            <a href="http://stackoverflow.com/users/3272220/timbest" target="_blank">
-              <span class="social-link fi-social-stack-overflow"></span>
-            </a>
-          </li>
-          <li>
-            <a href="https://www.hackerrank.com/TimothyBest" target="_blank">
-              <span>HR</span>
-            </a>
-          </li>
-        </ul>
-      </div>
+      <hr>
+      <a href="mailto:besttimothy1@gmail.com" target="_blank">
+        BestTimothy1@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/pub/timothy-best/58/697/88a" target="_blank">
+        LinkedIn
+      </a>
+      <a href="https://github.com/TimothyBest" target="_blank">
+        GitHub
+      </a>
+      <a href="http://stackoverflow.com/users/3272220/timbest" target="_blank">
+        Stack Overflow
+      </a>
+      <a href="https://www.hackerrank.com/TimothyBest" target="_blank">
+        <span>Hacker Rank</span>
+      </a>
     </footer>
   </body>
 </html>
