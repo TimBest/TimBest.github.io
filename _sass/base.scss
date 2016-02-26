@@ -1,118 +1,23 @@
-@import 'foundation/components/global';
-@import 'foundation/components/card';
-
-
-$header-color: $white;
-$header-color-dark: $secondary-color;
-
-
-/* HEADER */
-.header {
-  background-color: $success-color;
-  color: $header-color;
-  margin-bottom: 20px;
-  a, h1, h2, h3, h4, h5, h6 {
-    color: $header-color;
-  }
-  a:hover {
-    color: $header-color-dark;
+a {
     text-decoration: none;
-  }
-  .tabs {
-    dd,
-    .tab-title {
-      > a {
-        color: $header-color;
-        a:hover {
-          text-decoration: none;
-        }
-      }
-      &.active a {
-        color: $header-color-dark;
-      }
-    }
-  }
-}
-@media only screen and (max-width: 40em) {
-  .header {
-    height: 100px;
-    position: relative;
-    .global-nav-right {
-      position: absolute;
-      bottom: -70px;
-      left: -17px;
-      .tabs {
-        height:55px;
-        width: 328px;
-        .tab-title {
-          a {
-            font-weight:normal;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 40.063em) {
-  .header {
-    .global-nav-right {
-      position: absolute;
-      bottom: 16px;
-      right: 0px;
-    }
-  }
-}
-
-/* FOOTER */
-footer {
-  a {
-    color: $success-color;
     &:hover {
-      color: darken($success-color, 10%);
+        text-decoration: underline;
     }
-  }
-
-  .social-link {
-    font-size: 1.3rem;
-    &.fi-social-linkedin {
-      color:#4875B4;
-      &:hover {
-        color: darken(#4875B4, 10%);
-      }
-    }
-    &.fi-social-github {
-      color:#333333;
-      &:hover {
-        color: darken(#333333, 10%);
-      }
-    }
-    &.fi-social-stack-overflow {
-      color:#fe7a15;
-      &:hover {
-        color: darken(#fe7a15, 10%);
-      }
-    }
-
-  }
+}
+h1,h2,h3,h4,h5,h6 {
+  font-family: serif;
 }
 
-/* HELLPERS */
-.body-font-color {
-  color: $jet;
-  &:hover {
-    color: $black;
-  }
+html {
+  font-family: sans-serif;
 }
+body {
+    background-color: $ghost;
+    color: $jet;
+}
+header {
 
-.button {
-  &:hover {
-    text-decoration: none;
-  }
 }
-.card {
-  .card-navigation {
-    padding: $card-padding;
-    padding-top: 0px;
-  }
+footer {
+
 }

@@ -2,20 +2,5 @@
 
 ---
 // style Reset: normalized style across browsers
-@import 'normalize.scss';
-
-// Foundation
-@import 'foundation/settings';
-@import 'foundation/overwrites/tabs';
-@import 'foundation.scss';
-// Foundation Plugins
-@import 'foundation-icons.scss';
-
-//lightslider
-@import 'lightslider.scss';
-
-// My sites style
-@import '35mm-slide.scss';
+@import 'globals.scss';
 @import 'base.scss';
-@import 'resume.scss';
-@import 'projects.scss';
