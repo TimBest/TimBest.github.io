@@ -12,36 +12,41 @@
   </head>
   <body>
     <header>
-      <h1><a href="/" >Tim Best</a></h1>
-      <nav>
-        <a class="{{ page.projects }}" href="/projects/">Projects</a>
-        <a class="{{ page.resume }}" href="/resume/">Resume</a>
-      </nav>
+      <div class="container flex-row-space-between">
+        <h1><a href="/">Tim Best</a></h1>
+        <nav>
+          <a class="{{ page.projects }}" href="/projects/">Projects</a>
+          <a class="{{ page.resume }}" href="/resume/">Resume</a>
+        </nav>
+      </div>
     </header>
     <main>
       {{ content }}
     </main>
-    <hr>
-    <footer class="row">
-      <span>
-        <a href="mailto:besttimothy1@gmail.com" target="_blank">
-          BestTimothy1@gmail.com
-        </a>
-      </span>
-      <span>
-        <a href="https://www.linkedin.com/pub/timothy-best/58/697/88a" target="_blank">
-          LinkedIn
-        </a>
-        <a href="https://github.com/TimothyBest" target="_blank">
-          GitHub
-        </a>
-        <a href="http://stackoverflow.com/users/3272220/timbest" target="_blank">
-          Stack Overflow
-        </a>
-        <a href="https://www.hackerrank.com/TimothyBest" target="_blank">
-          <span>Hacker Rank</span>
-        </a>
-      </span>
+    <footer class="container">
+      <hr>
+      <div class="flex-row-space-between">
+        <span>
+          <a href="mailto:besttimothy1@gmail.com" target="_blank">
+            BestTimothy1@gmail.com
+          </a>
+        </span>
+        <span>
+          <a href="https://www.linkedin.com/pub/timothy-best/58/697/88a" target="_blank">
+            LinkedIn
+          </a>
+          <a href="https://github.com/TimothyBest" target="_blank">
+            GitHub
+          </a>
+          <a href="http://stackoverflow.com/users/3272220/timbest" target="_blank">
+            Stack Overflow
+          </a>
+          <a href="https://www.hackerrank.com/TimothyBest" target="_blank">
+            <span>Hacker Rank</span>
+          </a>
+        </span>
+      </div>
+
     </footer>
   </body>
 </html>

@@ -1,0 +1,11 @@
+.container {
+  margin: 0 5vw;
+  max-width: 50rem;
+}
+
+.flex-row-space-between {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: baseline;
+}

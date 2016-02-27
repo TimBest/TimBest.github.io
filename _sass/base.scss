@@ -17,3 +17,24 @@ a {
 h1, h2, h3, h4, h5, h6 {
   font-family: serif;
 }
+
+header {
+  background-color: $primary-color;
+
+  a {
+    color: $white;
+    &:hover {
+      color: $secondary-color;
+      text-decoration: none;
+    }
+  }
+
+  h1 {
+
+  }
+  nav {
+  }
+}
+footer {
+
+}
