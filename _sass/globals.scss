@@ -28,3 +28,8 @@ $tuatara       : darken( $base, 40%  ) !default;
 $oil           : darken( $base, 47%  ) !default;
 $jet           : darken( $base, 54%  ) !default;
 $black         : #000000 !default;
+
+// Fonts
+$font-family-sans-serif: 'Lato', Roboto, sans-serif;
+$font-family-serif: 'Libre Baskerville', Cambria, serif;
+$font-family-monospace: Consolas, "Liberation Mono", Courier, monospace;
