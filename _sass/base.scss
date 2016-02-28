@@ -1,14 +1,6 @@
-html {
-  font-family: $font-family-sans-serif;
-}
-
-body {
-  background-color: $ghost;
-  color: $jet;
-}
-
 header {
   background-color: $primary-color;
+  margin-bottom: 20px;
 
   a {
     color: $white;
@@ -22,8 +14,15 @@ header {
 
   }
   nav {
+    align-self: center;
+    a {
+      padding: 16px 8px;
+      text-transform: uppercase;
+    }
   }
 }
 footer {
-
+  a {
+    padding: 16px 8px;
+  }
 }
