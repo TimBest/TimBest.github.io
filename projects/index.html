@@ -4,40 +4,26 @@ title: Projects | Tim Best
 projects: active
 ---
 
-<div class="row">
-  <div class="large-12 columns">
-    <h2>Projects</h2>
-    <hr/>
-
-    <div>
-      <div class="filter button" data-filter="all">All</div>
-      <div class="filter button" data-filter=".web">Web</div>
-      <div class="filter button" data-filter=".hobby">Hobby</div>
-    </div>
-
-    <div class="row" id="Container">
-    {% for project in site.data.projects %}
-      <div class="large-6 columns project mix {{ project.class }}">
-        <div class="card">
-          <a href="{{ project.project_page }}">
-            <img src="{{ project.image_src }}" />
-          </a>
-          <div class="card-section">
-            {% if project.title %}
-              <h4/><a class="body-font-color" href="{{ project.project_page }}">{{ project.title }}</a></h4>
-            {% endif %}
-            <p>{{ project.description }}</p>
-            <hr/>
-            <ul class="inline-list">
-              <li><a href="{{ project.project_page }}" {{ project.project_target }} > PROJECT PAGE</a></li>
-              {% if project.repo %}
-                <li><a href="{{ project.repo }}" target="_blank">{{ project.repo_service }} REPOSITORY</a></li>
-              {% endif %}
-            </ul>
-          </div>
-        </div>
-      </div>
-    {% endfor %}
+<div class="container">
+  <h2>Projects</h2>
+  {% for project in site.data.projects %}
+  <hr/>
+  <div class="{{ project.class }}">
+    <a href="{{ project.project_page }}">
+      <figure>
+        <img src="{{ project.image_src }}" />
+      </figure>
+    </a>
+    {% if project.title %}
+    <h3/><a class="body-font-color" href="{{ project.project_page }}">{{ project.title }}</a></h3>
+    {% endif %}
+    <p>{{ project.description }}</p>
+    <div class="flex-row-space-between">
+      <a href="{{ project.project_page }}" {{ project.project_target }} > PROJECT PAGE</a>
+      {% if project.repo %}
+      <a href="{{ project.repo }}" target="_blank">{{ project.repo_service }} REPOSITORY</a>
+      {% endif %}
     </div>
   </div>
+  {% endfor %}
 </div>
