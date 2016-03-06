@@ -1,13 +1,4 @@
-<li class="slide-35mm" data-thumb="{{ include.url }}">
-  <div class="slide-section"></div>
-    <a href="{{ include.url }}">
-      <div class="slide-image">
-        <div class="shadow">
-          <img src="{{ include.url }}" />
-        </div>
-      </div>
-    </a>
-  <div class="slide-section">
-    <p>{{ include.caption }}</p>
-  </div>
-</li>
+<a href="{{ include.url }}">
+  <img src="{{ include.url }}" />
+</a>
+<p>{{ include.caption }}</p>

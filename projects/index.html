@@ -7,7 +7,7 @@ projects: active
 <div class="container">
   <h2>Projects</h2>
   {% for project in site.data.projects %}
-  <hr/>
+  <hr>
   <div class="{{ project.class }}">
     <a href="{{ project.project_page }}">
       <figure>
@@ -15,7 +15,7 @@ projects: active
       </figure>
     </a>
     {% if project.title %}
-    <h3/><a class="body-font-color" href="{{ project.project_page }}">{{ project.title }}</a></h3>
+    <h3/><a  href="{{ project.project_page }}">{{ project.title }}</a></h3>
     {% endif %}
     <p>{{ project.description }}</p>
     <div class="flex-row-space-between">
