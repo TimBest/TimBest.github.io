@@ -19,10 +19,7 @@ projects: active
     {% endif %}
     <p>{{ project.description }}</p>
     <div class="flex-row-space-between">
-      <a href="{{ project.project_page }}" {{ project.project_target }} > PROJECT PAGE</a>
-      {% if project.repo %}
-      <a href="{{ project.repo }}" target="_blank">{{ project.repo_service }} REPOSITORY</a>
-      {% endif %}
+      <a href="{{ project.project_page }}" {{ project.project_target }} >Project Page</a>
     </div>
   </div>
   {% endfor %}

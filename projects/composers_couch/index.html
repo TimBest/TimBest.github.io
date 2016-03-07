@@ -1,0 +1,107 @@
+---
+layout: base
+title: Composer's Couch | Tim Best
+projects: active
+---
+
+<div class="container">
+  <h2>
+    <a href=/projects/>&#8612; COMPOSERS COUCH</a>
+  </h2>
+  <h5>January 2014 to July 2015</h5>
+  <a href="https://bitbucket.org/composersCouch/composerscouch" target="_blank"> BITBUCKET REPO</a>
+  <p>
+    A website dedicated to improving how concerts are booked and promoted.
+    Composer's Couch provided the information and tools necessary to make educated decisions when requesting and booking shows.
+  </p>
+  <hr>
+
+  <h4>Authentication</h4>
+  <p>
+    'Sign up' and 'Login' terminology were chosen for their distinctness.
+    They differ in the number of words and the starting letter allowing for quick scanning of the website.
+  </p>
+  {% include screenshot.html url="/images/composers_couch/homescreen.png" caption="'Sign up' and 'Login' forms are embedded into the home screen for quick access." %}
+  {% include screenshot.html url="/images/composers_couch/auth_login.png" caption="Users are authenticated through Facebook, Twitter or an email address and password." %}
+  {% include screenshot.html url="/images/composers_couch/auth_signup.png" caption="The zipcode field auto fills based on the users IP address. Future plans were to only ask for this field when a zipcode had not been found." %}
+  {% include screenshot.html url="/images/composers_couch/auth_signup_social.png" caption="After signing up with social authentication users are prompted for needed information." %}
+  <hr>
+
+  <h4>Inbox</h4>
+  <p>
+    The users messages, private requests, public requests and show notifications are managed here.
+    Messages could be sent internally through the site or to an email address.
+    The idea was to reduce the time that it took to evaluate requests and schedule a date for them to play by providing: an integrated calendar, universally formatted press kits, and fan turn out metrics.
+    Future plans included combining the rich content of filtered inbox's into one view and having one message form where public and private request are a single form instead of three forms.
+  </p>
+  {% include screenshot.html url="/images/composers_couch/inbox.png" caption="All messages can be viewed and accessed here." %}
+  {% include screenshot.html url="/images/composers_couch/inbox_sent.png" caption="Any message sent or replied to can be found here." %}
+  {% include screenshot.html url="/images/composers_couch/inbox_trash.png" caption="When deleted, threads are moved to the trash." %}
+  {% include screenshot.html url="/images/composers_couch/inbox_public_requests_sent.png" caption="Filtering the inbox by message type allows for more detailed message views." %}
+  {% include screenshot.html url="/images/composers_couch/inbox_public_request_application.png" caption="Each public request has an attached thread for responding and working out details. Future plans were to add a 'Add to Calendar' form." %}
+  {% include screenshot.html url="/images/composers_couch/inbox_private_request.png" caption="Private request allowed for planning shows and quick porting to your calendar." %}
+  {% include screenshot.html url="/images/composers_couch/inbox_event_notification.png" caption="Messages are sent to all site users when they are entered as a participant in a show." %}
+  {% include screenshot.html url="/images/composers_couch/inbox_message.png" caption="Regular thread contain links to all users in the message." %}
+  <hr>
+
+  <h4>Calendar</h4>
+  <p>
+    Used to manage confirmed shows and private requests.
+    Shows are exportable.
+  </p>
+  {% include screenshot.html url="/images/composers_couch/calendar_month.png" caption="Month view." %}
+  {% include screenshot.html url="/images/composers_couch/calendar_month_expanded.png" caption="Expanded days allow for more detail on smaller screen, quick access to artist/venue search, and a create show button with the corresponding date already filled in." %}
+  {% include screenshot.html url="/images/composers_couch/calendar_year.png" caption="Can view the entire year and quickly jump to a month, week, day or single event." %}
+  {% include screenshot.html url="/images/composers_couch/calendar_day.png" caption="Single day view." %}
+  {% include screenshot.html url="/images/composers_couch/calendar_add_show.png" caption="Form used to add or edit shows." %}
+  <hr>
+
+  <h4>Feeds</h4>
+  <p>
+    By default the sites feeds are sorted by location.
+    This allows for better promotion and discovery for artist and venues for they are not competing against global pop stars but rather other local acts.
+  </p>
+  {% include screenshot.html url="/images/composers_couch/feeds_requests.png" caption="Public Request can be browsed by location, who they are looking for, just posted and about to expire." %}
+  {% include screenshot.html url="/images/composers_couch/feeds_requests_filter.png" caption="All feeds can be filtered by a single genre group or by genres saved to your profile." %}
+  {% include screenshot.html url="/images/composers_couch/feeds_shows.png" caption="A list of shows that have been approved and made visible by all site users participating in the event." %}
+  {% include screenshot.html url="/images/composers_couch/feeds_artists.png" caption="Artists can be discovered by location and availability. Availability filtering allows traveling artist to fill in wholes in their tour. " %}
+  {% include screenshot.html url="/images/composers_couch/feeds_venues.png" caption="Quickly search for a venue near you or find one that has an opening." %}
+  {% include screenshot.html url="/images/composers_couch/feeds_updates.png" caption="A way to keep up with news from local or your favorite users. Can be used to promote shows or show off content. " %}
+  <hr>
+
+  <h4>Artist Profile</h4>
+  <p>
+    The Artist Profile main functionality was to serve as a universally formatted press kit.
+    Since most of the information in a press kit is also viable as a metric for discovering artists and it doubles as a promotional page.
+  </p>
+  {% include screenshot.html url="/images/composers_couch/artist_about.png" caption="" %}
+  {% include screenshot.html url="/images/composers_couch/artist_news.png" caption="Recent stories in the news and current content the artist wants to promote." %}
+  {% include screenshot.html url="/images/composers_couch/artist_shows.png" caption="All shows that the artist has made visible." %}
+  {% include screenshot.html url="/images/composers_couch/artist_music.png" caption="Music is currently displayed in albums/playlists. Future plan were to allow single uploads and have an artist selected top 5 songs." %}
+  {% include screenshot.html url="/images/composers_couch/artist_photos.png" caption="A collection of all photos uploaded by the user." %}
+  {% include screenshot.html url="/images/composers_couch/artist_videos.png" caption="Videos are stored as links to YouTube or Vimeo. They can be added individually or to tracks on an album" %}
+  <hr>
+
+  <h4>Venue Profile</h4>
+  <p>
+    This offers Artist and Fans to discover and learn about venues.
+    Future plans included adding near by parking, lodging and restaurants.
+  </p>
+  {% include screenshot.html url="/images/composers_couch/venue_about.png" caption="" %}
+  {% include screenshot.html url="/images/composers_couch/venue_news.png" caption="Recent stories in the news and current content the venue wants to promote." %}
+  {% include screenshot.html url="/images/composers_couch/venue_shows.png" caption="All shows that the venue has made visible." %}
+  {% include screenshot.html url="/images/composers_couch/venue_photos.png" caption="A collection of all photos uploaded by the venue" %}
+  <hr>
+
+  <h4>Static Pages</h4>
+  {% include screenshot.html url="/images/composers_couch/static_about.png" caption="" %}
+  {% include screenshot.html url="/images/composers_couch/static_learn_more.png" caption="" %}
+  {% include screenshot.html url="/images/composers_couch/static_changelog.png" caption="" %}
+  {% include screenshot.html url="/images/composers_couch/static_pipeline.png" caption="" %}
+  <hr>
+
+  <h4>Extracted Django modules</h4>
+  <p>
+    List of Django models that  might be use full as stand alone Django modules
+  </p>
+</div>

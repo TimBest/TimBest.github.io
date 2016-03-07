@@ -1,0 +1,192 @@
+---
+layout: base
+title: Image to Color Palette | Tim Best
+projects: active
+---
+<div class="container">
+  <h2>
+    <a href=/projects/>&#8612; Image to Color Palette</a>
+  </h2>
+  <a href="https://github.com/TimothyBest/Image_to_Color_Palette">View on GitHub</a>
+  <p>
+    A JavaScript library that takes an image and identifies to 10 most prevalent colors.
+    Future plans include rebuilding the library and adding a function that will turn the prevalent colors into a sensible color scheme.
+  </p>
+  <hr>
+
+  <h3>Demo</h3>
+
+  <h5>Example Image</h5>
+  <div class="row">
+    <div class="medium-4 columns">
+      <span class="th radius">
+        <img id="example-image" alt="example image" aria-hidden=true src="/images/image_to_color_pallet/house.jpg"/>
+      </span>
+    </div>
+    <div class="medium-8 columns">
+      <input class="button primary small radius" type="submit" value="Find Color Pallet" onclick="findDominateColors('example-image','example-output')"/>
+      <div id="example-output"></div>
+    </div>
+  </div>
+
+  <h5>Upload your own image</h5>
+  <input type="file" value="Upload File" onchange="readURL(this, 'uploaded-image');" accept="image/*" />
+  <div class="row">
+    <div class="medium-4 columns">
+      <span class="th radius">
+        <img id="uploaded-image" alt="your image" aria-hidden=true src="/images/image_to_color_pallet/upload_image.png"/>
+      </span>
+    </div>
+    <div class="medium-8 columns">
+      <input class="button primary small radius" type="submit" value="Find Color Pallet" onclick="findDominateColors('uploaded-image','uploaded-output')"/>
+      <div id="uploaded-output"></div>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <h3>About This Project</h3>
+    <p>
+      This project currently works by dividing three dimensional color space into a series of weighted ranges.
+      After the ranges have been established we take each individual pixel in an image and determine what range it falls under.
+      As each pixel is added to a range it is averaged into the range and increases that ranges weight.
+      Once completed we are left with a series of average colors and weights.
+      From this we take the ten highest weighted objects and return them to the user.
+    </p>
+
+    <div>
+      <h4>Determining the color model</h4>
+      <div class="row">
+        <div class="medium-4 columns">
+          <img alt="Red, Green, and Blue color model" src="/images/image_to_color_pallet/RGB_cube.png"/>
+          <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Basic_principle" target="_blank">
+            Source
+          </a>
+        </div>
+        <div class="medium-8 columns">
+          <h4>Red, Green, and Blue (RGB)</h4>
+          <p>
+            At first I naively tried to divide up the Red, Green, and Blue color space.
+            While attempting to do so I found that many of the ranges were not humanly intuitive.
+            For each range I had to look up many RGB values to determine logical boundaries.
+            This endeavor was unacceptably tedious so I set out to research other ways of representing the color space.
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="medium-4 columns">
+          <img alt="Hue, Saturation, and Lightness color model" src="/images/image_to_color_pallet/HSL_cylinder.png"/>
+          <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Motivation" target="_blank">
+            Source
+          </a>
+        </div>
+        <div class="medium-8 columns">
+          <h4>Hue, Saturation, and Lightness (HSL)</h4>
+          <p>
+            My research determined that a Hue, Saturation, and lightness color model would be the most intuitive representation.
+            After some experimentation with the color space I found that this assumption was true and went ahead dividing this color space into several ranges.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h4>Dividing color space</h4>
+      <p>
+        One of the issues with using HSL is that the entire top and bottom of the cylinder represent the singular values #FFFFFF (white) and #000000 (black) respectively.
+        To deal with this distortion we cut the cylinder into 3 cylinders along the Lightness axis.
+      </p>
+
+      <table>
+        <tbody>
+          <tr>
+            <th>Black</th>
+            <td>0%</td><td><=</td><td>Lightness</td><td><=</td><td>5%</td>
+          </tr>
+          <tr>
+            <th>Color</th>
+            <td>5%</td><td><</td><td>Lightness</td><td><</td><td>95%</td>
+          </tr>
+          <tr>
+            <th>White</th>
+            <td>95%</td><td><=</td><td>Lightness</td><td><=</td><td>100%</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        The white and black cylinders are then divided into 5 pie slices based on their hue (we ignore saturation due to the distortion).
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td>0</td><td><=</td><td>Hue</td><td><</td><td>72</td>
+          </tr>
+          <tr>
+            <td>72</td><td><=</td><td>Hue</td><td><</td><td>144</td>
+          </tr>
+          <tr>
+            <td>144</td><td><=</td><td>Hue</td><td><</td><td>216</td>
+          </tr>
+          <tr>
+            <td>216</td><td><=</td><td>Hue</td><td><</td><td>288</td>
+          </tr>
+          <tr>
+            <td>288</td><td><=</td><td>Hue</td><td><</td><td>360</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        For the color cylinder we create 36 pie slices each accounting for 10 degrees of the cylinder.
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td>0</td><td><=</td><td>Hue</td><td><</td><td>10</td>
+          </tr>
+          <tr>
+            <td>10</td><td><=</td><td>Hue</td><td><</td><td>20</td>
+          </tr>
+          <tr>
+            <td></td><td></td><td>...</td><td></td><td></td>
+          </tr>
+          <tr>
+            <td>350</td><td><=</td><td>Hue</td><td><</td><td>360</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        We then take each pie slice and cut it into 6 pieces (with equal volume) along the saturation axis.
+      </p>
+      <table>
+        <tbody>
+          <tr>
+            <td>0</td><td><=</td><td>Saturation</td><td><</td><td>40.8</td>
+          </tr>
+          <tr>
+            <td>40.8</td><td><=</td><td>Saturation</td><td><</td><td>57.7</td>
+          </tr>
+          <tr>
+            <td>57.7</td><td><=</td><td>Saturation</td><td><</td><td>70.7</td>
+          </tr>
+          <tr>
+            <td>70.7</td><td><=</td><td>Saturation</td><td><</td><td>81.6</td>
+          </tr>
+          <tr>
+            <td>81.6</td><td><=</td><td>Saturation</td><td><</td><td>91.3</td>
+          </tr>
+          <tr>
+            <td>91.3</td><td><=</td><td>Saturation</td><td><</td><td>100</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+    <script src="https://raw.githubusercontent.com/TimothyBest/Image_to_Color_Palette/master/scripts/color_space_converter.js"></script>
+    <script src="https://raw.githubusercontent.com/TimothyBest/Image_to_Color_Palette/master/scripts/hash_table.js"></script>
+    <script src="https://raw.githubusercontent.com/TimothyBest/Image_to_Color_Palette/master/scripts/binary_heap.js"></script>
+    <script src="https://raw.githubusercontent.com/TimothyBest/Image_to_Color_Palette/master/scripts/image_to_color_palette.js"></script>
+</div>

@@ -1,43 +1,40 @@
-- class: web composers-couch
-  image_src: /images/composers-couch/logo.png
+- class: web
+  image_src: /images/composers_couch/logo.png
   description: |
     A website dedicated to improving how concerts are booked and promoted.
     Composer's Couch provided the information and tools necessary to make educated decisions when requesting and booking shows.
-  project_page: /projects/composers-couch/
-  repo: https://bitbucket.org/composersCouch/composerscouch
+  project_page: /projects/composers_couch/
 - title: Image To Color Palette
-  class: web image-to-color-palette
+  class: web
   image_src: /images/radio_to_color_palette.png
   description: |
     A JavaScript library that takes an image and identifies to 10 most prevalent colors.
     Future plans include rebuilding the library and adding a function that will turn the prevalent colors into a sensible color scheme.
-  project_page: /Image_to_Color_Palette/
-  repo: https://github.com/TimothyBest/Image_to_Color_Palette
+  project_page: /projects/image_to_color_pallet/
 - title: 1979 Porsche 924
-  class: hobby 1979-porsche-924
-  image_src: /images/1979-porsche-924/front.jpg
+  class: hobby
+  image_src: /images/1979_porsche_924/front.jpg
   description:
-  project_page: /projects/1979-porsche-924/
+  project_page: /projects/1979_porsche_924/
 - title: 1983 Porsche 944
-  class: hobby 1983-porsche-944
-  image_src: /images/1983-porsche-944/side.jpg
+  class: hobby
+  image_src: /images/1983_porsche_944/side.jpg
   description:
-  project_page: /projects/1983-porsche-944/
+  project_page: /projects/1983_porsche_944/
 - title: Chalk Bag
-  class: hobby chalk-bag
-  image_src: /images/chalk-bag/finished.jpeg
+  class: hobby
+  image_src: /images/chalk_bag/finished.jpeg
   description:
-  project_page: /projects/chalk-bag/
+  project_page: /projects/chalk_bag/
 - title: Projects For drchrono
-  class: web drchrono-projects
+  class: web
   image_src: /images/drchrono/screenshot.png
   description: |
     Projects I worked on to learn the drchrono API.
   project_page: /projects/drchrono/
 - title: Django Boilerplate
-  class: web django-boilerplate
+  class: web
   image_src: /images/leaf.jpg
   description: |
     My personal boilerplate for all new Django projects.
   project_page: https://github.com/TimothyBest/Django_Boilerplate
-  repo: https://github.com/TimothyBest/Django_Boilerplate
