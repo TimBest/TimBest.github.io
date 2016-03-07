@@ -17,32 +17,15 @@ projects: active
   <h3>Demo</h3>
 
   <h5>Example Image</h5>
-  <div class="row">
-    <div class="medium-4 columns">
-      <span class="th radius">
-        <img id="example-image" alt="example image" aria-hidden=true src="/images/image_to_color_pallet/house.jpg"/>
-      </span>
-    </div>
-    <div class="medium-8 columns">
-      <input class="button primary small radius" type="submit" value="Find Color Pallet" onclick="findDominateColors('example-image','example-output')"/>
-      <div id="example-output"></div>
-    </div>
-  </div>
+  <img id="example-image" alt="example image" aria-hidden=true src="/images/image_to_color_pallet/house.jpg"/>
+  <input type="submit" value="Find Color Pallet" onclick="findDominateColors('example-image','example-output')"/>
+  <div id="example-output"></div>
 
   <h5>Upload your own image</h5>
   <input type="file" value="Upload File" onchange="readURL(this, 'uploaded-image');" accept="image/*" />
-  <div class="row">
-    <div class="medium-4 columns">
-      <span class="th radius">
-        <img id="uploaded-image" alt="your image" aria-hidden=true src="/images/image_to_color_pallet/upload_image.png"/>
-      </span>
-    </div>
-    <div class="medium-8 columns">
-      <input class="button primary small radius" type="submit" value="Find Color Pallet" onclick="findDominateColors('uploaded-image','uploaded-output')"/>
-      <div id="uploaded-output"></div>
-    </div>
-  </div>
-
+  <img id="uploaded-image" alt="your image" aria-hidden=true src="/images/image_to_color_pallet/upload_image.png"/>
+  <input type="submit" value="Find Color Pallet" onclick="findDominateColors('uploaded-image','uploaded-output')"/>
+  <div id="uploaded-output"></div>
   <hr/>
 
   <div>
