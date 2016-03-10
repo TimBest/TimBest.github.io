@@ -5,28 +5,28 @@ projects: active
 ---
 <div class="container">
   <h2>
-    <a href=/projects/>&#8612; Image to Color Palette</a>
+    <a href="/projects/">&#8612; Image to Color Palette</a>
   </h2>
   <a href="https://github.com/TimothyBest/Image_to_Color_Palette">View on GitHub</a>
   <p>
     A JavaScript library that takes an image and identifies to 10 most prevalent colors.
     Future plans include rebuilding the library and adding a function that will turn the prevalent colors into a sensible color scheme.
   </p>
-  <hr>
+  <hr/>
 
   <h3>Demo</h3>
 
   <h5>Example Image</h5>
-  <img id="example-image" alt="example image" aria-hidden=true src="/images/image_to_color_pallet/house.jpg">
-  <input type="submit" value="Find Color Pallet" onclick="findDominateColors('example-image','example-output')">
+  <img id="example-image" alt="example image" aria-hidden="true" src="/images/image_to_color_pallet/house.jpg"/>
+  <input type="submit" value="Find Color Pallet" onclick="findDominateColors('example-image','example-output')"/>
   <div id="example-output"></div>
 
   <h5>Upload your own image</h5>
-  <input type="file" value="Upload File" onchange="readURL(this, 'uploaded-image');" accept="image/*">
-  <img id="uploaded-image" alt="your image" aria-hidden=true src="/images/image_to_color_pallet/upload_image.png">
-  <input type="submit" value="Find Color Pallet" onclick="findDominateColors('uploaded-image','uploaded-output')">
+  <input type="file" value="Upload File" onchange="readURL(this, 'uploaded-image');" accept="image/*"/>
+  <img id="uploaded-image" alt="your image" aria-hidden="true" src="/images/image_to_color_pallet/upload_image.png"/>
+  <input type="submit" value="Find Color Pallet" onclick="findDominateColors('uploaded-image','uploaded-output')"/>
   <div id="uploaded-output"></div>
-  <hr>
+  <hr/>
 
   <h3>About This Project</h3>
   <p>
@@ -38,7 +38,7 @@ projects: active
   </p>
 
   <h4>Determining the color model</h4>
-  <img alt="Red, Green, and Blue color model" src="/images/image_to_color_pallet/RGB_cube.png">
+  <img alt="Red, Green, and Blue color model" src="/images/image_to_color_pallet/RGB_cube.png"/>
   <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Basic_principle" target="_blank">
     Source
   </a>
@@ -49,7 +49,7 @@ projects: active
     For each range I had to look up many RGB values to determine logical boundaries.
     This endeavor was unacceptably tedious so I set out to research other ways of representing the color space.
   </p>
-  <img alt="Hue, Saturation, and Lightness color model" src="/images/image_to_color_pallet/HSL_cylinder.png">
+  <img alt="Hue, Saturation, and Lightness color model" src="/images/image_to_color_pallet/HSL_cylinder.png"/>
   <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Motivation" target="_blank">
     Source
   </a>
@@ -68,15 +68,15 @@ projects: active
     <tbody>
       <tr>
         <th>Black</th>
-        <td>0%</td><td><=</td><td>Lightness</td><td><=</td><td>5%</td>
+        <td>0%</td><td>&#60;=</td><td>Lightness</td><td>&#60;=</td><td>5%</td>
       </tr>
       <tr>
         <th>Color</th>
-        <td>5%</td><td><</td><td>Lightness</td><td><</td><td>95%</td>
+        <td>5%</td><td>&#60;</td><td>Lightness</td><td>&#60;</td><td>95%</td>
       </tr>
       <tr>
         <th>White</th>
-        <td>95%</td><td><=</td><td>Lightness</td><td><=</td><td>100%</td>
+        <td>95%</td><td>&#60;=</td><td>Lightness</td><td>&#60;=</td><td>100%</td>
       </tr>
     </tbody>
   </table>
@@ -86,19 +86,19 @@ projects: active
   <table>
     <tbody>
       <tr>
-        <td>0</td><td><=</td><td>Hue</td><td><</td><td>72</td>
+        <td>0</td><td>&#60;=</td><td>Hue</td><td>&#60;</td><td>72</td>
       </tr>
       <tr>
-        <td>72</td><td><=</td><td>Hue</td><td><</td><td>144</td>
+        <td>72</td><td>&#60;=</td><td>Hue</td><td>&#60;</td><td>144</td>
       </tr>
       <tr>
-        <td>144</td><td><=</td><td>Hue</td><td><</td><td>216</td>
+        <td>144</td><td>&#60;=</td><td>Hue</td><td>&#60;</td><td>216</td>
       </tr>
       <tr>
-        <td>216</td><td><=</td><td>Hue</td><td><</td><td>288</td>
+        <td>216</td><td>&#60;=</td><td>Hue</td><td>&#60;</td><td>288</td>
       </tr>
       <tr>
-        <td>288</td><td><=</td><td>Hue</td><td><</td><td>360</td>
+        <td>288</td><td>&#60;=</td><td>Hue</td><td>&#60;</td><td>360</td>
       </tr>
     </tbody>
   </table>
@@ -109,16 +109,16 @@ projects: active
   <table>
     <tbody>
       <tr>
-        <td>0</td><td><=</td><td>Hue</td><td><</td><td>10</td>
+        <td>0</td><td>&#60;=</td><td>Hue</td><td>&#60;</td><td>10</td>
       </tr>
       <tr>
-        <td>10</td><td><=</td><td>Hue</td><td><</td><td>20</td>
+        <td>10</td><td>&#60;=</td><td>Hue</td><td>&#60;</td><td>20</td>
       </tr>
       <tr>
         <td></td><td></td><td>...</td><td></td><td></td>
       </tr>
       <tr>
-        <td>350</td><td><=</td><td>Hue</td><td><</td><td>360</td>
+        <td>350</td><td>&#60;=</td><td>Hue</td><td>&#60;</td><td>360</td>
       </tr>
     </tbody>
   </table>
@@ -128,22 +128,22 @@ projects: active
   <table>
     <tbody>
       <tr>
-        <td>0</td><td><=</td><td>Saturation</td><td><</td><td>40.8</td>
+        <td>0</td><td>&#60;=</td><td>Saturation</td><td>&#60;</td><td>40.8</td>
       </tr>
       <tr>
-        <td>40.8</td><td><=</td><td>Saturation</td><td><</td><td>57.7</td>
+        <td>40.8</td><td>&#60;=</td><td>Saturation</td><td>&#60;</td><td>57.7</td>
       </tr>
       <tr>
-        <td>57.7</td><td><=</td><td>Saturation</td><td><</td><td>70.7</td>
+        <td>57.7</td><td>&#60;=</td><td>Saturation</td><td>&#60;</td><td>70.7</td>
       </tr>
       <tr>
-        <td>70.7</td><td><=</td><td>Saturation</td><td><</td><td>81.6</td>
+        <td>70.7</td><td>&#60;=</td><td>Saturation</td><td>&#60;</td><td>81.6</td>
       </tr>
       <tr>
-        <td>81.6</td><td><=</td><td>Saturation</td><td><</td><td>91.3</td>
+        <td>81.6</td><td>&#60;=</td><td>Saturation</td><td>&#60;</td><td>91.3</td>
       </tr>
       <tr>
-        <td>91.3</td><td><=</td><td>Saturation</td><td><</td><td>100</td>
+        <td>91.3</td><td>&#60;=</td><td>Saturation</td><td>&#60;</td><td>100</td>
       </tr>
     </tbody>
   </table>

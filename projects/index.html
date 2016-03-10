@@ -7,11 +7,11 @@ projects: active
 <div class="container">
   <h2>Projects</h2>
   {% for project in site.data.projects %}
-  <hr>
+  <hr/>
   <div class="{{ project.class }}">
     <a href="{{ project.project_page }}">
       <figure>
-        <img src="{{ project.image_src }}">
+        <img src="{{ project.image_src }}" alt="{{ project.image_alt }}"/>
       </figure>
     </a>
     {% if project.title %}
@@ -19,7 +19,7 @@ projects: active
     {% endif %}
     <p>{{ project.description }}</p>
     <div class="flex-row-space-between">
-      <a href="{{ project.project_page }}" {{ project.project_target }} >Project Page</a>
+      <a href="{{ project.project_page }}">Project Page</a>
     </div>
   </div>
   {% endfor %}
