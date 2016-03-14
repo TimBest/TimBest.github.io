@@ -9,6 +9,7 @@ body {
 
 a {
   text-decoration: none;
+
   &:hover {
     text-decoration: underline;
   }
@@ -17,29 +18,34 @@ a {
 h1, h2, h3, h4, h5, h6 {
   font-family: $font-family-serif;
   font-weight: normal;
-  line-height:1.5;
-
+  line-height: 1.5;
   margin: 0;
+
   a {
-    color:inherit;
+    color: inherit;
   }
 }
 
 h1 {
   font-size: $h1-font-size;
 }
+
 h2 {
   font-size: $h2-font-size;
 }
+
 h3 {
   font-size: $h3-font-size;
 }
+
 h4 {
   font-size: $h4-font-size;
 }
+
 h5 {
   font-size: $h5-font-size;
 }
+
 h6 {
   font-size: $h6-font-size;
 }
@@ -53,15 +59,18 @@ p {
   line-height: 1.5;
   margin: 1rem 0;
 }
+
 ul {
+  margin: 0;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
   padding: 0;
   padding-left: 1rem;
-  margin: 0;
-  margin-left: 1rem;
-  margin-bottom: 1  rem;
+
 }
+
 img {
   display: block;
-  max-width: 100%;
   margin: 0 auto;
+  max-width: 100%;
 }

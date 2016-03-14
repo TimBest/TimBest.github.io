@@ -4,6 +4,7 @@ header {
 
   a {
     color: $white;
+
     &:hover,
     &:focus,
     &.active {
@@ -12,17 +13,16 @@ header {
     }
   }
 
-  h1 {
-
-  }
   nav {
     align-self: center;
+
     a {
       padding: 16px 8px;
       text-transform: uppercase;
     }
   }
 }
+
 footer {
   a {
     padding: 16px 8px;
