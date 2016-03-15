@@ -14,10 +14,12 @@ header {
   }
 
   nav {
+    $nav-padding: 16px;
     align-self: center;
+    padding: $nav-padding 0;
 
     a {
-      padding: 16px 8px;
+      padding: $nav-padding 8px;
       text-transform: uppercase;
     }
   }
