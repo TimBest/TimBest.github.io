@@ -18,13 +18,22 @@ header {
   }
 
   nav {
-    $nav-padding: 16px;
     align-self: center;
-    padding: $nav-padding 0;
 
     a {
-      padding: $nav-padding 8px;
       text-transform: uppercase;
+    }
+  }
+}
+
+.inline-links {
+  padding: 16px 0;
+
+  a {
+    padding: 16px 8px;
+
+    &:first-child {
+      padding-left: 0;
     }
   }
 }
@@ -32,9 +41,5 @@ header {
 footer {
   .flex-row-space-between {
     margin: 20px 0;
-  }
-
-  a {
-    padding: 16px 8px;
   }
 }
