@@ -2,18 +2,19 @@ header {
   background-color: $primary-color;
   margin-bottom: 20px;
 
-  a {
-    color: $white;
 
-    &:visited {
+  h1 {
+    a {
       color: $white;
-    }
 
-    &:hover,
-    &:focus,
-    &.active {
-      color: $secondary-color;
-      text-decoration: none;
+      &:hover,
+      &:focus {
+        text-decoration: none;
+      }
+
+      &:visited {
+        color: $white;
+      }
     }
   }
 
@@ -22,18 +23,6 @@ header {
 
     a {
       text-transform: uppercase;
-    }
-  }
-}
-
-.inline-links {
-  padding: 16px 0;
-
-  a {
-    padding: 16px 8px;
-
-    &:first-child {
-      padding-left: 0;
     }
   }
 }

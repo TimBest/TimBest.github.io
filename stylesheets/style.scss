@@ -4,6 +4,7 @@
 // style Reset: normalized style across browsers
 @import 'globals.scss';
 @import 'elements.scss';
-@import 'components.scss';
+@import 'components/layout.scss';
+@import 'components/tabs.scss';
 @import 'helpers.scss';
 @import 'base.scss';
