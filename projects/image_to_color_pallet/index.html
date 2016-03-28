@@ -3,6 +3,24 @@ layout: base
 title: Image to Color Palette | Tim Best
 projects: active
 ---
+<script src="http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/color_space_converter.js"></script>
+<script src="http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/hash_table.js"></script>
+<script src="http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/binary_heap.js"></script>
+<script src="http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/image_to_color_palette.js"></script>
+<script>
+    window.onload = function() {
+        document.getElementById('example-trigger').onclick = function() {
+            findDominateColors('example-image','example-output');
+        };
+        document.getElementById('uploaded-file').onchange = function() {
+            readURL(this, 'uploaded-image');
+        };
+        document.getElementById('uploaded-trigger').onclick = function() {
+            findDominateColors('uploaded-image','uploaded-output');
+        };
+    }
+</script>
+
 <div class="container">
   <h2>
     <a href="/projects/">&#8612; Image to Color Palette</a>
@@ -17,14 +35,14 @@ projects: active
   <h3>Demo</h3>
 
   <h5>Example Image</h5>
-  <img id="example-image" alt="example image" aria-hidden="true" src="/images/image_to_color_pallet/house.jpg"/>
-  <input type="submit" value="Find Color Pallet" onclick="findDominateColors('example-image','example-output')"/>
+  <img id="example-image" alt="windows xp background" aria-hidden="true" src="/images/image_to_color_pallet/windows_xp.jpg"/>
+  <input id="example-trigger" type="submit" value="Find Color Pallet"/>
   <div id="example-output"></div>
 
   <h5>Upload your own image</h5>
-  <input type="file" value="Upload File" onchange="readURL(this, 'uploaded-image');" accept="image/*"/>
+  <input id="uploaded-file" type="file" value="Upload File" accept="image/*"/>
   <img id="uploaded-image" alt="your image" aria-hidden="true" src="/images/image_to_color_pallet/upload_image.png"/>
-  <input type="submit" value="Find Color Pallet" onclick="findDominateColors('uploaded-image','uploaded-output')"/>
+  <input id="uploaded-trigger" type="submit" value="Find Color Pallet"/>
   <div id="uploaded-output"></div>
   <hr/>
 
@@ -147,9 +165,4 @@ projects: active
       </tr>
     </tbody>
   </table>
-
-  <script src="https://raw.githubusercontent.com/TimothyBest/Image_to_Color_Palette/master/scripts/color_space_converter.js"></script>
-  <script src="https://raw.githubusercontent.com/TimothyBest/Image_to_Color_Palette/master/scripts/hash_table.js"></script>
-  <script src="https://raw.githubusercontent.com/TimothyBest/Image_to_Color_Palette/master/scripts/binary_heap.js"></script>
-  <script src="https://raw.githubusercontent.com/TimothyBest/Image_to_Color_Palette/master/scripts/image_to_color_palette.js"></script>
 </div>
