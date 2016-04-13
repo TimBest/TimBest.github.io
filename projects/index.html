@@ -6,21 +6,46 @@ projects: active
 
 <div class="container">
   <h2>Projects</h2>
-  {% for project in site.data.projects %}
   <hr/>
-  <div class="{{ project.class }}">
-    <a href="{{ project.project_page }}">
-      <figure>
-        <img src="{{ project.image_src }}" alt="{{ project.image_alt }}"/>
-      </figure>
-    </a>
-    {% if project.title %}
-    <h3><a href="{{ project.project_page }}">{{ project.title }}</a></h3>
-    {% endif %}
-    <p>{{ project.description }}</p>
-    <div class="flex-row-space-between">
-      <a href="{{ project.project_page }}">Project Page</a>
-    </div>
+
+  <div class="projects-flex-row">
+    <section class="project-menu">
+      <h6>Show:</h6>
+      <ul>
+        <li><a href="#">All</a></li>
+        <li><a class="web" href="#">Web</a></li>
+        <li><a class="car" href="#">Car</a></li>
+        <li><a class="sewing" href="#">Sewing</a></li>
+      </ul>
+    </section>
+    <span class="projects flex-row-space-between">
+      {% for project in site.data.projects %}
+      <div class="card {{ project.class }}">
+        <a href="{{ project.project_page }}">
+          <img src="{{ project.image_src }}" alt="{{ project.image_alt }}"/>
+        </a>
+        <section>
+          {% if project.title %}
+          <h3><a href="{{ project.project_page }}">{{ project.title }}</a></h3>
+          {% endif %}
+          <p>{{ project.description }}</p>
+          <div class="text-right">
+            <a href="{{ project.project_page }}">View Project</a>
+          </div>
+        </section>
+      </div>
+      {% endfor %}
+    </span>
   </div>
-  {% endfor %}
 </div>
+
+<script>
+  $(".project-menu li a").click(function() {
+    // ensure all cards are shown
+    $(".projects .card").show();
+    if ($(this).attr('class')) {
+      // hide the cards that arn't relavent
+      $(".projects .card").not("." + $(this).attr('class')).hide();
+    }
+  });
+</script>

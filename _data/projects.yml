@@ -12,17 +12,17 @@
     Future plans include rebuilding the library and adding a function that will turn the prevalent colors into a sensible color scheme.
   project_page: /projects/image_to_color_pallet/
 - title: 1979 Porsche 924
-  class: hobby
+  class: car
   image_src: /images/1979_porsche_924/front.jpg
   description:
   project_page: /projects/1979_porsche_924/
 - title: 1983 Porsche 944
-  class: hobby
+  class: car
   image_src: /images/1983_porsche_944/side.jpg
   description:
   project_page: /projects/1983_porsche_944/
 - title: Chalk Bag
-  class: hobby
+  class: sewing
   image_src: /images/chalk_bag/finished.jpeg
   description:
   project_page: /projects/chalk_bag/
