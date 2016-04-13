@@ -1,4 +1,4 @@
-- class: web
+- class: web composers-couch
   image_src: /images/composers_couch/logo.png
   description: |
     A website dedicated to improving how concerts are booked and promoted.

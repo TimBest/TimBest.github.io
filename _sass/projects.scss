@@ -1,24 +1,40 @@
-.projects-flex-row {
+.projects-page {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
 }
 
+.project-cards-layout {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+
 .project-menu {
-  flex-grow: 1;
+  list-style: none;
+  margin: 0 15px 0 0;
+  padding: 0;
 
-  ul {
-    list-style: none;
-    margin: 0 15px 0 0;
-    padding: 0;
-
-    a {
-      display: inline-block;
-      width: 100%;
-    }
+  a {
+    display: inline-block;
+    width: 100%;
   }
 }
 
-.projects {
-  flex-grow: 3;
+.project {
+  max-width: 50%;
+
+  @media (max-width: 700px) {
+    max-width: 100%;
+  }
+
+  .composers-couch {
+
+    img {
+      padding: 1rem;
+      padding-bottom: 0;
+    }
+  }
 }
