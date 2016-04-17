@@ -1,8 +1,11 @@
 ---
 
 ---
-// style Reset: normalized style across browsers
 @import 'globals.scss';
+
+@import 'photo_swipe/main.scss';
+@import 'photo_swipe/default-skin/default-skin.scss';
+
 @import 'elements.scss';
 @import 'components/card.scss';
 @import 'components/layout.scss';
