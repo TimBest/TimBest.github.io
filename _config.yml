@@ -1,5 +1,5 @@
 markdown: rdiscount
-highlighter: pygments
+rouge: pygments
 
 sass:
     sass_dir: _sass
