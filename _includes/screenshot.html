@@ -1,6 +1,6 @@
-<figure>
-  <a href="{{ include.url }}">
-    <img src="{{ include.url }}" alt="{{ include.alt }}"/>
+<figure itemprop="associatedMedia" itemscope itemtype="{{ include.url }}">
+  <a href="{{ include.url }}" itemprop="contentUrl" data-size="600x400">
+    <img src="{{ include.url }}" itemprop="thumbnail" alt="{{ include.alt }}"/>
   </a>
-  <figcaption>{{ include.caption }}</figcaption>
+  <figcaption itemprop="caption description">{{ include.caption }}</figcaption>
 </figure>

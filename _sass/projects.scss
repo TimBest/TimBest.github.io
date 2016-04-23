@@ -38,3 +38,33 @@
     }
   }
 }
+
+.my-gallery {
+
+  figure {
+    margin: 1em 0;
+
+    img {
+      max-height: 150px;
+      max-width: 150px;
+    }
+
+    figcaption {
+      display: none;
+    }
+
+    &:first-of-type  {
+      display: inline-block;
+      margin: 1em 40px;
+
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+
+      figcaption {
+        display: inline-block;
+      }
+    }
+  }
+}
