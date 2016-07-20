@@ -14,7 +14,7 @@ CHECKS = [
         'match_files': [r'.*yipit/.*\.js$'],
     },
     {
-        'status': 'Running aspell on .html',
+        'output': 'Running aspell on .html',
         'command': r'aspell list -H < %(file)s',
         'match_files': [r'\.html$'],
     },
