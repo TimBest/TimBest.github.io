@@ -3,8 +3,7 @@ $space-between-tabs: $vertical-padding; // number of pixels between tabs
 $active-border-width: 5px; // width of the active tabs bottom border
 
 %inline-links {
-  //HACK to prvent completely unreasonable colapse behavior on nline links
-  padding: $vertical-padding 0;
+  display: flex;
 
   a {
     padding: $vertical-padding ($space-between-tabs / 2);
