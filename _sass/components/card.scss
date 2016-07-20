@@ -1,5 +1,5 @@
 $card-shadow-color: rgba(0, 0, 0, .2);
-$card-color: lighten($secondary-color, 10%);
+$card-color: $primary-color-light;
 
 .card {
   background: $card-color;

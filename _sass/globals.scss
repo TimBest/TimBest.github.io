@@ -1,6 +1,7 @@
 // We use these as default colors throughout
-$primary-color: #964941 !default;
-$secondary-color: #2E382F !default;
+$primary-color: #2E382F !default;
+$primary-color-dark: darken($primary-color, 10%) !default;
+$primary-color-light: lighten($primary-color, 10%) !default;
 
 $alert-color: #F57C00 !default;
 $success-color: #6E8243 !default;
