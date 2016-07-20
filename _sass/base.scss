@@ -1,9 +1,14 @@
-header {
-  background-color: $primary-color;
-  margin-bottom: 20px;
+footer {
+  background-color: $secondary-color;
+  bottom: 0;
+  box-shadow: 0 0 8px 0 $card-shadow-color;
+  height: $footer-height;
+  left: 0;
+  position: fixed;
+  right: 0;
 
   a {
-    color: $white;
+    color: $iron;
 
     &:hover,
     &:focus {
@@ -11,7 +16,7 @@ header {
     }
 
     &:visited {
-      color: $white;
+      color: $iron;
     }
   }
 
@@ -22,49 +27,43 @@ header {
       text-transform: uppercase;
     }
   }
+
+  .container {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 }
 
-footer {
-  $github: #333;
-  $linkedin: #4875B4;
-  $stack-overflow: #fe7a15;
+$github: #333;
+$linkedin: #4875B4;
+$stack-overflow: #fe7a15;
 
-  .flex-row-space-between {
-    margin: 18px 0;
+a.github {
+  color: $github;
+
+  &:hover,
+  &:focus {
+    color: darken($github, 20%);
+    text-decoration: none;
   }
+}
 
-  a {
-    &:hover,
-    &:focus {
-      text-decoration: none;
-    }
+a.linkedin {
+  color: $linkedin;
+
+  &:hover,
+  &:focus {
+    color: darken($linkedin, 20%);
+    text-decoration: none;
   }
+}
 
-  .github {
-    color: $github;
+a.stack-overflow {
+  color: $stack-overflow;
 
-    &:hover,
-    &:focus {
-      color: darken($github, 20%);
-    }
+  &:hover,
+  &:focus {
+    color: darken($stack-overflow, 15%);
+    text-decoration: none;
   }
-
-  .linkedin {
-    color: $linkedin;
-
-    &:hover,
-    &:focus {
-      color: darken($linkedin, 20%);
-    }
-  }
-
-  .stack-overflow {
-    color: $stack-overflow;
-
-    &:hover,
-    &:focus {
-      color: darken($stack-overflow, 15%);
-    }
-  }
-
 }

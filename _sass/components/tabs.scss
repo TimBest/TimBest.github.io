@@ -1,6 +1,6 @@
 $vertical-padding: 18px; // padding on top and bottom of each tab
 $space-between-tabs: $vertical-padding; // number of pixels between tabs
-$active-border-width: 2px; // width of the active tabs bottom border
+$active-border-width: 5px; // width of the active tabs bottom border
 
 %inline-links {
   //HACK to prvent completely unreasonable colapse behavior on nline links
@@ -31,8 +31,8 @@ $active-border-width: 2px; // width of the active tabs bottom border
     }
 
     &.active {
-      border-bottom: $active-border-width solid $secondary-color;
-      color: $secondary-color;
+      border-bottom: $active-border-width solid $iron;
+      color: $iron;
       padding-bottom: $vertical-padding - $active-border-width;
       text-decoration: none;
     }

@@ -3,8 +3,9 @@ html {
 }
 
 body {
-  background-color: $ghost;
+  background-color: $white-smoke;
   color: $jet;
+  margin-bottom: $footer-height;
 }
 
 a {
@@ -61,7 +62,7 @@ h6 {
 
 hr {
   border: 0;
-  border-top: $secondary-color 1px solid;
+  border-top: $iron 1px solid;
 }
 
 p {
