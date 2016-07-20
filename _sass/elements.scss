@@ -1,10 +1,11 @@
 html {
   font-family: $font-family-sans-serif;
+  letter-spacing: 0.8px;
 }
 
 body {
-  background-color: $white-smoke;
-  color: $jet;
+  background-color: $secondary-color;
+  color: $iron;
   margin-bottom: $footer-height;
 }
 

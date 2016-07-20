@@ -1,11 +1,12 @@
 $card-shadow-color: rgba(0, 0, 0, .2);
+$card-color: lighten($secondary-color, 10%);
 
 .card {
-  background: $white;
-  border: 1px solid smartscale($white, 7%);
+  background: $card-color;
+  border: 1px solid smartscale($card-color, 7%);
   border-radius: 3px;
   box-shadow: 0 0 8px 0 $card-shadow-color;
-  color: isitlight($white);
+  color: isitlight($card-color);
   margin: .5rem;
   overflow: hidden;
 
