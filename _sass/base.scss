@@ -7,6 +7,10 @@ footer {
   position: fixed;
   right: 0;
 
+  .flex-row-space-between {
+    flex-wrap: wrap-reverse;
+  }
+
   a {
     color: $iron;
 
