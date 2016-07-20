@@ -34,7 +34,7 @@ footer {
   }
 }
 
-$github: #333;
+$github: #000;
 $linkedin: #4875B4;
 $stack-overflow: #fe7a15;
 
@@ -43,7 +43,7 @@ a.github {
 
   &:hover,
   &:focus {
-    color: darken($github, 20%);
+    color: lighten($github, 10%);
     text-decoration: none;
   }
 }
