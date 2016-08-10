@@ -1,3 +1,6 @@
-# Personal Website
+# My Personal Website
 
-To run locally: https://help.github.com/articles/using-jekyll-with-pages/
+## Setup
+
+- Create python3 virtualenv [virtualenvwrapper.readthedocs.io](rtualenvwrapper.readthedocs.io)
+- pip install requirements.txt
