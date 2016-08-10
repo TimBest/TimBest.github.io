@@ -1,23 +1,22 @@
----
-layout: base
-title: Tim Best
-about: active
----
+{% extends "_base.html" %}
+
+{% block title %}Tim Best{% endblock %}
+
+{% block about_class %}active{% endblock %}
+
+
+{% block content %}
 <div class="hero"></div>
-
-
 
 <div class="container">
   <h2 id="aboutMe">About Me</h2>
   <hr/>
-
   <p>
     My name in Tim Best. I am original from upstate New York and graduated from Clarkson University with a Bachelor of Science in computer science and a minor in mathematics.
     By trade I am a practicing Full-Stack web developer at <a href="//www.drchrono.com/" target="_blank">drchrono</a>; a Medical billing and Electronic Health Records startup based in Mountain View, California.
     Before working at drchrono I founded the startup <a href="/projects/composers_couch/">Composer's Couch</a>, a website dedicated to improving how concerts are booked and promoted.
     Through these experiences I have developed a stronger sense of self motivation, improved my visual communication skills, and have acquired a deeper understanding of end user needs.
   </p>
-
   <hr/>
   <div class="flex-row-space-between">
     <span>
@@ -36,3 +35,4 @@ about: active
     </span>
   </div>
 </div>
+{% endblock %}
