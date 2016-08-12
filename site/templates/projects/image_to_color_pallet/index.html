@@ -1,8 +1,10 @@
----
-layout: base
-title: Image to Color Palette | Tim Best
-projects: active
----
+{% extends "templates/_base.html" %}
+
+{% block title %}Image to Color Palette | Tim Best{% endblock %}
+
+{% block projects_class %}active{% endblock %}
+
+{% block content %}
 <script src="http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/color_space_converter.js"></script>
 <script src="http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/hash_table.js"></script>
 <script src="http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/binary_heap.js"></script>
@@ -166,3 +168,4 @@ projects: active
     </tbody>
   </table>
 </div>
+{% endblock %}

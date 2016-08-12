@@ -1,0 +1,8 @@
+{% macro screenshot(url, alt='', caption='') -%}
+  <figure itemprop="associatedMedia" itemscope itemtype="{{ url }}">
+    <a href="{{ url }}" itemprop="contentUrl" data-size="600x400">
+      <img src="{{ url }}" itemprop="thumbnail" alt="{{ alt }}"/>
+    </a>
+    <figcaption itemprop="caption description">{{ caption }}</figcaption>
+  </figure>
+{%- endmacro %}

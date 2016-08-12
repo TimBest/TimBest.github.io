@@ -1,9 +1,11 @@
----
-layout: base
-title: Chalk Bag | Tim Best
-projects: active
----
+{% extends "templates/_base.html" %}
+{% import 'templates/_macros.html' as macros %}
 
+{% block title %}Chalk Bag | Tim Best{% endblock %}
+
+{% block projects_class %}active{% endblock %}
+
+{% block content %}
 <div class="container">
   <h2>
     <a href="/projects/">&#8612; Chalk Bag</a>
@@ -26,9 +28,9 @@ projects: active
   </p>
 
   <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
-    {% include screenshot.html url="/images/chalk_bag/materials.jpeg" caption="I chose a jade corduroy as the external shell, a gray fleece for the bags liner, and a white nylon ribbon to strengthen the bag's opening and to add attachment points." %}
-    {% include screenshot.html url="/images/chalk_bag/assembly.jpeg" caption="Part way through the assembly we can see the shapes of each cut and how the fleece already looks a bit to small." %}
-    {% include screenshot.html url="/images/chalk_bag/finished.jpeg" caption="Here is the bag fully assembled and ready for some climbing." %}
+    {{ macros.screenshot(url="/images/chalk_bag/materials.jpeg", caption="I chose a jade corduroy as the external shell, a gray fleece for the bags liner, and a white nylon ribbon to strengthen the bag's opening and to add attachment points.") }}
+    {{ macros.screenshot(url="/images/chalk_bag/assembly.jpeg", caption="Part way through the assembly we can see the shapes of each cut and how the fleece already looks a bit to small.") }}
+    {{ macros.screenshot(url="/images/chalk_bag/finished.jpeg", caption="Here is the bag fully assembled and ready for some climbing.") }}
   </div>
   <p>
     For my next bag I plan to try this
@@ -37,3 +39,4 @@ projects: active
     <a href="http://blog.weighmyrack.com">weighmyrack.com</a>.
   </p>
 </div>
+{% endblock %}

@@ -1,9 +1,11 @@
----
-layout: base
-title: 1983 Porsche 944 | Tim Best
-projects: active
----
+{% extends "templates/_base.html" %}
+{% import 'templates/_macros.html' as macros %}
 
+{% block title %}1983 Porsche 944 | Tim Best{% endblock %}
+
+{% block projects_class %}active{% endblock %}
+
+{% block content %}
 <div class="container">
   <h2>
     <a href="/projects/">&#8612; 1983 Porsche 944</a>
@@ -26,6 +28,7 @@ projects: active
 
   <h3>Slideshow</h3>
   <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
-    {% include screenshot.html url="/images/1983_porsche_944/side.jpg" caption="" %}
+    {{ macros.screenshot(url="/images/1983_porsche_944/side.jpg", caption="") }}
   </div>
 </div>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "templates/_base.html" %}
+{% import 'templates/_macros.html' as macros %}
+
+{% block title %}1979 Porsche 924 | Tim Best{% endblock %}
+
+{% block projects_class %}active{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>
+    <a href="/projects/">&#8612; 1979 Porsche 924</a>
+  </h2>
+  <p><b>September 2009 - November 2013</b></p>
+  <p>
+    My first car.
+  </p>
+  <hr/>
+
+  <h3>Painting the wheels</h3>
+  <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
+    {{ macros.screenshot(url="/images/1979_porsche_924/wheel_old.jpg", caption="Old rims and calipers.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/wheel_painted.jpg", caption="Calipers, lugs, and rims fresh after painting with high temperature engine rated spray paint.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/wheel_caps.jpg", caption="Wheel caps colored with hobby paint and sealed with clear spray paint.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/wheel_new.jpg", caption="Wheel fully put together and dried") }}
+  </div>
+  <hr/>
+
+  <h3>Painting the car</h3>
+  <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
+    {{ macros.screenshot(url="/images/1979_porsche_924/painting_1.JPG", caption="Before painting.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/painting_2.JPG", caption="Removed all rust with an angle grinder and sanded the entire body of the car.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/painting_4.JPG", caption="Primed the bare metal and taped the car.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/painting_9.JPG", caption="First attempt was far the heavy and the paint ran before drying.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/painting_10.JPG", caption="After purchasing a proper gravity fed paint gun and much more practice the second attempt is much better.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/painting_13.JPG", caption="Clear coat had a bit of orange peel due to holding the gun to far away. However, It is nothing a good coat of wax can't cover up.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/painting_14.JPG", caption="Side view of the freshly painted 924") }}
+  </div>
+  <hr/>
+
+  <h3>Adding halo lights</h3>
+  <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
+    {{ macros.screenshot(url="/images/1979_porsche_924/halo_lights_testing.jpg", caption="Testing my halo lights made with clear hosing, strips of weather proofed LEDs, and silver Mylar tape.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/front.jpg", caption="Wired the halo lights to the day time running lights.") }}
+    {{ macros.screenshot(url="/images/1979_porsche_924/halo_lights_inaction.jpg", caption="Had to modify the headlights so they were raised when the day time running lights were turned on.") }}
+  </div>
+</div>
+{% endblock %}

@@ -1,9 +1,10 @@
----
-layout: base
-title: Projects | Tim Best
-projects: active
----
+{% extends "templates/_base.html" %}
 
+{% block title %}Projects | Tim Best{% endblock %}
+
+{% block projects_class %}active{% endblock %}
+
+{% block content %}
 <div class="container">
   <h2>Projects</h2>
   <hr/>
@@ -19,7 +20,7 @@ projects: active
       </ul>
     </section>
     <span class="projects project-cards-layout">
-      {% for project in site.data.projects %}
+      {#{% for project in site.data.projects %}
       <div class="project">
         <div class="card {{ project.class }}">
           <a href="{{ project.project_page }}">
@@ -36,7 +37,7 @@ projects: active
           </section>
         </div>
       </div>
-      {% endfor %}
+      {% endfor %}#}
     </span>
   </div>
 </div>
@@ -51,3 +52,4 @@ projects: active
     }
   });
 </script>
+{% endblock %}

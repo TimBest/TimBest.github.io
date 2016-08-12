@@ -1,0 +1,56 @@
+{% extends "templates/_base.html" %}
+{% import 'templates/_macros.html' as macros %}
+
+{% block title %}Project For drchrono | Tim Best{% endblock %}
+
+{% block projects_class %}active{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2>
+    <a href="/projects/">&#8612; drchrono</a>
+  </h2>
+  <p>
+    Projects I worked on to learn the drchrono API.
+  </p>
+  <hr/>
+
+  <h3>Happy Birthday drchono</h3>
+  <a href="https://github.com/TimothyBest/Happy_Birthday_drchrono" target="_blank">REPOSITORY</a>
+  <p>
+     Doctors using drchrono for their electronic record keeping can sign up and the application will send their patients a happy birthday email/text.
+  </p>
+  <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
+    {{ macros.screenshot(url="/images/drchrono/happy-birthday/homescreen.png", caption="Home page.") }}
+    {{ macros.screenshot(url="/images/drchrono/happy-birthday/profile-email-deactivated.png", caption="Profile page with the email Happy Birthday form's notification deactivated.") }}
+    {{ macros.screenshot(url="/images/drchrono/happy-birthday/profile-sms-active.png", caption="Profile page with the SMS Happy Birthday form's notification activated.") }}
+    {{ macros.screenshot(url="/images/drchrono/happy-birthday/homescreen-logged-in.png", caption="Home page as seen by a user that is logged in.") }}
+  </div>
+  <hr/>
+
+  <h3>Appointment Booking drchrono</h3>
+  <a href="https://github.com/TimothyBest/Appointment_Booking_drchrono" target="_blank">REPOSITORY</a>
+  <p>
+    A third party web application built using drchrono's API that allows patients to book appointment with their provider
+  </p>
+  <h3>Practice</h3>
+  <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
+    {{ macros.screenshot(url="/images/drchrono/appointments/home-page-no-users.png", caption="") }}
+    {{ macros.screenshot(url="/images/drchrono/appointments/oauth-drchrono.png", caption="") }}
+    {{ macros.screenshot(url="/images/drchrono/appointments/practice-profile.png", caption="") }}
+    {{ macros.screenshot(url="/images/drchrono/appointments/home-page-with-practice.png", caption="") }}
+  </div>
+  <hr/>
+
+  <h3>Patient</h3>
+  <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
+    {{ macros.screenshot(url="/images/drchrono/appointments/home-page-with-practice.png", caption="") }}
+    {{ macros.screenshot(url="/images/drchrono/appointments/form.png", caption="") }}
+    {{ macros.screenshot(url="/images/drchrono/appointments/date-picker.png", caption="") }}
+    {{ macros.screenshot(url="/images/drchrono/appointments/signup-after-form-submit.png", caption="") }}
+    {{ macros.screenshot(url="/images/drchrono/appointments/patient-profile.png", caption="") }}
+    {{ macros.screenshot(url="/images/drchrono/appointments/form-auto-fill.png", caption="") }}
+  </div>
+
+</div>
+{% endblock %}

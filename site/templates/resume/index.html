@@ -1,9 +1,10 @@
----
-layout: base
-title: Resume | Tim Best
-resume: active
----
+{% extends "templates/_base.html" %}
 
+{% block title %}Resume | Tim Best{% endblock %}
+
+{% block resume_class %}active{% endblock %}
+
+{% block content %}
 <div class="resume">
   <div class="container">
     <div id="professional-experience">
@@ -100,3 +101,4 @@ resume: active
     </div>
   </div>
 </div>
+{% endblock %}

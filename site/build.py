@@ -15,6 +15,7 @@ if __name__ == "__main__":
         searchpath=root_directory,
         outpath=output_directory,
         staticpaths=[
+            'documents/',
             'images/',
             'scripts/',
             'stylesheets/',

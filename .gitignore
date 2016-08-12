@@ -1,4 +1,4 @@
 _site/
-site/__pycache__
+__pycache__/
 .sass-cache/
 *.pyc
