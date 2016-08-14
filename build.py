@@ -22,12 +22,9 @@ if __name__ == "__main__":
         searchpath=site_directory,
         outpath=output_directory,
         staticpaths=[
-            'documents/',
-            'images/',
-            'scripts/',
-            'stylesheets/',
+            'static/',
         ],
-        contexts=[('projects/index.html', projects_context)]
+        contexts=[('projects/index.html', projects_context)],
     )
 
     site.render()
