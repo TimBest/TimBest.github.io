@@ -27,13 +27,14 @@ class Build():
         site = make_site(
             searchpath=config.SITE_DIRECTORY,
             outpath=config.OUTPUT_DIRECTORY,
-            staticpaths=['static/',],
+            staticpaths=[config.STATIC_PATH,],
             contexts=self.get_contexts(),
+            env_globals={
+                'static': lambda x: '/%s%s' % (config.STATIC_PATH, x),
+            },
         )
 
         site.render()
-
-
 
 
 class StaticHTTPRequestHandler(SimpleHTTPRequestHandler):
