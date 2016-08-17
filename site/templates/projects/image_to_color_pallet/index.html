@@ -37,13 +37,13 @@
   <h3>Demo</h3>
 
   <h5>Example Image</h5>
-  <img id="example-image" alt="orange dune buggy" aria-hidden="true" src="/images/image_to_color_pallet/dune_buggy.jpg"/>
+  <img id="example-image" alt="orange dune buggy" aria-hidden="true" src="{{ static('images/image_to_color_pallet/dune_buggy.jpg') }}"/>
   <input id="example-trigger" type="submit" value="Find Color Pallet"/>
   <div id="example-output"></div>
 
   <h5>Upload your own image</h5>
   <input id="uploaded-file" type="file" value="Upload File" accept="image/*"/>
-  <img id="uploaded-image" alt="your image" aria-hidden="true" src="/images/image_to_color_pallet/upload_image.png"/>
+  <img id="uploaded-image" alt="your image" aria-hidden="true" src="{{ static('images/image_to_color_pallet/upload_image.png') }}"/>
   <input id="uploaded-trigger" type="submit" value="Find Color Pallet"/>
   <div id="uploaded-output"></div>
   <hr/>
@@ -58,7 +58,7 @@
   </p>
 
   <h4>Determining the color model</h4>
-  <img alt="Red, Green, and Blue color model" src="/images/image_to_color_pallet/RGB_cube.png"/>
+  <img alt="Red, Green, and Blue color model" src="{{ static('images/image_to_color_pallet/RGB_cube.png') }}"/>
   <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Basic_principle" target="_blank">
     Source
   </a>
@@ -69,7 +69,7 @@
     For each range I had to look up many RGB values to determine logical boundaries.
     This endeavor was unacceptably tedious so I set out to research other ways of representing the color space.
   </p>
-  <img alt="Hue, Saturation, and Lightness color model" src="/images/image_to_color_pallet/HSL_cylinder.png"/>
+  <img alt="Hue, Saturation, and Lightness color model" src="{{ static('images/image_to_color_pallet/HSL_cylinder.png') }}"/>
   <a href="https://en.wikipedia.org/wiki/HSL_and_HSV#Motivation" target="_blank">
     Source
   </a>
