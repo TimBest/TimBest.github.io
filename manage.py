@@ -4,10 +4,12 @@ import sys
 import time
 import urllib.parse
 
-import config
 import yaml
-from http.server import HTTPServer, SimpleHTTPRequestHandler
+from http.server import HTTPServer
 from staticjinja import make_site
+
+import config
+from generator.server import StaticHTTPRequestHandler
 
 
 class Build():
@@ -35,39 +37,6 @@ class Build():
         )
 
         site.render()
-
-
-class StaticHTTPRequestHandler(SimpleHTTPRequestHandler):
-
-    def translate_path(self, path):
-        """Translate a /-separated PATH to the local filename syntax.
-
-        Components that mean special things to the local file system
-        (e.g. drive or directory names) are ignored.  (XXX They should
-        probably be diagnosed.)
-
-        """
-        # abandon query parameters
-        path = path.split('?',1)[0]
-        path = path.split('#',1)[0]
-        # Don't forget explicit trailing slash when normalizing. Issue17324
-        trailing_slash = path.rstrip().endswith('/')
-        try:
-            path = urllib.parse.unquote(path, errors='surrogatepass')
-        except UnicodeDecodeError:
-            path = urllib.parse.unquote(path)
-        path = posixpath.normpath(path)
-        words = path.split('/')
-        words = filter(None, words)
-        path = config.OUTPUT_DIRECTORY
-        for word in words:
-            if os.path.dirname(word) or word in (os.curdir, os.pardir):
-                # Ignore components that are not a simple file/directory name
-                continue
-            path = os.path.join(path, word)
-        if trailing_slash:
-            path += '/'
-        return path
 
 
 class Serve():
