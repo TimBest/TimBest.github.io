@@ -6,4 +6,7 @@
 - setup precommit hook `cd .git/hooks; ln -s -f ../../pre-commit pre-commit`
 
 ## Build
-- `python site/build.py`
+- `python site/manage.py build`
+
+## Test locally
+- `python site/manage.py serve`
