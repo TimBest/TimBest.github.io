@@ -10,6 +10,7 @@ from staticjinja import make_site
 
 import config
 from generator.server import StaticHTTPRequestHandler
+from generator.rules import remove_templates_dir
 
 
 class Build():
@@ -34,6 +35,9 @@ class Build():
             env_globals={
                 'static': lambda x: '/%s%s' % (config.STATIC_PATH, x),
             },
+            rules=[
+                ('templates/*', remove_templates_dir),
+            ],
         )
 
         site.render()
