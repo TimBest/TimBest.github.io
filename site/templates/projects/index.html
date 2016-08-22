@@ -24,7 +24,7 @@
       <div class="project">
         <div class="card {{ project.class }}">
           <a href="{{ project.project_page }}">
-            <img src="{{ project.image_src }}" alt="{{ project.image_alt }}"/>
+            <img src="{{ static(project.image_src) }}" alt="{{ project.image_alt }}"/>
           </a>
           <section>
             {% if project.title %}

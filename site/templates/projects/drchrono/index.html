@@ -20,7 +20,7 @@
   <p>
      Doctors using drchrono for their electronic record keeping can sign up and the application will send their patients a happy birthday email/text.
   </p>
-  <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
+  <div class="my-gallery flex-row-space-between" itemscope itemtype="{{ static('/images/composers_couch/calendar_month.png') }}">
     {{ macros.screenshot(url="/images/drchrono/happy-birthday/homescreen.png", caption="Home page.") }}
     {{ macros.screenshot(url="/images/drchrono/happy-birthday/profile-email-deactivated.png", caption="Profile page with the email Happy Birthday form's notification deactivated.") }}
     {{ macros.screenshot(url="/images/drchrono/happy-birthday/profile-sms-active.png", caption="Profile page with the SMS Happy Birthday form's notification activated.") }}
@@ -34,7 +34,7 @@
     A third party web application built using drchrono's API that allows patients to book appointment with their provider
   </p>
   <h3>Practice</h3>
-  <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
+  <div class="my-gallery flex-row-space-between" itemscope itemtype="{{ static('/images/composers_couch/calendar_month.png') }}">
     {{ macros.screenshot(url="/images/drchrono/appointments/home-page-no-users.png", caption="") }}
     {{ macros.screenshot(url="/images/drchrono/appointments/oauth-drchrono.png", caption="") }}
     {{ macros.screenshot(url="/images/drchrono/appointments/practice-profile.png", caption="") }}
@@ -43,7 +43,7 @@
   <hr/>
 
   <h3>Patient</h3>
-  <div class="my-gallery flex-row-space-between" itemscope itemtype="/images/composers_couch/calendar_month.png">
+  <div class="my-gallery flex-row-space-between" itemscope itemtype="{{ static('/images/composers_couch/calendar_month.png') }}">
     {{ macros.screenshot(url="/images/drchrono/appointments/home-page-with-practice.png", caption="") }}
     {{ macros.screenshot(url="/images/drchrono/appointments/form.png", caption="") }}
     {{ macros.screenshot(url="/images/drchrono/appointments/date-picker.png", caption="") }}
