@@ -23,10 +23,6 @@ class Build():
         return [('templates/projects/index.html', projects_context)]
 
     def run(self):
-        # ensure output directory exists
-        if not os.path.exists(config.OUTPUT_DIRECTORY):
-            os.makedirs(config.OUTPUT_DIRECTORY)
-
         site = make_site(
             searchpath=config.SITE_DIRECTORY,
             outpath=config.OUTPUT_DIRECTORY,
