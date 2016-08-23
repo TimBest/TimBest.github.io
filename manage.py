@@ -34,6 +34,9 @@ class Build():
             rules=[
                 ('templates/*', remove_templates_dir),
             ],
+            extensions=[
+                'pyjade.ext.jinja.PyJadeExtension',
+            ],
         )
 
         site.render()
