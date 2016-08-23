@@ -10,7 +10,7 @@ from staticjinja import make_site
 
 import config
 from generator.server import StaticHTTPRequestHandler
-from generator.rules import remove_templates_dir
+from generator.rules import preprocess_templates
 
 
 class Build():
@@ -32,7 +32,7 @@ class Build():
                 'static': lambda x: '/%s%s' % (config.STATIC_PATH, x),
             },
             rules=[
-                ('templates/*', remove_templates_dir),
+                ('templates/*', preprocess_templates),
             ],
             extensions=[
                 'pyjade.ext.jinja.PyJadeExtension',
