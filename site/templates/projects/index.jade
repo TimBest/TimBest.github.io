@@ -1,0 +1,44 @@
+| {% extends "templates/_base.jade" %}
+| {% block title %}Projects | Tim Best{% endblock %}
+| {% block projects_class %}active{% endblock %}
+| {% block content %}
+.container
+  h2 Projects
+  hr
+  .projects-page
+    section
+      h6 Show:
+      ul.project-menu
+        li
+          a(href='#all') All
+        li
+          a.web(href='#web') Web
+        li
+          a.car(href='#car') Car
+        li
+          a.sewing(href='#sewing') Sewing
+    span.projects.project-cards-layout
+      | {% for project in projects %}
+      .project
+        .card(class='{{ project.class }}')
+          a(href='{{ project.project_page }}')
+            img(src='{{ static(project.image_src) }}', alt='{{ project.image_alt }}')
+          section
+            | {% if project.title %}
+            h3
+              a(href='{{ project.project_page }}') {{ project.title }}
+            |             {% endif %}
+            p {{ project.description }}
+            .text-right
+              a(href='{{ project.project_page }}') View Project
+      |       {% endfor %}
+script.
+  $(".project-menu a").click(function() {
+  // ensure all cards are shown
+  $(".projects .card").show();
+  if ($(this).attr('class')) {
+  // hide the cards that arn't relavent
+  $(".projects .card").not("." + $(this).attr('class')).hide();
+  }
+  });
+| {% endblock %}

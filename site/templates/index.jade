@@ -1,0 +1,34 @@
+extends 'templates/_base.jade'
+
+block title
+  | Tim Best
+
+block about_class
+  | active
+
+
+- block content
+  .hero
+  .container
+    h2#aboutMe About Me
+    hr
+    p
+      | My name in Tim Best. I am original from upstate New York and graduated from Clarkson University with a Bachelor of Science in computer science and a minor in mathematics.
+      | By trade I am a practicing Full-Stack web developer at 
+      a(href='//www.drchrono.com/', target='_blank') drchrono
+      | ; a Medical billing and Electronic Health Records startup based in Mountain View, California.
+      | Before working at drchrono I founded the startup 
+      a(href='/projects/composers_couch/') Composer's Couch
+      | , a website dedicated to improving how concerts are booked and promoted.
+      | Through these experiences I have developed a stronger sense of self motivation, improved my visual communication skills, and have acquired a deeper understanding of end user needs.
+    hr
+    .flex-row-space-between
+      span
+        | site@timbest.net
+      span.inline-links
+        a.linkedin(href='https://www.linkedin.com/pub/timothy-best/58/697/88a', target='_blank')
+          span.fa.fa-linkedin
+        a.github(href='https://github.com/TimothyBest', target='_blank')
+          span.fa.fa-github
+        a.stack-overflow(href='http://stackoverflow.com/users/3272220/timbest', target='_blank')
+          span.fa.fa-stack-overflow

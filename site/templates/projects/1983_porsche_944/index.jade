@@ -1,0 +1,26 @@
+| {% extends "templates/_base.jade" %}
+| {% import 'templates/_macros.jade' as macros %}
+| {% block title %}1983 Porsche 944 | Tim Best{% endblock %}
+| {% block projects_class %}active{% endblock %}
+| {% block content %}
+.container
+  h2
+    a(href='/projects/') ↤ 1983 Porsche 944
+  p
+    b May 2013 - September 2015
+  p
+    | My second car.
+  hr
+  h3 Whats been done?
+  ul
+    li New starter and battery.
+    li Replaced cabin lights and dashboard indicators with LEDs.
+    li Fixed driver's door lock and replace passenger's door handle.
+    li Replaced brake and clutch master.
+    li
+      | Replaced water pump, all engine belts, engine temperature gauge, and upgraded to a warm climate thermostat.
+    li Replaced rotor, distributor, spark plugs, and spark pug wires.
+  h3 Slideshow
+  .my-gallery.flex-row-space-between(itemscope='', itemtype="{{ static('/images/composers_couch/calendar_month.png') }}")
+    | {{ macros.screenshot(url="/images/1983_porsche_944/side.jpg", caption="") }}
+| {% endblock %}

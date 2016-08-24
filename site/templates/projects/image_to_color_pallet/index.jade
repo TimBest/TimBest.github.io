@@ -1,0 +1,246 @@
+html
+  body
+    | {% extends 'templates/_base.jade' %}
+    | {% block title %}Image to Color Palette | Tim Best{% endblock %}
+    | {% block projects_class %}active{% endblock %}
+    | {% block content %}
+    script(src='http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/color_space_converter.js')
+    script(src='http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/hash_table.js')
+    script(src='http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/binary_heap.js')
+    script(src='http://cdn.rawgit.com/TimothyBest/Image_to_Color_Palette/master/scripts/image_to_color_palette.js')
+    script.
+      window.onload = function() {
+      document.getElementById('example-trigger').onclick = function() {
+      findDominateColors('example-image','example-output');
+      };
+      document.getElementById('uploaded-file').onchange = function() {
+      readURL(this, 'uploaded-image');
+      };
+      document.getElementById('uploaded-trigger').onclick = function() {
+      findDominateColors('uploaded-image','uploaded-output');
+      };
+      }
+    .container
+      h2
+        a(href='/projects/') &mapstoleft; Image to Color Palette
+      |   
+      a(href='https://github.com/TimothyBest/Image_to_Color_Palette') View on GitHub
+      |   
+      p
+        | A JavaScript library that takes an image and identifies to 10 most prevalent colors.
+        | Future plans include rebuilding the library and adding a function that will turn the prevalent colors into a sensible color scheme.
+      |   
+      hr
+      |   
+      h3 Demo
+      |   
+      h5 Example Image
+      |   
+      img#example-image(alt='orange dune buggy', aria-hidden='true', src="{{ static('images/image_to_color_pallet/dune_buggy.jpg') }}")
+      |   
+      input#example-trigger(type='submit', value='Find Color Pallet')
+      |   
+      #example-output
+      |   
+      h5 Upload your own image
+      |   
+      input#uploaded-file(type='file', value='Upload File', accept='image/*')
+      |   
+      img#uploaded-image(alt='your image', aria-hidden='true', src="{{ static('images/image_to_color_pallet/upload_image.png') }}")
+      |   
+      input#uploaded-trigger(type='submit', value='Find Color Pallet')
+      |   
+      #uploaded-output
+      |   
+      hr
+      |   
+      h3 About This Project
+      |   
+      p
+        | This project currently works by dividing three dimensional color space into a series of weighted ranges.
+        | After the ranges have been established we take each individual pixel in an image and determine what range it falls under.
+        | As each pixel is added to a range it is averaged into the range and increases that ranges weight.
+        | Once completed we are left with a series of average colors and weights.
+        | From this we take the ten highest weighted objects and return them to the user.
+      |   
+      h4 Determining the color model
+      |   
+      img(alt='Red, Green, and Blue color model', src="{{ static('images/image_to_color_pallet/RGB_cube.png') }}")
+      |   
+      a(href='https://en.wikipedia.org/wiki/HSL_and_HSV#Basic_principle', target='_blank')
+        | Source
+      |   
+      h4 Red, Green, and Blue (RGB)
+      |   
+      p
+        | At first I naively tried to divide up the Red, Green, and Blue color space.
+        | While attempting to do so I found that many of the ranges were not humanly intuitive.
+        | For each range I had to look up many RGB values to determine logical boundaries.
+        | This endeavor was unacceptably tedious so I set out to research other ways of representing the color space.
+      |   
+      img(alt='Hue, Saturation, and Lightness color model', src="{{ static('images/image_to_color_pallet/HSL_cylinder.png') }}")
+      |   
+      a(href='https://en.wikipedia.org/wiki/HSL_and_HSV#Motivation', target='_blank')
+        | Source
+      |   
+      h4 Hue, Saturation, and Lightness (HSL)
+      |   
+      p
+        | My research determined that a Hue, Saturation, and lightness color model would be the most intuitive representation.
+        | After some experimentation with the color space I found that this assumption was true and went ahead dividing this color space into several ranges.
+      |   
+      h4 Dividing color space
+      |   
+      p
+        | One of the issues with using HSL is that the entire top and bottom of the cylinder represent the singular values #FFFFFF (white) and #000000 (black) respectively.
+        | To deal with this distortion we cut the cylinder into 3 cylinders along the Lightness axis.
+      |   
+      table
+        tbody
+          tr
+            th Black
+            |         
+            td 0%
+            td &lt;=
+            td Lightness
+            td &lt;=
+            td 5%
+          |       
+          tr
+            th Color
+            |         
+            td 5%
+            td &lt;
+            td Lightness
+            td &lt;
+            td 95%
+          |       
+          tr
+            th White
+            |         
+            td 95%
+            td &lt;=
+            td Lightness
+            td &lt;=
+            td 100%
+      |   
+      p
+        | The white and black cylinders are then divided into 5 pie slices based on their hue (we ignore saturation due to the distortion).
+      |   
+      table
+        tbody
+          tr
+            td 0
+            td &lt;=
+            td Hue
+            td &lt;
+            td 72
+          |       
+          tr
+            td 72
+            td &lt;=
+            td Hue
+            td &lt;
+            td 144
+          |       
+          tr
+            td 144
+            td &lt;=
+            td Hue
+            td &lt;
+            td 216
+          |       
+          tr
+            td 216
+            td &lt;=
+            td Hue
+            td &lt;
+            td 288
+          |       
+          tr
+            td 288
+            td &lt;=
+            td Hue
+            td &lt;
+            td 360
+      |   
+      p
+        | For the color cylinder we create 36 pie slices each accounting for 10 degrees of the cylinder.
+      |   
+      table
+        tbody
+          tr
+            td 0
+            td &lt;=
+            td Hue
+            td &lt;
+            td 10
+          |       
+          tr
+            td 10
+            td &lt;=
+            td Hue
+            td &lt;
+            td 20
+          |       
+          tr
+            td
+            td
+            td ...
+            td
+            td
+          |       
+          tr
+            td 350
+            td &lt;=
+            td Hue
+            td &lt;
+            td 360
+      |   
+      p
+        | We then take each pie slice and cut it into 6 pieces (with equal volume) along the saturation axis.
+      |   
+      table
+        tbody
+          tr
+            td 0
+            td &lt;=
+            td Saturation
+            td &lt;
+            td 40.8
+          |       
+          tr
+            td 40.8
+            td &lt;=
+            td Saturation
+            td &lt;
+            td 57.7
+          |       
+          tr
+            td 57.7
+            td &lt;=
+            td Saturation
+            td &lt;
+            td 70.7
+          |       
+          tr
+            td 70.7
+            td &lt;=
+            td Saturation
+            td &lt;
+            td 81.6
+          |       
+          tr
+            td 81.6
+            td &lt;=
+            td Saturation
+            td &lt;
+            td 91.3
+          |       
+          tr
+            td 91.3
+            td &lt;=
+            td Saturation
+            td &lt;
+            td 100
+    | {% endblock %}
