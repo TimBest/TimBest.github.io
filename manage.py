@@ -20,7 +20,7 @@ class Build():
         projects_context = {
             'projects': yaml.load(open(projects_data)),
         }
-        return [('templates/projects/index.html', projects_context)]
+        return [('templates/projects/index.pug', projects_context)]
 
     def run(self):
         site = make_site(

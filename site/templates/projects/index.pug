@@ -30,8 +30,8 @@ block content
               section
                 if project.title
                   h3
-                    a(href=project.project_page) project.title
-                p project.description
+                    a(href=project.project_page)= project.title
+                p= project.description
                 .text-right
                   a(href=project.project_page) View Project
   script.
