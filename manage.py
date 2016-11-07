@@ -35,7 +35,7 @@ class Build():
                 ('templates/*', preprocess_templates),
             ],
             extensions=[
-                'pyjade.ext.jinja.PyJadeExtension',
+                'pypugjs.ext.jinja.PyPugJSExtension',
             ],
         )
 
