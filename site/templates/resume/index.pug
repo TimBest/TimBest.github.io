@@ -1,89 +1,92 @@
-| {% extends "templates/_base.pug" %}
-| {% block title %}Resume | Tim Best{% endblock %}
-| {% block resume_class %}active{% endblock %}
-| {% block content %}
-.resume
-  .container
-    #professional-experience
-      h3 Professional Experience
-      hr
-      p
-        strong Full-Stack Developer
-        |  | September 2015 to Present
-        br
-        |         DRCHRONO - Mountain View, CA
-      p
-        | Maintained core components within an all-in-one platform with continuously changing product scope and requirements.
-        | Managed the entire lifecycle of new features from customer requirement to deployment.
-      ul
-        li
-          | Fostered the adoption of unit testing, linting, and the defining of product functionality
-        li
-          | Interpreted CDC requirements for vaccinations into product requirements for an immunization workflow and schedule for pediatrics
-        li
-          | Rebuilt drchrono’s patient portal to accommodate larger practice groups and allow patients better access to their data
-      p
-        strong Founder & CEO
-        |  | January 2014 to July 2015
-        br
-        |         COMPOSERS COUCH - Clifton Park, NY
-      ul
-        li
-          | Founded Composer’s Couch on the premise that, with the right tools, concerts could be booked and promoted based on data, performance, and work ethic instead of connections.
-        li
-          | Developed, launched, and maintained a dynamic website with user profiles, an internal/external messaging system, a scheduling application, and a set of location based feeds for concerts, musicians, venues, updates, and public show requests.
-      p
-        strong Software Engineering Intern
-        |  | June 2013 to December 2013
-        br
-        |         C SPEED - Liverpool, NY
-      ul
-        li
-          | Debugged both software and hardware issues on a USB device driver.
-          | Designed and analyzed tests to prove that proposed solutions had not affected device performance.
-        li
-          | Prototyped and documented a Microsoft Excel worksheet to validate and export user input as an extensible markup language (XML) file.
-        li
-          | Built multiple web components based on detailed client specifications and designs.
-      p
-        strong Web Developer
-        |  | September  2012 to December 2013
-        br
-        |         CLARKSON UNIVERSITY: Department of Psychology - Potsdam, NY
-      ul
-        li
-          | Created documentation, refractured code, and added functionality to a website used for tracking research credits earned by students enrolled in introduction to psychology.
-        li
-          | Spring 2013 Symposium on Undergraduate Research Experiences award winner.
-      p
-        strong Information Services Intern
-        |  | Summer 2012
-        br
-        |         UNITED PARCEL SERVICE - Mahwah, NJ
-      ul
-        li
-          | Designed and developed a vendor award tracking system in Microsoft SharePoint.
-        li
-          | Researched and prototyped wikis for internal software cataloging.
-    #education
-      h3 Education
-      hr
-      p
-        strong BS in Computer Science, Minor in Mathematics
-        |  | September 2010 to December 2013
-        br
-        |         CLARKSON UNIVERSITY - Potsdam, NY | GPA: 3.2/4.0, Dean's list 3 semesters
-    #skills
-      h3 Skills
-      hr
-      p
-        strong Programing Languages
-        | : Python, Less, Sass, CSS, Angular, JQuery, JavaScript, HTML, Jinja2, C, PHP
-        br
-        strong Frameworks & Software
-        | : Django, Bootstrap, Git, Ubuntu, Jekyll, Foundation, AWS, SharePoint
-        br
-        strong Extracurricular
-        | : Automotive Restoration, Cooking, Sewing, Woodworking, Rock Climbing, Electronics
-        br
-| {% endblock %}
+extends 'templates/_base.pug'
+
+block title
+  | Resume | Tim Best
+block resume_class
+  | active
+
+block content
+  .resume
+    .container
+      #professional-experience
+        h3 Professional Experience
+        hr
+        p
+          strong Full-Stack Developer
+          |  | September 2015 to Present
+          br
+          |         DRCHRONO - Mountain View, CA
+        p
+          | Maintained core components within an all-in-one platform with continuously changing product scope and requirements.
+          | Managed the entire lifecycle of new features from customer requirement to deployment.
+        ul
+          li
+            | Fostered the adoption of unit testing, linting, and the defining of product functionality
+          li
+            | Interpreted CDC requirements for vaccinations into product requirements for an immunization workflow and schedule for pediatrics
+          li
+            | Rebuilt drchrono’s patient portal to accommodate larger practice groups and allow patients better access to their data
+        p
+          strong Founder & CEO
+          |  | January 2014 to July 2015
+          br
+          |         COMPOSERS COUCH - Clifton Park, NY
+        ul
+          li
+            | Founded Composer’s Couch on the premise that, with the right tools, concerts could be booked and promoted based on data, performance, and work ethic instead of connections.
+          li
+            | Developed, launched, and maintained a dynamic website with user profiles, an internal/external messaging system, a scheduling application, and a set of location based feeds for concerts, musicians, venues, updates, and public show requests.
+        p
+          strong Software Engineering Intern
+          |  | June 2013 to December 2013
+          br
+          |         C SPEED - Liverpool, NY
+        ul
+          li
+            | Debugged both software and hardware issues on a USB device driver.
+            | Designed and analyzed tests to prove that proposed solutions had not affected device performance.
+          li
+            | Prototyped and documented a Microsoft Excel worksheet to validate and export user input as an extensible markup language (XML) file.
+          li
+            | Built multiple web components based on detailed client specifications and designs.
+        p
+          strong Web Developer
+          |  | September  2012 to December 2013
+          br
+          |         CLARKSON UNIVERSITY: Department of Psychology - Potsdam, NY
+        ul
+          li
+            | Created documentation, refractured code, and added functionality to a website used for tracking research credits earned by students enrolled in introduction to psychology.
+          li
+            | Spring 2013 Symposium on Undergraduate Research Experiences award winner.
+        p
+          strong Information Services Intern
+          |  | Summer 2012
+          br
+          |         UNITED PARCEL SERVICE - Mahwah, NJ
+        ul
+          li
+            | Designed and developed a vendor award tracking system in Microsoft SharePoint.
+          li
+            | Researched and prototyped wikis for internal software cataloging.
+      #education
+        h3 Education
+        hr
+        p
+          strong BS in Computer Science, Minor in Mathematics
+          |  | September 2010 to December 2013
+          br
+          |         CLARKSON UNIVERSITY - Potsdam, NY | GPA: 3.2/4.0, Dean's list 3 semesters
+      #skills
+        h3 Skills
+        hr
+        p
+          strong Programing Languages
+          | : Python, Less, Sass, CSS, Angular, JQuery, JavaScript, HTML, Jinja2, C, PHP
+          br
+          strong Frameworks & Software
+          | : Django, Bootstrap, Git, Ubuntu, Jekyll, Foundation, AWS, SharePoint
+          br
+          strong Extracurricular
+          | : Automotive Restoration, Cooking, Sewing, Woodworking, Rock Climbing, Electronics
+          br

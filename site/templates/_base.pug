@@ -16,7 +16,7 @@ html(lang='en')
     script(src="{{ static('scripts/photoswipe.js') }}")
     script(src="{{ static('scripts/photoswipe-ui-default.js') }}")
     main
-      | {% block content %}{% endblock %}
+      block content
     footer
       .container.flex-row-space-between
         h1
