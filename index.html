@@ -20,12 +20,13 @@
         background-image: url("Houndstooth.svg");
         background-repeat: repeat;
         background-size: 200px;
+        background-position: center bottom;
         /* background-image: linear-gradient(45deg, #2f565f 1px, transparent 1px), linear-gradient(90deg, #081d1f 1px, transparent 1px), linear-gradient(-45deg, #2f565f 60px, transparent 60px); */
-  /* background-size: 2px 2px, 2px 2px, 150px 150px; */
-        /* background-color: #2f565f;
+  /* background-size: 2px 2px, 2px 2px, 150px 150px;
+        background-color: #2f565f;
         background-image: linear-gradient(45deg, #2f565f 1px, transparent 1px), linear-gradient(90deg, #081d1f 1px, transparent 1px), linear-gradient(-45deg, #2f565f 60px, transparent 60px), linear-gradient(225deg, transparent 50px, #081d1f 50px, #081d1f 75px, transparent 75px), linear-gradient(45deg, transparent 50px, #081d1f 50px, #081d1f 75px, transparent 75px), linear-gradient(225deg, #081d1f 30px, transparent 30px), linear-gradient(45deg, #081d1f 30px, transparent 30px), linear-gradient(0deg, #2f565f 75px, transparent 75px), linear-gradient(90deg, #081d1f 75px, transparent 75px), linear-gradient(0deg, #081d1f 75px, #2f565f 75px);
-        background-size: 2px 2px, 2px 2px, 150px 150px, 150px 150px, 150px 150px, 150px 150px, 150px 150px, 150px 150px, 150px 150px, 150px 150px; */
-        box-shadow: 0 0 175px rgba(0, 0, 0, 0.3) inset;
+        background-size: 2px 2px, 2px 2px, 150px 150px, 150px 150px, 150px 150px, 150px 150px, 150px 150px, 150px 150px, 150px 150px, 150px 150px;
+        box-shadow: 0 0 175px rgba(0, 0, 0, 0.3) inset; */
 
         height:100vh;
         width:100vw;
@@ -33,6 +34,31 @@
         display: grid;
         align-items: center;
         justify-items: center;
+      }
+
+
+      .hero-transition {
+        background-color: #fff;
+        background-image: url("Houndstooth_transition.svg");
+        background-repeat: repeat;
+        background-size: 200px;
+        background-position: center top;
+        height: 100px
+      }
+
+      .topography {
+        background-color: #3c4860;
+        background-image: url("topography.svg");
+        background-repeat: repeat;
+        background-size: 300px;
+        height:100vh;
+        width:100vw;
+      }
+
+      .green-section {
+        background-color: #2f565f;
+        height:100vh;
+        width:100vw;
       }
 
       .title {
@@ -49,8 +75,11 @@
     <div class="hero">
       <h1 class="title">TIMOTHY BEST</h1>
     </div>
-    <div>
-      this is some more content
+    <div class="hero-transition">
+    </div>
+    <div class="green-section">
+    </div>
+    <div class="topography">
     </div>
   </body>
 </html>
