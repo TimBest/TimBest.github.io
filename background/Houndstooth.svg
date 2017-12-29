@@ -4,34 +4,27 @@
       <feGaussianBlur in="SourceGraphic" stdDeviation=".08"/>
     </filter>
     <pattern id="stitch1" x="0" y="0" width=".01" height=".01">
-      <polygon
-        points="0,0, 0,4, 4,4, 4,0"
-        fill="#081d1f"
-      />
-      <polygon
-        points="1.2,.15, 2.85,.15, 2.85,2.55, 2,2.55, 2,1.6, 1.2,1.6"
+      <path d="M0 0 V4 H4 V0 Z" fill="#081d1f"/>
+      <path
+        d="M1.2 .15 H2.85 V2.55 H2 V1.6 H1.2 Z"
         fill="#2f565f"
         filter="url(#blur)"
-        transform="scale(.75)"
       />
     </pattern>
     <pattern id="stitch2" x="0" y="0" width=".01" height=".01">
-      <polygon
-        points="0,0, 0,4, 4,4, 4,0"
-        fill="#2f565f"
-      />
-      <polygon
-        points=".15,1.25, .75,1.25, .75,2.25, 1.3,2.25, 1.3,2.85, .15,2.85"
+      <path d="M0 0 V4 H4 V0 Z" fill="#2f565f"/>
+      <path
+        d="M.15 1.25 H.75 V2.25 H1.3 V2.85 H.15 Z"
         fill="#081d1f"
         filter="url(#blur)"
       />
     </pattern>
   </defs>
-  <rect height="400" width="400" fill="url(#stitch1)"/>
-  <polygon
-    points="
-      0,400, 100,400, 0,300, 0,400, 0,0, 200,0, 400,200, 300,200, 200,100, 200,200, 100,200,
-      200,300, 200,400, 0,200, 0,0, 400,0, 400,100, 300,0, 400,0, 0,0
+  <path d="M0 0 V400 H400 V0 Z" fill="url(#stitch1)"/>
+  <path
+    d="
+      M0 400 H100 L0 300 V0 H200 L400 200 H300 L200 100 V200 H100
+      L200 300 V400 L0 200 V0 H400 V100 L300 0 H0 Z
     "
     fill="url(#stitch2)"
   />
