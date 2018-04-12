@@ -1,6 +1,0 @@
-| {% macro screenshot(url, alt='', caption='') -%}
-figure(itemprop='associatedMedia', itemscope='', itemtype='{{ static(url) }}')
-  a(href='{{ static(url) }}', itemprop='contentUrl', data-size='600x400')
-    img(src='{{ static(url) }}', itemprop='thumbnail', alt='{{ alt }}')
-  figcaption(itemprop='caption description') {{ caption }}
-| {%- endmacro %}

@@ -1,4 +1,4 @@
-_site/
-__pycache__/
-.sass-cache/
-*.pyc
+.DS_Store
+_site
+.sass-cache
+.jekyll-metadata
