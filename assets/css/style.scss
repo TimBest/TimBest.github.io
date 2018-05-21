@@ -170,11 +170,16 @@ body {
 }
 
 #lines {
-  background-color: #fff;
-  background-image: url("/assets/img/patterns/lines/triangles.svg");
-  background-repeat: repeat;
-  background-size: 70px;
-  background-position: center bottom;
   height:100vh;
   width:100vw;
+  overflow: hidden;
+
+  .row {
+    white-space: nowrap;
+  }
+
+  svg {
+    margin-right: -4px;
+    margin-bottom: -4px;
+  }
 }

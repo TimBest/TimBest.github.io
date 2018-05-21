@@ -1,16 +1,7 @@
-<!--
-#55cc94
-#9455cc
-#55c8cc
-#cc558c
-#cc9455
--->
-
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="400" width="400">
   <path d="M0 0 V400 H400 V0 Z" fill="#9455cc"/>
   <path d="M5 188 V5 H388 Z" fill="#1c1b26"/>
   <path d="M12 195 H395 V12 Z" fill="#1c1b26"/>
   <path d="M12 205 H395 V388 Z" fill="#1c1b26"/>
   <path d="M5 212 V395 H388 Z" fill="#1c1b26"/>
-
 </svg>
