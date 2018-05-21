@@ -1,52 +1,179 @@
 ---
 ---
 
-html,
-body {
-  margin: 0;
-  padding: 0;
-}
+$title-font-color: #39364c;
+$body-font-color: #394972;
+$white: #f6f9f4;
+
 
 @font-face {
   font-family: "Montserrat";
   src: url("/assets/Montserrat-SemiBold.ttf") format("truetype");
 }
 
-.houndstooth {
+h1, h2, h3, h4, h5, h6 {
+  color: $title-font-color;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Open Sans, Segoe UI, sans-serif;
+  color: $body-font-color;
+  background-color: $white;
+  height: 100%;
+}
+
+#index {
+  display: grid;
+  grid-template-rows: 45vh auto 100px;
+  height: 100%;
+
+  .houndstooth {
+    background-color: $white;
+    background-image: url("/assets/img/background/Houndstooth.svg");
+    background-repeat: repeat;
+    background-size: 66px;
+    background-position: center bottom;
+    width: 100vw;
+    box-shadow: 0 0 175px rgba(0, 0, 0, 0.3) inset;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-decoration: none;
+
+    .title {
+      font-size: 5vh;
+      color: $white;
+      text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                   0px 8px 13px rgba(0,0,0,0.1),
+                   0px 18px 23px rgba(0,0,0,0.1);
+     font-family: "Montserrat", "Open Sans", sans-serif;
+    }
+  }
+
+  .content {
+    .wrapper {
+      margin: 0 auto;
+      padding: 35px;
+      max-width: 1200px;
+    }
+
+    .patterns {
+      display: flex;
+
+      .card {
+        $card-radius: 5px;
+
+        box-shadow: 0 1px 3px 0 #d4d4d5,0 0 0 1px #d4d4d5;
+        border-radius: $card-radius;
+        color: $body-font-color;
+        text-decoration: none;
+        width: 150px;
+        margin: 10px;
+
+        &:hover,
+        &:focus {
+          transform: translateY(-1px);
+        }
+
+        .card-image {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 150px;
+
+          img {
+            border-radius: $card-radius $card-radius 0 0;
+          }
+        }
+
+        .card-content {
+          padding: 1em;
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $white;
+    background-color: #852237;
+
+    a {
+      color: $white;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        color: #ccc;
+      }
+    }
+  }
+
+}
+
+#houndstooth {
+  .houndstooth {
+    background-color: #fff;
+    background-image: url("/assets/img/background/Houndstooth.svg");
+    background-repeat: repeat;
+    background-size: 200px;
+    background-position: center bottom;
+    height:100vh;
+    width:100vw;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+
+
+  .houndstooth-transition {
+    background-color: #fff;
+    background-image: url("/assets/img/background/Houndstooth_transition.svg");
+    background-repeat: repeat;
+    background-size: 200px;
+    background-position: center top;
+    height: 100px
+  }
+
+  .green-section {
+    background-color: #2f565f;
+    height:100vh;
+    width:100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    p {
+      color: #fff;
+    }
+  }
+
+  .title {
+    font-family: "Montserrat", "Open Sans", sans-serif;
+    font-size: 90px;
+    color: #fff;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+                 0px 8px 13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
+  }
+}
+
+#lines {
   background-color: #fff;
-  background-image: url("/assets/img/background/Houndstooth.svg");
+  background-image: url("/assets/img/patterns/lines/triangles.svg");
   background-repeat: repeat;
-  background-size: 200px;
+  background-size: 70px;
   background-position: center bottom;
   height:100vh;
   width:100vw;
-
-  display: grid;
-  align-items: center;
-  justify-items: center;
-}
-
-
-.houndstooth-transition {
-  background-color: #fff;
-  background-image: url("/assets/img/background/Houndstooth_transition.svg");
-  background-repeat: repeat;
-  background-size: 200px;
-  background-position: center top;
-  height: 100px
-}
-
-.green-section {
-  background-color: #2f565f;
-  height:100vh;
-  width:100vw;
-}
-
-.title {
-  font-family: "Montserrat", "Open Sans", sans;
-  font-size: 90px;
-  color: #fff;
-  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
-               0px 8px 13px rgba(0,0,0,0.1),
-               0px 18px 23px rgba(0,0,0,0.1);
 }
