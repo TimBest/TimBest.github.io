@@ -7,48 +7,48 @@ layout: default
 <div id="lines2"></div>
 
 <script>
-  function lines(backgroundSize, fill, rotation) {
+  function lines(backgroundSize, fill, rotation, rotationCenter) {
     return [
       `
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${backgroundSize/2}, ${backgroundSize/2})">      <path d="M12 5 H395 V388 Z" fill="${fill}"/>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M12 5 H395 V388 Z" fill="${fill}"/>
         <path d="M5 12 V395 H388 Z" fill="${fill}"/>
       </g></svg>
       `,
       `
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${backgroundSize/2}, ${backgroundSize/2})">      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
         <path d="M8.5 200 L395 12 V388 Z" fill="${fill}"/>
         <path d="M5 212 V395 H388 Z" fill="${fill}"/>
       </g></svg>
       `,
       `
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${backgroundSize/2}, ${backgroundSize/2})">      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
         <path d="M12 195 H395 V12 Z" fill="${fill}"/>
         <path d="M12 205 H395 V388 Z" fill="${fill}"/>
         <path d="M5 212 V395 H388 Z" fill="${fill}"/>
       </g></svg>
       `,
       `
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${backgroundSize/2}, ${backgroundSize/2})">      <path d="M12 5 H395 V188 Z" fill="${fill}"/>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M12 5 H395 V188 Z" fill="${fill}"/>
         <path d="M5 12 V195 H388 Z" fill="${fill}"/>
         <path d="M12 205 H395 V388 Z" fill="${fill}"/>
         <path d="M5 212 V395 H388 Z" fill="${fill}"/>
       </g></svg>
       `,
       `
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${backgroundSize/2}, ${backgroundSize/2})">      <path d="M5 5 V395 h90 V5 Z" fill="${fill}"/>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 5 V395 h90 V5 Z" fill="${fill}"/>
         <path d="M105 5 V395 h90 V5 Z" fill="${fill}"/>
         <path d="M205 5 V395 h90 V5 Z" fill="${fill}"/>
         <path d="M305 5 V395 h90 V5 Z" fill="${fill}"/>
       </g></svg>
       `,
       `
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${backgroundSize/2}, ${backgroundSize/2})">      <path d="M5 5 V395 h123.3 V5 Z" fill="${fill}"/>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 5 V395 h123.3 V5 Z" fill="${fill}"/>
         <path d="M138.3 5 V395 h123.3 V5 Z" fill="${fill}"/>
         <path d="M271.6 5 V395 h123.3 V5 Z" fill="${fill}"/>
       </g></svg>
       `,
       `
-      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${backgroundSize/2}, ${backgroundSize/2})">      <path d="M5 5 V395 h190 V5 Z" fill="${fill}"/>
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 5 V395 h190 V5 Z" fill="${fill}"/>
         <path d="M205 5 V395 h190 V5 Z" fill="${fill}"/>
       </g></svg>
       `,
@@ -61,7 +61,7 @@ layout: default
   var color2 = colors[Math.floor(Math.random()*colors.length)];
   document.body.style.backgroundColor = color;
 
-  var rotations = [0];
+  var rotations = [0,90,180,270];
 
   function genBackground() {
     document.getElementById("lines").innerHTML = "";
@@ -73,7 +73,7 @@ layout: default
       row.className = "row";
       for (var j = 0; j < width; j = j + 70) {
         var rotation = rotations[Math.floor(Math.random()*rotations.length)]
-        var shapes = lines(70, '#1c1b26', rotation)
+        var shapes = lines(70, '#1c1b26', rotation, 200)
         row.insertAdjacentHTML('beforeend', shapes[Math.floor(Math.random()*shapes.length)]);
       }
       document.getElementById("lines").appendChild(row);
@@ -91,7 +91,7 @@ layout: default
       row.className = "row";
       for (var j = 0; j < width; j = j + 70) {
         var rotation = Math.floor(Math.random()*360)
-        var shapes = lines(70, '#1c1b26', rotation)
+        var shapes = lines(70, '#1c1b26', rotation, 35)
         row.insertAdjacentHTML('beforeend', shapes[Math.floor(Math.random()*shapes.length)]);
       }
       document.getElementById("lines2").appendChild(row);
@@ -113,7 +113,7 @@ layout: default
       row.className = "row";
       for (var j = 0; j < width; j = j + 70) {
         var rotation = rotations[Math.floor(Math.random()*rotations.length)]
-        var shapes = lines(70, '#1c1b26', rotation)
+        var shapes = lines(70, '#1c1b26', rotation, 35)
         row.insertAdjacentHTML('beforeend', shapes[Math.floor(Math.random()*shapes.length)]);
       }
       document.getElementById("lines3").appendChild(row);
