@@ -3,6 +3,8 @@ layout: default
 ---
 
 <div id="lines"></div>
+<div id="lines3"></div>
+<div id="lines2"></div>
 
 <script>
   function lines(backgroundSize, fill, rotation) {
@@ -55,11 +57,15 @@ layout: default
 
   var colors = ['#55cc94', '#9455cc', '#55c8cc', '#cc558c', '#cc9455'];
   var color = colors[Math.floor(Math.random()*colors.length)];
+  var color1 = colors[Math.floor(Math.random()*colors.length)];
+  var color2 = colors[Math.floor(Math.random()*colors.length)];
   document.body.style.backgroundColor = color;
 
   var rotations = [0];
 
   function genBackground() {
+    document.getElementById("lines").innerHTML = "";
+
     var width = window.innerWidth || document.body.clientWidth;
     var height = window.innerHeight || document.body.clientHeight;
     for (var i = 0; i < height; i = i + 70) {
@@ -73,5 +79,54 @@ layout: default
       document.getElementById("lines").appendChild(row);
     }
   }
-  window.onload = genBackground;
+
+  function genBackground2() {
+    document.getElementById("lines2").style.backgroundColor = color1;
+    document.getElementById("lines2").innerHTML = "";
+
+    var width = window.innerWidth || document.body.clientWidth;
+    var height = window.innerHeight || document.body.clientHeight;
+    for (var i = 0; i < height; i = i + 70) {
+      var row = document.createElement("div");
+      row.className = "row";
+      for (var j = 0; j < width; j = j + 70) {
+        var rotation = Math.floor(Math.random()*360)
+        var shapes = lines(70, '#1c1b26', rotation)
+        row.insertAdjacentHTML('beforeend', shapes[Math.floor(Math.random()*shapes.length)]);
+      }
+      document.getElementById("lines2").appendChild(row);
+    }
+  }
+
+  function genBackground3() {
+    document.getElementById("lines3").style.backgroundColor = color2;
+
+    var rotations = [90,180,270];
+
+
+    var width = window.innerWidth || document.body.clientWidth;
+    var height = window.innerHeight || document.body.clientHeight;
+    document.getElementById("lines3").innerHTML = "";
+    for (var i = 0; i < height; i = i + 70) {
+      document.getElementById("lines3").innerHT
+      var row = document.createElement("div");
+      row.className = "row";
+      for (var j = 0; j < width; j = j + 70) {
+        var rotation = rotations[Math.floor(Math.random()*rotations.length)]
+        var shapes = lines(70, '#1c1b26', rotation)
+        row.insertAdjacentHTML('beforeend', shapes[Math.floor(Math.random()*shapes.length)]);
+      }
+      document.getElementById("lines3").appendChild(row);
+    }
+  }
+  window.onload = () => {
+    genBackground();
+    genBackground2();
+    genBackground3();
+  }
+  window.onresize = () => {
+    genBackground();
+    genBackground2();
+    genBackground3();
+  }
 </script>
