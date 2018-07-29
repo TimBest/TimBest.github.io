@@ -55,6 +55,16 @@ layout: default
     ];
   }
 
+  function getHeight() {
+    return window.innerHeight || document.body.clientHeight;
+  }
+
+  function getWidth() {
+    return window.innerWidth || document.body.clientWidth;
+  }
+
+
+  var initialWidth = getWidth();
   var colors = ['#55cc94', '#9455cc', '#55c8cc', '#cc558c', '#cc9455'];
   var color = colors[Math.floor(Math.random()*colors.length)];
   var color1 = colors[Math.floor(Math.random()*colors.length)];
@@ -66,8 +76,8 @@ layout: default
   function genBackground() {
     document.getElementById("lines").innerHTML = "";
 
-    var width = window.innerWidth || document.body.clientWidth;
-    var height = window.innerHeight || document.body.clientHeight;
+    var width = getWidth();
+    var height = getHeight();
     for (var i = 0; i < height; i = i + 70) {
       var row = document.createElement("div");
       row.className = "row";
@@ -84,8 +94,8 @@ layout: default
     document.getElementById("lines2").style.backgroundColor = color1;
     document.getElementById("lines2").innerHTML = "";
 
-    var width = window.innerWidth || document.body.clientWidth;
-    var height = window.innerHeight || document.body.clientHeight;
+    var width = getWidth();
+    var height = getHeight();
     for (var i = 0; i < height; i = i + 70) {
       var row = document.createElement("div");
       row.className = "row";
@@ -103,9 +113,8 @@ layout: default
 
     var rotations = [90,180,270];
 
-
-    var width = window.innerWidth || document.body.clientWidth;
-    var height = window.innerHeight || document.body.clientHeight;
+    var width = getWidth();
+    var height = getHeight();
     document.getElementById("lines3").innerHTML = "";
     for (var i = 0; i < height; i = i + 70) {
       document.getElementById("lines3").innerHT
@@ -124,7 +133,10 @@ layout: default
     genBackground2();
     genBackground3();
   }
-  window.onresize = () => {
+  window.onresize = (args) => {
+    if (initialWidth === initialWidth()) {
+      return;
+    }
     genBackground();
     genBackground2();
     genBackground3();

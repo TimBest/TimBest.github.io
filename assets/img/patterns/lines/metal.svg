@@ -1,0 +1,28 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="Gradient2" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#000"></stop>
+      <stop offset="37%" stop-color="#888"></stop>
+      <stop offset="53%" stop-color="#777"></stop>
+      <stop offset="100%" stop-color="#666"></stop>
+    </linearGradient>
+    <filter id="n">
+    <feTurbulence baseFrequency=".008,.3" width="200%" height="200%" top="-50%" type="fractalNoise" numOctaves="4" seed="0" result="FRACTAL-TEXTURE_10" />
+    <feColorMatrix type="matrix" values=
+   "0 0 0 0 0,
+   0 0 0 0 0,
+   0 0 0 0 0,
+   0 0 0 -0.8 0.7"
+   in="FRACTAL-TEXTURE_10" result="FRACTAL-TEXTURE_20" />
+  </filter>
+  </defs>
+  <g style="filter:url(#n); fill:#000">
+    <polygon points="0,0 200,0 200,200, 0,200"></polygon>
+  </g>
+</svg>
+
+<!--
+metal gradient
+background-image: -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0)   6%, hsla(0,0%,100%, .1) 7.5%),
+  -webkit-repeating-linear-gradient(left, hsla(0,0%,  0%,0) 0%, hsla(0,0%,  0%,0)   4%, hsla(0,0%,  0%,.03) 4.5%),
+  -webkit-repeating-linear-gradient(left, hsla(0,0%,100%,0) 0%, hsla(0,0%,100%,0) 1.2%, hsla(0,0%,100%,.15) 2.2%), -->
