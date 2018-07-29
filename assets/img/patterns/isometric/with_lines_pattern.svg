@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="231" width="400">
+  <path d="M0 0 V231 H400 V0 Z" fill="#fff"/>
+
+  <line x1="0" y1="0" x2="0" y2="231" stroke="#58c858" stroke-width="2px"/>
+  <line x1="200" y1="0" x2="200" y2="231" stroke="#58c858" stroke-width="2px"/>
+  <line x1="400" y1="0" x2="400" y2="231" stroke="#58c858" stroke-width="2px"/>
+
+  <line x1="0" y1="0" x2="400" y2="231" stroke="#58c858" stroke-width="2px"/>
+
+  <line x1="0" y1="231" x2="400" y2="0" stroke="#58c858" stroke-width="2px"/>
+</svg>

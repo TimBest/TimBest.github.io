@@ -9,6 +9,6 @@ patterns:
     image: lines/triangles.svg
     href: /lines
   - title: Isometric Grid
-    image: isometric/with_lines.svg
+    image: isometric/with_lines_pattern.svg
     href: /isometric
 ---
