@@ -304,10 +304,11 @@ body {
   }
 
   .flex {
-    $width: 400px;
+    $width: 100vw/15;
     $height: $width/(sqrt(3));
-    height: $height;
+    height: ($height*14);
     overflow: hidden;
+    background-color: #333;
 
     .row {
       display: flex;
@@ -330,10 +331,12 @@ body {
             shape-outside: $path;
             clip-path: $path;
           }
-          .content {
-            background-color: #bfcfe5;
+          .content, .s, .t, .f {
             height: $height;
             clip-path: polygon(0 0, 100% 50%, 0 100%);;
+          }
+          .content {
+            background-color: #333;
           }
         }
 
@@ -344,12 +347,25 @@ body {
             shape-outside: $path;
             clip-path: $path;
           }
-          .content {
-            background-color: #58c858;
+          .content, .s, .t, .f {
             height: $height;
             clip-path: polygon(0 50%, 100% 0, 100% 100%);
           }
+          .content {
+            background-color: #333;
+          }
         }
+
+        .t {
+          background-color: #ccc;
+        }
+        .s {
+          background-color: #888;
+        }
+        .f {
+          background-color: #fff;
+        }
+
       }
       &:nth-child(odd) {
         position: relative;
