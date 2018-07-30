@@ -220,6 +220,74 @@ body {
     background-size: 68px;
     background-position: left top;
     width: 100vw;
-    height: 100vw;
+    height: 300px;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    h1 {
+      text-align: center;
+      color: #58c858;
+      font-size: 3em;
+    }
+  }
+
+  .grid {
+    $height: 231px;
+    $width: 400px;
+    overflow: hidden;
+
+    .row {
+      display: flex;
+      color: white;
+
+      .cell {
+        height: $height;
+
+        .shape {
+          width: ($width/ 2);
+          height: $height;
+        }
+
+        &:nth-child(odd) {
+          .shape {
+            float: right;
+            $path: polygon(100% 0, 0 0, 100% 50%, 0 100%, 100% 100%);
+            shape-outside: $path;
+            clip-path: $path;
+          }
+          .content {
+            background-color: red;
+            height: $height;
+            clip-path: polygon(0 0, 100% 50%, 0 100%);;
+          }
+        }
+
+        &:nth-child(even) {
+          .shape {
+            float: left;
+            $path: polygon(0 0, 100% 0, 0 50%, 100% 100%, 0 100%);
+            shape-outside: $path;
+            clip-path: $path;
+          }
+          .content {
+            background-color: green;
+            height: $height;
+            clip-path: polygon(0 50%, 100% 0, 100% 100%);
+          }
+        }
+      }
+      &:nth-child(odd) {
+        position: relative;
+        top: -($height/ 2);
+        left: -($width/ 2);
+      }
+
+      &:nth-child(even) {
+        position: relative;
+        top: -$height;
+      }
+    }
   }
 }
