@@ -233,9 +233,22 @@ body {
     }
   }
 
+  @function sqrt($r) {
+    $x0: 1;
+    $x1: $x0;
+
+    @for $i from 1 through 10 {
+      $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+      $x0: $x1;
+    }
+
+    @return $x1;
+  }
+
   .grid {
-    $height: 231px;
     $width: 400px;
+    $height: $width/(sqrt(3));
+
     display: grid;
     grid-template-columns: ($width/ 2) ($width/ 2);
     overflow: hidden;
@@ -291,8 +304,8 @@ body {
   }
 
   .flex {
-    $height: 231px;
     $width: 400px;
+    $height: $width/(sqrt(3));
     height: $height;
     overflow: hidden;
 
