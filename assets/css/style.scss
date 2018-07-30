@@ -299,6 +299,8 @@ body {
     .row {
       display: flex;
       color: #252525;
+      height: ($height/ 2);
+      top: -($height/ 2);
 
       .cell {
         height: $height;
@@ -338,13 +340,11 @@ body {
       }
       &:nth-child(odd) {
         position: relative;
-        top: -($height/ 2);
         left: -($width/ 2);
       }
 
       &:nth-child(even) {
         position: relative;
-        top: -$height;
       }
     }
   }
