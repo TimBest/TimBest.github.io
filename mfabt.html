@@ -1,0 +1,91 @@
+---
+layout: default
+stylesheet: mfabt
+---
+
+<div class="background">
+  <svg class="frame" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1050 1300" height="100%">
+    <style>
+      /* <![CDATA[ */
+      .paper {
+        fill: #fff;
+      }
+      .frame {
+        fill: #000;
+      }
+      .mfabt {
+        font-family: Open Sans, Segoe UI, sans-serif;
+        text-align: center;
+        font-size: 72px;
+        font-weight: 600;
+      }
+      /* ]]> */
+    </style>
+    <defs>
+      <filter id="inset_shadow" x="-50%" y="-50%" width="200%" height="200%">
+       <feComponentTransfer in=SourceAlpha>
+         <feFuncA type="table" tableValues="1 0" />
+       </feComponentTransfer>
+       <feGaussianBlur stdDeviation="3"/>
+       <feOffset dx="5" dy="5" result="offsetblur"/>
+       <feFlood flood-color="rgb(20, 0, 0)" result="color"/>
+       <feComposite in2="offsetblur" operator="in"/>
+       <feComposite in2="SourceAlpha" operator="in" />
+       <feMerge>
+         <feMergeNode in="SourceGraphic" />
+         <feMergeNode />
+       </feMerge>
+     </filter>
+
+      <filter id="mdf">
+        <feTurbulence type="turbulence" baseFrequency="0.2" numOctaves="1" result="noise"/>
+        <feDiffuseLighting in="noise" lighting-color="#555" surfaceScale="0.6" result="diffLight">
+          <feDistantLight azimuth="95" elevation="35"/>
+        </feDiffuseLighting>
+      </filter>
+      <pattern id="mdf_frame" x="0" y="0" width="1" height="1">
+        <rect width="1050" height="1300" filter="url(#mdf)"/>
+      </pattern>
+      <!-- <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" style="stop-color:rgba(255,255,255, 0.8);stop-opacity:1" />
+        <stop offset="100%" style="stop-color:rgba(255,255,255, 0.4);stop-opacity:1" />
+      </linearGradient> -->
+    </defs>
+
+    <!-- Frame -->
+    <polygon fill="url(#mdf_frame)" points="0,0 100,100 950,100 1050,0"></polygon>
+    <polygon fill="url(#mdf_frame)" points="0,0 100,100 100,1200 0,1300"></polygon>
+    <polygon fill="url(#mdf_frame)" points="0,1300 100,1200 950,1200 1050,1300"></polygon>
+    <polygon fill="url(#mdf_frame)" points="1050,1300 950,1200 950,100 1050,0"></polygon>
+
+    <!-- Paper -->
+    <rect class="paper" x="100" y="100" width="850" height="1100" filter="url(#inset_shadow)"/>
+
+    <!-- Text on Paper -->
+    <text
+      class="mfabt"
+      x="50%"
+      y="50%"
+      width="100"
+      text-anchor="middle"
+    >
+      <tspan x="50%" y="450">MOVE</tspan>
+      <tspan x="50%" y="550">FAST</tspan>
+      <tspan x="50%" y="650">AND</tspan>
+      <tspan x="50%" y="750">BREAK</tspan>
+      <tspan x="50%" y="850">THINGS</tspan>
+    </text>
+
+    <!-- Glass -->
+    <!-- <polygon fill="url(#grad1)" points="100,100 850,100 100,900"></polygon> -->
+  </svg>
+
+</div>
+<script type="text/javascript">
+document.onclick = function(e) {
+  var width = 80;
+  var x = e.x - (width / 2);
+  var y = e.y - (width / 2);
+  document.querySelector(".background").innerHTML += "<img src='/assets/img/mfabt/crack.svg' style='position: absolute; left: "+x+"px; top: "+y+"px;' width='"+width+"px'/>"
+};
+</script>
