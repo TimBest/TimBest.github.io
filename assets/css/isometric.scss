@@ -1,0 +1,169 @@
+---
+---
+
+
+#isometric {
+  .paper {
+    background-image: url("/assets/img/patterns/isometric/with_lines_pattern.svg");
+    background-repeat: repeat;
+    background-size: 68px;
+    background-position: left top;
+    width: 100vw;
+    height: 300px;
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    h1 {
+      text-align: center;
+      color: #58c858;
+      font-size: 3em;
+    }
+  }
+
+  @function sqrt($r) {
+    $x0: 1;
+    $x1: $x0;
+
+    @for $i from 1 through 10 {
+      $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+      $x0: $x1;
+    }
+
+    @return $x1;
+  }
+
+  .grid {
+    $width: 400px;
+    $height: $width/(sqrt(3));
+
+    display: grid;
+    grid-template-columns: ($width/ 2) ($width/ 2);
+    overflow: hidden;
+    height: $height;
+    color: #252525;
+
+    .cell {
+      height: $height;
+
+      .shape {
+        width: ($width/ 2);
+        height: $height;
+      }
+
+      &:nth-child(even) {
+        .shape {
+          float: left;
+          $path: polygon(0 0, 100% 0, 0 50%, 100% 100%, 0 100%);
+          shape-outside: $path;
+          clip-path: $path;
+        }
+        .content {
+          background-color: #58c858;
+          height: $height;
+          clip-path: polygon(0 50%, 100% 0, 100% 100%);
+        }
+      }
+
+      &:nth-child(odd) {
+        .shape {
+          float: right;
+          $path: polygon(100% 0, 0 0, 100% 50%, 0 100%, 100% 100%);
+          shape-outside: $path;
+          clip-path: $path;
+        }
+        .content {
+          background-color: #bfcfe5;
+          height: $height;
+          clip-path: polygon(0 0, 100% 50%, 0 100%);;
+        }
+      }
+    }
+    .row1 {
+      position: relative;
+      top: -($height/ 2);
+      left: -($width/ 2);
+    }
+
+    .row2 {
+      position: relative;
+      top: -$height;
+    }
+  }
+
+  .flex {
+    $width: 100vw/15;
+    $height: $width/(sqrt(3));
+    height: ($height*14);
+    overflow: hidden;
+    background-color: #333;
+
+    .row {
+      display: flex;
+      color: #252525;
+      height: ($height/ 2);
+      top: -($height/ 2);
+
+      .cell {
+        height: $height;
+
+        .shape {
+          width: ($width/ 2);
+          height: $height;
+        }
+
+        &:nth-child(odd) {
+          .shape {
+            float: right;
+            $path: polygon(100% 0, 0 0, 100% 50%, 0 100%, 100% 100%);
+            shape-outside: $path;
+            clip-path: $path;
+          }
+          .content, .s, .t, .f {
+            height: $height;
+            clip-path: polygon(0 0, 100% 50%, 0 100%);;
+          }
+          .content {
+            background-color: #000;
+          }
+        }
+
+        &:nth-child(even) {
+          .shape {
+            float: left;
+            $path: polygon(0 0, 100% 0, 0 50%, 100% 100%, 0 100%);
+            shape-outside: $path;
+            clip-path: $path;
+          }
+          .content, .s, .t, .f {
+            height: $height;
+            clip-path: polygon(0 50%, 100% 0, 100% 100%);
+          }
+          .content {
+            background-color: #333;
+          }
+        }
+
+        .t {
+          background-color: #ccc;
+        }
+        .s {
+          background-color: #888;
+        }
+        .f {
+          background-color: #fff;
+        }
+
+      }
+      &:nth-child(odd) {
+        position: relative;
+        left: -($width/ 2);
+      }
+
+      &:nth-child(even) {
+        position: relative;
+      }
+    }
+  }
+}
