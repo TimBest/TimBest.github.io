@@ -82,10 +82,29 @@ stylesheet: mfabt
 
 </div>
 <script type="text/javascript">
-document.onclick = function(e) {
   var width = 80;
-  var x = e.x - (width / 2);
-  var y = e.y - (width / 2);
-  document.querySelector(".background").innerHTML += "<img src='/assets/img/mfabt/crack.svg' style='position: absolute; left: "+x+"px; top: "+y+"px;' width='"+width+"px'/>"
-};
+
+
+  document.querySelector(".paper").onclick = function(e) {
+    var x = e.x - (width / 2);
+    var y = e.y - (width / 2);
+    var crack = document.createElement("img");
+    crack.src = "/assets/img/mfabt/crack.svg";
+    crack.width = width;
+    crack.style.position = "absolute";
+    crack.style.left = x + "px";
+    crack.style.top = y + "px";
+    document.body.appendChild(crack);
+  };
+  document.querySelector("text").onclick = function(e) {
+    var x = e.x - (width / 2);
+    var y = e.y - (width / 2);
+    var crack = document.createElement("img");
+    crack.src = "/assets/img/mfabt/crack.svg";
+    crack.width = width;
+    crack.style.position = "absolute";
+    crack.style.left = x + "px";
+    crack.style.top = y + "px";
+    document.body.appendChild(crack);
+  };
 </script>

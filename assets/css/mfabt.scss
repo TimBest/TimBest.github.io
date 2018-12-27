@@ -7,7 +7,6 @@ $wall-padding: 10vmin;
   background-image: url("/assets/img/mfabt/snow_fall_stucco.svg");
   background-size: contain;
 
-  cursor: url("/assets/img/mfabt/hammer.svg"), auto;
 
   height: calc(100vh - (2 * #{$wall-padding}));
   width: calc(100vw - (2 * #{$wall-padding}));
@@ -18,10 +17,17 @@ $wall-padding: 10vmin;
 
   padding: 10vmin;
 
+
+}
+
+.paper, text {
+  cursor: url("/assets/img/mfabt/hammer.svg"), auto;
+
   &:active {
     cursor: url("/assets/img/mfabt/hammer_strike.svg"), auto;
   }
 }
+
 
 .frame {
   box-shadow: 0 6px 12px -2px rgba(20,0,0,.25),0 3px 7px -3px rgba(0,0,0,.3);
