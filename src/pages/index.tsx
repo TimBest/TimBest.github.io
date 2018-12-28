@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 import SEO from '../components/seo'
 import '../images/index.css'
 import houndstooth from '../images/Houndstooth.svg'
+import lines from '../images/triangles.svg'
 
 const Card = (props: {href: string, title: string, image: string}) => (
   <Link className="card" to={props.href}>
@@ -25,6 +26,7 @@ const IndexPage = () => (
       <div className="wrapper">
         <div className="patterns">
           <Card href="/houndstooth/" title="Houndstooth" image={houndstooth}/>
+          <Card href="/lines/" title="Lines" image={lines}/>
         </div>
       </div>
     </div>
