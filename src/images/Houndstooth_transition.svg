@@ -1,0 +1,38 @@
+
+
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="400" width="400">
+  <defs>
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation=".08"/>
+    </filter>
+    <pattern id="stitch1" x="0" y="0" width=".01" height=".01">
+      <path d="M0 0 V4 H4 V0 Z" fill="#081d1f"/>
+      <path
+        d="M1.2 .15 H2.85 V2.55 H2 V1.6 H1.2 Z"
+        fill="#2f565f"
+        filter="url(#blur)"
+      />
+    </pattern>
+    <pattern id="stitch2" x="0" y="0" width=".01" height=".01">
+      <path d="M0 0 V4 H4 V0 Z" fill="#2f565f"/>
+      <path
+        d="M.15 1.25 H.75 V2.25 H1.3 V2.85 H.15 Z"
+        fill="#081d1f"
+        filter="url(#blur)"
+      />
+    </pattern>
+    <linearGradient id="Gradient" x1="0" x2="0" y1="0" y2="1">
+      <stop stop-opacity="0" offset="0%" stop-color="#2f565f"/>
+      <stop stop-opacity="1" offset="30%" stop-color="#2f565f"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 0 V400 H400 V0 Z" fill="url(#stitch1)"/>
+  <path
+    d="M0 0 H200 L400 200 V400 H0 V0 H400 V100 L300 0 H0 Z"
+    fill="url(#stitch2)"
+  />
+  <path
+    d="M0 0 H200 L400 200 V400 H0 V0 H400 V100 L300 0 H0 Z"
+    fill="url(#Gradient)"
+  />
+</svg>
