@@ -1,11 +1,3 @@
-#lines { height: 100vh; width: 100vw; overflow: hidden; }
-#lines .row { white-space: nowrap; }
-#lines svg { margin-right: -4px; margin-bottom: -4px; }
-
-#lines2 { height: 100vh; width: 100vw; overflow: hidden; }
-#lines2 .row { white-space: nowrap; }
-#lines2 svg { margin-right: -4px; margin-bottom: -4px; }
-
-#lines3 { height: 100vh; width: 100vw; overflow: hidden; }
-#lines3 .row { white-space: nowrap; }
-#lines3 svg { margin-right: -4px; margin-bottom: -4px; }
+.lines { height: 100vh; width: 100vw; overflow: hidden; }
+.lines .row { white-space: nowrap; }
+.lines svg { margin-right: -4px; margin-bottom: -8px; }

@@ -50,91 +50,29 @@ function lines(backgroundSize, fill, rotation, rotationCenter) {
   ];
 }
 
-function getHeight() {
-  return window.innerHeight || document.body.clientHeight;
+interface Props {
+  rotationCenter: number
+  rotationGranularity: number
 }
 
-function getWidth() {
-  return window.innerWidth || document.body.clientWidth;
-}
+class Lines extends React.Component<Props, {}> {
+  colors = ['#55cc94', '#9455cc', '#55c8cc', '#cc558c', '#cc9455']
+  color = this.colors[Math.floor(Math.random()*this.colors.length)]
 
-const rotations = [0,90,180,270];
-const initialWidth = getWidth();
-const colors = ['#55cc94', '#9455cc', '#55c8cc', '#cc558c', '#cc9455'];
-const color = colors[Math.floor(Math.random()*colors.length)];
-const color1 = colors[Math.floor(Math.random()*colors.length)];
-const color2 = colors[Math.floor(Math.random()*colors.length)];
-document.body.style.backgroundColor = color;
-
-const Lines1 = () => {
-  const lineArray = []
-  const width = getWidth();
-  const height = getHeight();
-
-  for (var i = 0; i < height; i = i + 70) {
-    const row = ""
-    for (var j = 0; j < width; j = j + 70) {
-      var rotation = rotations[Math.floor(Math.random()*rotations.length)]
-      var shapes = lines(70, '#1c1b26', rotation, 200)
-      row += (shapes[Math.floor(Math.random()*shapes.length)]);
-    }
-    lineArray.push(<div className="row" dangerouslySetInnerHTML={{__html: row}}></div>)
-  }
-  return lineArray;
-}
-const Lines2 = () => {
-  const lineArray = []
-  const width = getWidth();
-  const height = getHeight();
-
-  for (var i = 0; i < height; i = i + 70) {
-    const row = ""
-    for (var j = 0; j < width; j = j + 70) {
-      var rotation = Math.floor(Math.random()*360)
-      var shapes = lines(70, '#1c1b26', rotation, 35)
-      row += (shapes[Math.floor(Math.random()*shapes.length)]);
-    }
-    lineArray.push(
-      <div
-        className="row"
-        dangerouslySetInnerHTML={{__html: row}}
-        style={{backgroundColor:color1}}
-      >
-      </div>
-    )
-  }
-  return lineArray;
-}
-const Lines3 = () => {
-  const lineArray = []
-  const width = getWidth();
-  const height = getHeight();
-
-  for (var i = 0; i < height; i = i + 70) {
-    const row = ""
-    for (var j = 0; j < width; j = j + 70) {
-      var rotation = rotations[Math.floor(Math.random()*rotations.length)]
-      var shapes = lines(70, '#1c1b26', rotation, 35)
-      row += (shapes[Math.floor(Math.random()*shapes.length)]);
-    }
-    lineArray.push(
-      <div
-        className="row"
-        dangerouslySetInnerHTML={{__html: row}}
-        style={{backgroundColor:color2}}
-      >
-      </div>
-    )  }
-  return lineArray;
-}
-
-class Lines extends React.Component {
   constructor() {
-    super();
+    super()
     this.state = {
-      width: getWidth(),
-      height: getHeight()
+      width: this.getWidth(),
+      height: this.getHeight()
     }
+  }
+
+  getHeight() {
+    return window.innerHeight || document.body.clientHeight
+  }
+
+  getWidth() {
+    return window.innerWidth || document.body.clientWidth
   }
 
   /**
@@ -142,7 +80,7 @@ class Lines extends React.Component {
    */
   updateDimensions() {
     // TODO: should only update state if one of these is diffrent
-    this.setState({ width: getWidth(), height: getHeight() });
+    this.setState({ width: this.getWidth(), height: this.getHeight() })
   }
 
   componentDidMount() {
@@ -150,15 +88,49 @@ class Lines extends React.Component {
   }
 
   render() {
+    const lineArray = []
+
+    for (var i = 0; i < this.state.height; i = i + 70) {
+      const row = ""
+      for (var j = 0; j < this.state.width; j = j + 70) {
+        var rotation = Math.floor(Math.random()*this.props.rotationGranularity) * (360/this.props.rotationGranularity)
+        var shapes = lines(70, '#1c1b26', rotation, this.props.rotationCenter)
+        row += (shapes[Math.floor(Math.random()*shapes.length)])
+      }
+      lineArray.push(
+        <div
+          className="row"
+          dangerouslySetInnerHTML={{__html: row}}
+          style={{backgroundColor: this.color}}
+        />
+      )
+    }
     return (
-      <div>
-        <SEO title="lines"/>
-        <div id="lines"><Lines1/></div>
-        <div id="lines3"><Lines3/></div>
-        <div id="lines2"><Lines2/></div>
+      <div className="lines">
+       {lineArray}
       </div>
-    )
+    );
   }
 }
 
-export default Lines
+
+const LinesPage = () =>  (
+  <div>
+    <SEO title="lines"/>
+    <Lines
+      rotationCenter={200}
+      rotationGranularity={4}
+    />
+    <Lines
+      rotationCenter={35}
+      rotationGranularity={4}
+    />
+    <Lines
+      rotationCenter={35}
+      rotationGranularity={360}
+    />
+  </div>
+)
+
+
+export default LinesPage
