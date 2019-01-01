@@ -4,6 +4,7 @@ import SEO from '../components/seo'
 import '../images/index.css'
 import houndstooth from '../images/Houndstooth.svg'
 import lines from '../images/triangles.svg'
+import isometric from '../images/with_lines_pattern.svg'
 
 interface CardProps {
   href: string
@@ -33,6 +34,7 @@ const IndexPage = () => (
         <div className="patterns">
           <Card href="/houndstooth/" title="Houndstooth" image={houndstooth}/>
           <Card href="/lines/" title="Lines" image={lines}/>
+          <Card href="/isometric/" title="Isometric" image={isometric}/>
         </div>
       </div>
     </div>
