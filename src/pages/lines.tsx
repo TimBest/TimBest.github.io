@@ -1,8 +1,8 @@
-import React from 'react'
+import * as React from 'react'
 import SEO from '../components/seo'
 import '../images/lines.css'
 
-function lines(backgroundSize, fill, rotation, rotationCenter) {
+function lines(backgroundSize: number, fill: string, rotation: number, rotationCenter: number): string[] {
   return [
     `
     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M12 5 H395 V388 Z" fill="${fill}"/>
@@ -55,12 +55,17 @@ interface Props {
   rotationGranularity: number
 }
 
-class Lines extends React.Component<Props, {}> {
-  colors = ['#55cc94', '#9455cc', '#55c8cc', '#cc558c', '#cc9455']
-  color = this.colors[Math.floor(Math.random()*this.colors.length)]
+interface State {
+  width: number;
+  height: number;
+}
 
-  constructor() {
-    super()
+class Lines extends React.Component<Props, State> {
+  colors: string[] = ['#55cc94', '#9455cc', '#55c8cc', '#cc558c', '#cc9455']
+  color: string = this.colors[Math.floor(Math.random()*this.colors.length)]
+
+  constructor(props: Props) {
+    super(props)
     this.state = {
       width: this.getWidth(),
       height: this.getHeight()
@@ -88,10 +93,10 @@ class Lines extends React.Component<Props, {}> {
   }
 
   render() {
-    const lineArray = []
+    const lineArray: JSX.Element[] = []
 
     for (var i = 0; i < this.state.height; i = i + 70) {
-      const row = ""
+      let row = ""
       for (var j = 0; j < this.state.width; j = j + 70) {
         var rotation = Math.floor(Math.random()*this.props.rotationGranularity) * (360/this.props.rotationGranularity)
         var shapes = lines(70, '#1c1b26', rotation, this.props.rotationCenter)

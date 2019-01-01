@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true,
     "allowJs": false,
     "alwaysStrict": true,
     "diagnostics": true,
@@ -10,6 +10,8 @@
     "importHelpers": true,
     "jsx": "react",
     "lib": [
+      "ES2016",
+      "DOM"
     ],
     "module": "commonjs",
     "moduleResolution": "node",

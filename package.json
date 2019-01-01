@@ -33,6 +33,8 @@
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
   "devDependencies": {
+    "@types/react": "^16.7.18",
+    "@types/react-helmet": "^5.0.8",
     "prettier": "^1.15.2"
   },
   "repository": {

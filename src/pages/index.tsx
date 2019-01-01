@@ -1,24 +1,30 @@
-import React from 'react'
+import * as React from 'react'
 import { Link } from 'gatsby'
 import SEO from '../components/seo'
 import '../images/index.css'
 import houndstooth from '../images/Houndstooth.svg'
 import lines from '../images/triangles.svg'
 
-const Card = (props: {href: string, title: string, image: string}) => (
-  <Link className="card" to={props.href}>
+interface CardProps {
+  href: string
+  title: string
+  image: string
+}
+
+const Card = ({href, title, image}: CardProps) => (
+  <Link className="card" to={href}>
     <div className="card-image">
-      <img src={props.image}/>
+      <img src={image}/>
     </div>
     <div className="card-content">
-      {props.title}
+      {title}
     </div>
   </Link>
 );
 
 const IndexPage = () => (
   <div id="index">
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Home"/>
     <div className="houndstooth-index">
       <h1 className="title">TIMOTHY BEST</h1>
     </div>
