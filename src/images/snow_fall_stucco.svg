@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" height="900" width="900">
   <defs>
     <filter id="snow_fall_stucco">
-      <feTurbulence type="fractalNoise" baseFrequency="0.025" numOctaves="5" result="noise"/>
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="5" result="noise"/>
       <feDiffuseLighting in="noise" lighting-color="#f2f1ec" surfaceScale="1.5" result="diffLight">
-        <feDistantLight azimuth="45" elevation="75"/>
+        <feDistantLight azimuth="45" elevation="80"/>
       </feDiffuseLighting>
     </filter>
     <pattern id="stitch1" x="0" y="0" width="1" height="1">
