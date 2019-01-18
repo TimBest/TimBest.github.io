@@ -67,10 +67,19 @@ class Lines extends React.Component<Props, State> {
   constructor(props: Props) {
     super(props)
     this.state = {
-      width: this.getWidth(),
-      height: this.getHeight()
+      width: 100,
+      height: 100
     }
   }
+
+  componentDidMount() {
+    window.addEventListener("resize", this.updateDimensions.bind(this))
+    this.setState({
+      width: this.getWidth(),
+      height: this.getHeight()
+    })
+  }
+
 
   getHeight() {
     return window.innerHeight || document.body.clientHeight
@@ -86,10 +95,6 @@ class Lines extends React.Component<Props, State> {
   updateDimensions() {
     // TODO: should only update state if one of these is diffrent
     this.setState({ width: this.getWidth(), height: this.getHeight() })
-  }
-
-  componentDidMount() {
-    window.addEventListener("resize", this.updateDimensions.bind(this))
   }
 
   render() {
