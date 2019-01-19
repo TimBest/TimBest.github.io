@@ -163,7 +163,7 @@ const DotsPage = () =>  (
       minY={-5}
     />
     <Dots
-      colors={['#b0437c' , '#7a5422' , '#d3841f']}
+      colors={['#b0437c' , '#6b502c' , '#d3841f']}
       dotDiameter={100}
       maxX={40}
       minX={50}
