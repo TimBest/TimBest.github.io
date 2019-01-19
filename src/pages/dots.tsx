@@ -35,6 +35,11 @@ interface DotsProps {
 interface DotsState {
   width: number;
   height: number;
+  dots: {
+    color: string
+    x: number
+    y: number
+  }[][]
 }
 
 class Dots extends React.Component<DotsProps, DotsState> {
@@ -43,8 +48,15 @@ class Dots extends React.Component<DotsProps, DotsState> {
     super(props)
     // set default width and height for static rendering since window size is unknown
     this.state = {
-      width: 100,
-      height: 100
+      width: this.props.dotDiameter,
+      height: this.props.dotDiameter,
+      dots: [[
+        {
+          color: this.props.colors[0],
+          x: this.props.dotDiameter / 2,
+          y: this.props.dotDiameter / 2
+        }
+      ]]
     }
   }
 
@@ -85,7 +97,6 @@ class Dots extends React.Component<DotsProps, DotsState> {
   }
 
   render() {
-    console.log("render");
     const dotRadius = this.props.dotDiameter / 2;
     const dots: JSX.Element[] = []
     // const color: string = this.colors[Math.floor(Math.random()*this.colors.length)]
@@ -147,14 +158,6 @@ const DotsPage = () =>  (
   <div className="dots">
     <SEO title="dots"/>
     <Dots
-      colors={['#556f3f' , '#c25247' , '#d3841f']}
-      dotDiameter={100}
-      maxX={40}
-      minX={50}
-      maxY={8}
-      minY={-5}
-    />
-    <Dots
       colors={['#b0437c' , '#203593' , '#d6ae37']}
       dotDiameter={100}
       maxX={40}
@@ -163,7 +166,7 @@ const DotsPage = () =>  (
       minY={-5}
     />
     <Dots
-      colors={['#b0437c' , '#6b502c' , '#d3841f']}
+      colors={['#556f3f' , '#c25247' , '#d3841f']}
       dotDiameter={100}
       maxX={40}
       minX={50}
@@ -178,8 +181,15 @@ const DotsPage = () =>  (
       maxY={8}
       minY={-5}
     />
+    <Dots
+      colors={['#b0437c' , '#6b502c' , '#d3841f']}
+      dotDiameter={100}
+      maxX={40}
+      minX={50}
+      maxY={8}
+      minY={-5}
+    />
   </div>
 )
-
 
 export default DotsPage
