@@ -1,13 +1,11 @@
-import React, { SFC } from 'react'
+import React from 'react'
 import SEO from '../components/seo'
 import '../images/dots.css'
 
 /*
 // TODO:
- - add filter to dots
  - make triangles impossible to form
  - add padding around dots
- - add variation to the background
  - only regenerate when needed
  - ensure dots are never cut off
 
@@ -150,6 +148,30 @@ const DotsPage = () =>  (
     <SEO title="dots"/>
     <Dots
       colors={['#556f3f' , '#c25247' , '#d3841f']}
+      dotDiameter={100}
+      maxX={40}
+      minX={50}
+      maxY={8}
+      minY={-5}
+    />
+    <Dots
+      colors={['#b0437c' , '#203593' , '#d6ae37']}
+      dotDiameter={100}
+      maxX={40}
+      minX={50}
+      maxY={8}
+      minY={-5}
+    />
+    <Dots
+      colors={['#b0437c' , '#7a5422' , '#d3841f']}
+      dotDiameter={100}
+      maxX={40}
+      minX={50}
+      maxY={8}
+      minY={-5}
+    />
+    <Dots
+      colors={['#d6ae37' , '#556f3f' , '#6f238b']}
       dotDiameter={100}
       maxX={40}
       minX={50}
