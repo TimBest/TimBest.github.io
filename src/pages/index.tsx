@@ -2,9 +2,10 @@ import * as React from 'react'
 import { Link } from 'gatsby'
 import SEO from '../components/seo'
 import '../images/index.css'
+import dots from '../images/dot.svg'
 import houndstooth from '../images/Houndstooth.svg'
-import lines from '../images/triangles.svg'
 import isometric from '../images/with_lines_pattern.svg'
+import lines from '../images/triangles.svg'
 
 interface CardProps {
   href: string
@@ -35,6 +36,7 @@ const IndexPage = () => (
           <Card href="/houndstooth/" title="Houndstooth" image={houndstooth}/>
           <Card href="/lines/" title="Lines" image={lines}/>
           <Card href="/isometric/" title="Isometric" image={isometric}/>
+          <Card href="/dots/" title="Dots" image={dots}/>
         </div>
       </div>
     </div>

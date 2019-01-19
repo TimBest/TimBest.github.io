@@ -93,7 +93,7 @@ class Lines extends React.Component<Props, State> {
    * Calculate & Update state of new dimensions
    */
   updateDimensions() {
-    // TODO: should only update state if one of these is diffrent
+    // TODO: this only needs to update state when width or height changes more then the shape size
     this.setState({ width: this.getWidth(), height: this.getHeight() })
   }
 
