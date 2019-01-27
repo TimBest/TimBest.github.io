@@ -19,6 +19,7 @@
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
+    "styled-components": "^4.1.3",
     "typescript": "^3.2.2"
   },
   "keywords": [
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@types/react": "^16.7.18",
     "@types/react-helmet": "^5.0.8",
+    "@types/styled-components": "^4.1.6",
     "gh-pages": "^2.0.1",
     "prettier": "^1.15.2"
   },

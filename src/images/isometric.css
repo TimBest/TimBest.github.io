@@ -1,5 +1,6 @@
 .paper { background-image: url("./with_lines_pattern.svg"); background-repeat: repeat; background-size: 68px; background-position: left top; width: 100vw; height: 300px; display: grid; align-items: center; justify-items: center; }
 .paper h1 { text-align: center; color: #58c858; font-size: 3em; }
+.paper p { text-align: center; color: #58c858; font-size: 1.5em; }
 
 .grid { display: grid; grid-template-columns: 200px 200px; overflow: hidden; height: 230.9401076759px; color: #252525; }
 .grid .cell { height: 230.9401076759px; }

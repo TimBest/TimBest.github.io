@@ -6,7 +6,10 @@ const Isometric = () => (
   <div>
     <SEO title="Isometric"/>
     <div className="paper">
-      <h1>Isometric Grid</h1>
+      <div>
+        <h1>Isometric Grid</h1>
+        <p>An exploration in non square layouts using <code>shape-outside</code> and <code>clip-path</code></p>
+      </div>
     </div>
     <div className="flex">
         <div className="row">
