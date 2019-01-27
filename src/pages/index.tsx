@@ -1,7 +1,9 @@
 import * as React from 'react'
 import { Link } from 'gatsby'
 import SEO from '../components/seo'
+import Project from '../components/project'
 import ContentSection from '../components/container'
+import styled from 'styled-components'
 
 import '../images/index.css'
 
@@ -9,6 +11,25 @@ import dots from '../images/dot.svg'
 import houndstooth from '../images/Houndstooth.svg'
 import isometric from '../images/with_lines_pattern.svg'
 import lines from '../images/triangles.svg'
+
+const SectionTitle = styled.h2`
+  padding-bottom: 1rem;
+  text-transform: uppercase;
+`
+
+const Linka = styled.a`
+  color: inherit;
+  text-decoration: none;
+  margin-right: 5px;
+
+  &:hover,
+  &:focus {
+    color: #4e66c4;
+  }
+  &[target="_blank"]::after {
+  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+  margin: 0 3px 0 5px;
+`
 
 interface CardProps {
   href: string
@@ -35,33 +56,56 @@ const IndexPage = () => (
     </div>
     <div className="content">
       <ContentSection>
-        <h2>Projects</h2>
-        <ol>
-          <li>
-            <a href="https://github.com/TimBest/tessellation-sketchplugin" target="_blank">tessellation-sketchplugin</a> <span>[WIP]</span> <span>A sketch plugin to aid in the development of svg tessellations</span>
-          </li>
-          <li>
-            <a href="http://generalset.io/" target="_blank">GeneralSet.io</a> <span>[WIP]</span> <span>An adaption of the game SET to work with any arbitratry features (shape, color, shadding, etc.)</span>
-          </li>
-          <li>
-            <a href="http://startupslikeme.gitlab.io/" target="_blank">startupslike.me</a> <span>[DEAD]</span> <span>An email service that uses a recomendation engine to send you 3 startups that you might like every week</span>
-          </li>
-          <li>
-            <a href="http://timbest.net/projects/composers_couch/" target="_blank">composerscouch.com</a> <span>[DEAD]</span> <span>A Web service to improve how Fans, Musicians and Venues connect</span>
-          </li>
-        </ol>
+        <SectionTitle>Projects</SectionTitle>
+        <Project
+          href="https://github.com/TimBest/tessellation-sketchplugin"
+          title="Tessellation-SketchPlugin"
+          status="wip"
+          description={`
+            A sketch plugin to aid in the development of svg tessellations
+          `}
+        />
+        <Project
+          href="http://generalset.io/"
+          title="GeneralSet.io"
+          status="wip"
+          description={`
+            An adaption of the game SET to work with any arbitratry features
+            (shape, color, shadding, etc.)
+          `}
+        />
+        <Project
+          href="http://startupslikeme.gitlab.io/"
+          title="StartupsLike.me"
+          status="dead"
+          description={`
+            An email service that uses a recomendation engine to send you 3 startups that you might
+            like every week
+          `}
+        />
+        <Project
+          href="http://timbest.net/projects/composers_couch/"
+          title="ComposersCouch.com"
+          status="dead"
+          description={`
+            A Web service to improve how Fans, Musicians and Venues connect
+          `}
+        />
       </ContentSection>
       <ContentSection>
-        <h2>One Day Builds</h2>
-        <p>Experiments with svgs and css that sometimes take more then a day</p>
-        <div className="wrapper">
-          <div className="patterns">
-            <Card href="/houndstooth/" title="Houndstooth" image={houndstooth}/>
-            <Card href="/lines/" title="Lines" image={lines}/>
-            <Card href="/isometric/" title="Isometric" image={isometric}/>
-            <Card href="/dots/" title="Carnival Dots" image={dots}/>
-          </div>
+        <SectionTitle>One Day Builds</SectionTitle>
+        <div className="patterns">
+          <Card href="/houndstooth/" title="Houndstooth" image={houndstooth}/>
+          <Card href="/lines/" title="Lines" image={lines}/>
+          <Card href="/isometric/" title="Isometric" image={isometric}/>
+          <Card href="/dots/" title="Carnival Dots" image={dots}/>
         </div>
+      </ContentSection>
+      <ContentSection>
+        <SectionTitle>Blog</SectionTitle>
+        <Linka href="https://onesignal.com/blog/modernizing-our-frontend-part-1-coffeescript-typescript/" target="_blank">
+          Modernizing OneSignal's Frontend
+        </Linka>
       </ContentSection>
     </div>
     <footer className="footer">
