@@ -59,7 +59,7 @@ const IndexPage = () => (
         <SectionTitle>Projects</SectionTitle>
         <Project
           href="https://github.com/TimBest/tessellation-sketchplugin"
-          title="Tessellation-SketchPlugin"
+          title="Tessellation SketchPlugin"
           status="wip"
           description={`
             A sketch plugin to aid in the development of svg tessellations
@@ -89,6 +89,14 @@ const IndexPage = () => (
           status="dead"
           description={`
             A Web service to improve how Fans, Musicians and Venues connect
+          `}
+        />
+        <Project
+          href="https://github.com/TimBest/django-multi-form-view"
+          title="Django MultiFormView"
+          status="maintained"
+          description={`
+            Django class based views for using more than one form in a single view
           `}
         />
       </ContentSection>

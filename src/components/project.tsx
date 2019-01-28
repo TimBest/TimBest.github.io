@@ -4,7 +4,7 @@ import styled from 'styled-components'
 interface Props {
   href: string
   title: string
-  status: 'wip' | 'dead'
+  status: 'wip' | 'dead' | 'maintained'
   description: string
 }
 
@@ -40,7 +40,7 @@ const Badge = styled.div`
   display: none;
   text-align: center;
   color: #fff;
-  background-color: ${props => props.status === 'wip' ? '#2f565f' : '#000'};
+  background-color: ${props => props.status === 'wip' ? '#000' : '#2f565f'};
 
   padding: 3px 5px;
   border-radius: 4px;
