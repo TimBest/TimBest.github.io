@@ -31,6 +31,12 @@ interface DotsState {
   dots: Dot[][]
 }
 
+interface DotColorParams {
+  left: string;
+  top: string;
+  topLeft: string;
+}
+
 class Dots extends React.Component<DotsProps, DotsState> {
   rows = 4
   xPadding = 35
@@ -82,6 +88,33 @@ class Dots extends React.Component<DotsProps, DotsState> {
     })
   }
 
+  getRandomColor() {
+    return this.props.colors[getRandomInt(this.props.colors.length)]
+  }
+
+  isEqual(x: any, y: any, z: any): boolean {
+    return x === y && y ===z;
+  }
+
+  isVaildColor(color: string, dots?: DotColorParams): boolean {
+    if(dots === undefined) {
+      return true;
+    }
+    if (this.props.colors.length <= 1) {
+      return true;
+    }
+
+    if (
+      this.isEqual(dots.left, dots.top, color) ||
+      this.isEqual(dots.topLeft, dots.left, color) ||
+      this.isEqual(dots.top, dots.topLeft, color)
+    ) {
+      return false;
+    }
+
+    return true;
+  }
+
   generateDots() {
     const dots: Dot[][] = [];
     const columns = (this.getWidth() / (this.maxError + this.dotDiameter + this.xPadding)) - 1
@@ -95,37 +128,20 @@ class Dots extends React.Component<DotsProps, DotsState> {
       }
       const row: Dot[] = [];
       for(var j = 0; j <= columns; j++) {
-        var postionX = width + this.getRandPadding()
-        var postionY = height + this.getRandPadding()
-        var color = this.props.colors[getRandomInt(this.props.colors.length)]
+        var postionX = width + this.getRandPadding();
+        var postionY = height + this.getRandPadding();
 
-        // prevent triangles from forming
-        if (this.props.colors.length >= 1) {
-          if (i !== 0 && j !==0) {
-            if (dots[i-1][j].color === row[j-1].color) {
-              while(color === row[j-1].color) {
-                color = this.props.colors[getRandomInt(this.props.colors.length)]
-              }
-            }
-            if (dots[i-1][j-1].color === row[j-1].color) {
-              while(color === row[j-1].color) {
-                color = this.props.colors[getRandomInt(this.props.colors.length)]
-              }
-            }
-            if (dots[i-1][j].color === dots[i-1][j-1].color) {
-              while(color === dots[i-1][j-1].color) {
-                color = this.props.colors[getRandomInt(this.props.colors.length)]
-              }
-            }
-            if (j < columns - 1) {
-              console.log(dots, i-1, j)
-              if (dots[i-1][j].color === dots[i-1][j+1].color) {
-                while(color === dots[i-1][j].color) {
-                  color = this.props.colors[getRandomInt(this.props.colors.length)]
-                }
-              }
-            }
-          }
+        let dotColorParams: DotColorParams | undefined;
+        if (i > 0 && j > 0) {
+          dotColorParams = {
+            left: row[j-1].color,
+            top: dots[i-1][j].color,
+            topLeft: dots[i-1][j-1].color,
+          };
+        }
+        let color = this.getRandomColor();
+        while (!this.isVaildColor(color, dotColorParams)) {
+          color = this.getRandomColor();
         }
 
         row.push({
@@ -153,9 +169,29 @@ class Dots extends React.Component<DotsProps, DotsState> {
         style={{marginBottom: "100px"}}
       >
         <filter id="filter">
-          <feTurbulence type="turbulence" baseFrequency=".4" numOctaves="1" seed="2"  result="turbulence"/>
-          <feGaussianBlur stdDeviation=".2" edgeMode="wrap" result="bluredTurbulance" in="turbulence"></feGaussianBlur>
-          <feComposite in="SourceGraphic" in2="bluredTurbulance" operator="out" x="0%" y="0%" width="100%" height="100%" result="composite"/>
+          <feTurbulence
+            type="turbulence"
+            baseFrequency=".4"
+            numOctaves="1"
+            seed="2"
+            result="turbulence"
+          />
+          <feGaussianBlur
+            stdDeviation=".2"
+            edgeMode="wrap"
+            result="bluredTurbulance"
+            in="turbulence"
+          />
+          <feComposite
+            in="SourceGraphic"
+            in2="bluredTurbulance"
+            operator="out"
+            x="0%"
+            y="0%"
+            width="100%"
+            height="100%"
+            result="composite"
+          />
         </filter>
         {this.state.dots.map(row => (
             row.map(dot => (
