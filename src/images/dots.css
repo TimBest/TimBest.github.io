@@ -1,5 +1,8 @@
 .dots {
   background-color: #f0f5f7;
   background-image: url("./mug.svg");
-  background-size: cover
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+
 }
