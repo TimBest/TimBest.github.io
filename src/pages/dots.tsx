@@ -35,6 +35,7 @@ interface DotColorParams {
   left: string;
   top: string;
   topLeft: string;
+  topRight?: string;
 }
 
 class Dots extends React.Component<DotsProps, DotsState> {
@@ -92,7 +93,7 @@ class Dots extends React.Component<DotsProps, DotsState> {
     return this.props.colors[getRandomInt(this.props.colors.length)]
   }
 
-  isEqual(x: any, y: any, z: any): boolean {
+  isEqual(x: string, y: string, z: string): boolean {
     return x === y && y ===z;
   }
 
@@ -109,6 +110,10 @@ class Dots extends React.Component<DotsProps, DotsState> {
       this.isEqual(dots.topLeft, dots.left, color) ||
       this.isEqual(dots.top, dots.topLeft, color)
     ) {
+      return false;
+    }
+
+    if (dots.topRight && this.isEqual(dots.top, dots.topRight, color)) {
       return false;
     }
 
@@ -133,10 +138,12 @@ class Dots extends React.Component<DotsProps, DotsState> {
 
         let dotColorParams: DotColorParams | undefined;
         if (i > 0 && j > 0) {
+
           dotColorParams = {
             left: row[j-1].color,
             top: dots[i-1][j].color,
             topLeft: dots[i-1][j-1].color,
+            topRight: (j < columns - 1) ? dots[i-1][j+1].color : undefined,
           };
         }
         let color = this.getRandomColor();
