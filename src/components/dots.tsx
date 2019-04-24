@@ -54,6 +54,16 @@ class Dots extends React.Component<DotsProps, DotsState> {
     }
   }
 
+  componentDidUpdate(props: DotsProps, state: DotsState) {
+    if (
+      props.colors.length !== this.props.colors.length
+    ) {
+      this.setState({
+        dots: this.generateDots()
+      })
+    }
+  }
+
   componentDidMount(): void {
     window.addEventListener("resize", this.updateDimensions.bind(this))
     this.setState({
@@ -100,7 +110,7 @@ class Dots extends React.Component<DotsProps, DotsState> {
     if(dots === undefined) {
       return true;
     }
-    if (this.props.colors.length <= 1) {
+    if (this.props.colors.length <= 2) {
       return true;
     }
 
