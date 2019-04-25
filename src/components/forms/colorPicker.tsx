@@ -14,6 +14,15 @@ const Color = styled.button`
   width: 30px;
   border-radius: 50%;
   margin: 5px;
+
+  &:hover, &:focus {
+    background-color: ${props => props.color};
+    cursor: pointer;
+  }
+`
+
+const Selected = styled.span`
+  color: #fff
 `
 
 interface Props {
@@ -53,9 +62,10 @@ class ColorPicker extends React.Component<Props, {}> {
       <Color
         key={color}
         color={color}
-        selected={isSelected}
         onClick={this.onClick.bind(this, isSelected, color)}
-      />
+      >
+        {isSelected ? <Selected>✓</Selected> : null}
+      </Color>
     )
   }
 
