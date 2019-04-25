@@ -62,7 +62,7 @@ class Dots extends React.Component<DotsProps, DotsState> {
       props.paddingX !== this.props.paddingX ||
       props.paddingY !== this.props.paddingY
     ) {
-      this.setState({dots: this.generateDots()})
+      this.updatePosition();
     }
   }
 
@@ -117,6 +117,20 @@ class Dots extends React.Component<DotsProps, DotsState> {
           };
         }
         dot.color = this.getColor(dotColorParams);
+      });
+    })
+    this.setState({dots})
+  }
+
+  updatePosition() {
+    const dots = Array.from(this.state.dots);
+    const columns = this.numberOfColumns(this.getWidth());
+    dots.forEach((row, i) => {
+      const y = this.getY(i);
+      row.forEach((dot, j) => {
+        const x = this.getX(i, j);
+        dot.x = x;
+        dot.y = y;
       });
     })
     this.setState({dots})

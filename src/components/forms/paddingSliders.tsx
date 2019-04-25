@@ -25,7 +25,7 @@ class PaddingSliders extends React.Component<Props, {}> {
     }
   }
 
-
+  // TODO: support negative ranges
   render() {
     return (
       <>
