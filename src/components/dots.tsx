@@ -55,10 +55,8 @@ class Dots extends React.Component<DotsProps, DotsState> {
   }
 
   componentDidUpdate(props: DotsProps, state: DotsState) {
-    if (
-      props.colors.length !== this.props.colors.length
-    ) {
-      this.setState({dots: this.generateDots()})
+    if (props.colors.length !== this.props.colors.length) {
+      this.updateColors();
     }
     if (
       props.paddingX !== this.props.paddingX ||
@@ -91,8 +89,6 @@ class Dots extends React.Component<DotsProps, DotsState> {
     const previousColumns = this.numberOfColumns(this.state.width);
     const width = this.getWidth();
     const columns = this.numberOfColumns(this.getWidth());
-    console.log(previousColumns, columns)
-    console.log(width, this.getWidth())
 
     if (previousColumns === columns || columns <= this.minColumns) {
       this.setState({width});
@@ -104,6 +100,26 @@ class Dots extends React.Component<DotsProps, DotsState> {
                  this.removeColumn(Array.from(this.state.dots));
 
     this.setState({width, dots})
+  }
+
+  updateColors() {
+    const dots = Array.from(this.state.dots);
+    const columns = this.numberOfColumns(this.getWidth());
+    dots.forEach((row, i) => {
+      row.forEach((dot, j) => {
+        let dotColorParams: DotColorParams | undefined;
+        if (i > 0 && j > 0) {
+          dotColorParams = {
+            left: row[j-1].color,
+            top: dots[i-1][j].color,
+            topLeft: dots[i-1][j-1].color,
+            topRight: (j < columns - 2) ? dots[i-1][j+1].color : undefined,
+          };
+        }
+        dot.color = this.getColor(dotColorParams);
+      });
+    })
+    this.setState({dots})
   }
 
   isEqual(x: number, y: number, z: number): boolean {
