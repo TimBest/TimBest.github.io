@@ -9,7 +9,9 @@ function getRandomFloat(min: number, max: number): number {
 }
 
 interface DotsProps {
-  colors: string[]
+  colors: string[];
+  paddingX: number;
+  paddingY: number;
 }
 
 interface Dot {
@@ -33,8 +35,6 @@ interface DotColorParams {
 class Dots extends React.Component<DotsProps, DotsState> {
   rows = 4
   minColumns = 1
-  xPadding = 35
-  yPadding = 3
   offset = 6
   dotDiameter = 100
   dotRadius = this.dotDiameter / 2
@@ -58,9 +58,13 @@ class Dots extends React.Component<DotsProps, DotsState> {
     if (
       props.colors.length !== this.props.colors.length
     ) {
-      this.setState({
-        dots: this.generateDots()
-      })
+      this.setState({dots: this.generateDots()})
+    }
+    if (
+      props.paddingX !== this.props.paddingX ||
+      props.paddingY !== this.props.paddingY
+    ) {
+      this.setState({dots: this.generateDots()})
     }
   }
 
@@ -147,14 +151,14 @@ class Dots extends React.Component<DotsProps, DotsState> {
 
   getY(row: number): number {
     const y = this.dotRadius + (this.dotDiameter * row);
-    const padding = this.yPadding * row;
+    const padding = this.props.paddingY * row;
     return y + padding + this.getOffset();
   }
 
   getX(row: number, column: number): number {
     const x = this.dotRadius + (this.dotDiameter * column);
-    const padding = this.xPadding * column;
-    const indent = row % 2 ? this.dotRadius + (this.xPadding/2) : 0;
+    const padding = this.props.paddingX * column;
+    const indent = row % 2 ? this.dotRadius + (this.props.paddingX/2) : 0;
     return x + padding + indent + this.getOffset();
   }
 
@@ -183,7 +187,7 @@ class Dots extends React.Component<DotsProps, DotsState> {
   }
 
   numberOfColumns(width: number): number {
-    return Math.floor(width / (this.offset + this.dotDiameter + this.xPadding))
+    return Math.floor(width / (this.offset + this.dotDiameter + this.props.paddingX))
   }
 
   generateDots() {
@@ -215,9 +219,9 @@ class Dots extends React.Component<DotsProps, DotsState> {
   }
 
   render() {
-    const height = ((this.dotDiameter + this.yPadding) * this.rows) + this.offset;
+    const height = ((this.dotDiameter + this.props.paddingY) * this.rows) + this.offset;
     const columns = this.state.dots[0].length;
-    const width = ((this.dotDiameter + this.xPadding) * columns) + this.offset + this.dotRadius;
+    const width = ((this.dotDiameter + this.props.paddingX) * columns) + this.offset + this.dotRadius;
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"

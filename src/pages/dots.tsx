@@ -2,6 +2,7 @@ import React from 'react'
 import SEO from '../components/seo'
 import Dots from '../components/dots'
 import ColorPicker from '../components/forms/colorPicker'
+import PaddingSliders from '../components/forms/paddingSliders'
 
 import '../images/dots.css'
 
@@ -11,7 +12,9 @@ interface Props {
 }
 
 interface State {
-  colorPallete: string[],
+  colorPallete: string[];
+  paddingX: number;
+  paddingY: number;
 }
 
 class DotsPage extends React.Component<Props, State> {
@@ -28,7 +31,9 @@ class DotsPage extends React.Component<Props, State> {
         this.colorPalletesOptions[2],
         this.colorPalletesOptions[3],
         this.colorPalletesOptions[5]
-      ]
+      ],
+      paddingX: 35,
+      paddingY: 3,
     }
   }
 
@@ -47,6 +52,14 @@ class DotsPage extends React.Component<Props, State> {
     }
   }
 
+  onChangePaddingX(paddingX: number) {
+    this.setState({paddingX});
+  }
+
+  onChangePaddingY(paddingY: number) {
+    this.setState({paddingY});
+  }
+
   render() {
     return (
       <div className="dots">
@@ -58,9 +71,19 @@ class DotsPage extends React.Component<Props, State> {
             onSelect={this.onColorSelect.bind(this)}
             onUnselect={this.onColorUnselect.bind(this)}
           />
+          <PaddingSliders
+            paddingX={this.state.paddingX}
+            paddingY={this.state.paddingY}
+            onXChange={this.onChangePaddingX.bind(this)}
+            onYChange={this.onChangePaddingY.bind(this)}
+          />
         </div>
         <div style={{display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
-          <Dots colors={this.state.colorPallete}/>
+          <Dots
+            paddingX={this.state.paddingX}
+            paddingY={this.state.paddingY}
+            colors={this.state.colorPallete}
+          />
         </div>
       </div>
     );
