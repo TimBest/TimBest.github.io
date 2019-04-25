@@ -3,7 +3,7 @@ import SEO from '../components/seo'
 import Dots from '../components/dots'
 import ColorPicker from '../components/forms/colorPicker'
 import PaddingSliders from '../components/forms/paddingSliders'
-
+import OffsetSlider from '../components/forms/offsetSlider'
 import '../images/dots.css'
 
 
@@ -15,6 +15,7 @@ interface State {
   colorPallete: string[];
   paddingX: number;
   paddingY: number;
+  maxOffset: number
 }
 
 class DotsPage extends React.Component<Props, State> {
@@ -34,6 +35,7 @@ class DotsPage extends React.Component<Props, State> {
       ],
       paddingX: 35,
       paddingY: 3,
+      maxOffset: 6,
     }
   }
 
@@ -60,11 +62,19 @@ class DotsPage extends React.Component<Props, State> {
     this.setState({paddingY});
   }
 
+  onMaxOffsetChange(maxOffset: number) {
+    this.setState({maxOffset});
+  }
+
   render() {
     return (
       <div className="dots">
         <SEO title="dots"/>
         <div style={{padding: "20px", display: "flex", justifyContent: "center", flexWrap: "wrap"}}>
+          <OffsetSlider
+            maxOffset={this.state.maxOffset}
+            onMaxOffsetChange={this.onMaxOffsetChange.bind(this)}
+          />
           <ColorPicker
             options={this.colorPalletesOptions}
             selected={this.state.colorPallete}
@@ -83,6 +93,7 @@ class DotsPage extends React.Component<Props, State> {
             paddingX={this.state.paddingX}
             paddingY={this.state.paddingY}
             colors={this.state.colorPallete}
+            maxOffset={this.state.maxOffset}
           />
         </div>
       </div>

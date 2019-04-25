@@ -12,6 +12,7 @@ interface DotsProps {
   colors: string[];
   paddingX: number;
   paddingY: number;
+  maxOffset: number;
 }
 
 interface Dot {
@@ -35,7 +36,6 @@ interface DotColorParams {
 class Dots extends React.Component<DotsProps, DotsState> {
   rows = 4
   minColumns = 1
-  offset = 6
   dotDiameter = 100
   dotRadius = this.dotDiameter / 2
 
@@ -60,7 +60,8 @@ class Dots extends React.Component<DotsProps, DotsState> {
     }
     if (
       props.paddingX !== this.props.paddingX ||
-      props.paddingY !== this.props.paddingY
+      props.paddingY !== this.props.paddingY ||
+      props.maxOffset !== this.props.maxOffset
     ) {
       this.updatePosition();
     }
@@ -124,7 +125,6 @@ class Dots extends React.Component<DotsProps, DotsState> {
 
   updatePosition() {
     const dots = Array.from(this.state.dots);
-    const columns = this.numberOfColumns(this.getWidth());
     dots.forEach((row, i) => {
       const y = this.getY(i);
       row.forEach((dot, j) => {
@@ -176,7 +176,7 @@ class Dots extends React.Component<DotsProps, DotsState> {
   }
 
   getOffset() {
-    return getRandomFloat(0, this.offset)
+    return getRandomFloat(0, this.props.maxOffset)
   }
 
   getY(row: number): number {
@@ -217,7 +217,7 @@ class Dots extends React.Component<DotsProps, DotsState> {
   }
 
   numberOfColumns(width: number): number {
-    return Math.floor(width / (this.offset + this.dotDiameter + this.props.paddingX))
+    return Math.floor(width / (this.props.maxOffset + this.dotDiameter + this.props.paddingX))
   }
 
   generateDots() {
@@ -249,9 +249,9 @@ class Dots extends React.Component<DotsProps, DotsState> {
   }
 
   render() {
-    const height = ((this.dotDiameter + this.props.paddingY) * this.rows) + this.offset;
+    const height = ((this.dotDiameter + this.props.paddingY) * this.rows) + this.props.maxOffset;
     const columns = this.state.dots[0].length;
-    const width = ((this.dotDiameter + this.props.paddingX) * columns) + this.offset + this.dotRadius;
+    const width = ((this.dotDiameter + this.props.paddingX) * columns) + this.props.maxOffset + this.dotRadius;
     return (
       <svg
         xmlns="http://www.w3.org/2000/svg"
