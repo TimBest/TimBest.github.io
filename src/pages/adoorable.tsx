@@ -32,7 +32,6 @@ const aDoorIs: ADoorIs[] = [
 
 interface Props {} 
 
-
 interface State {
   descriptor: ADoorIs;
 } 
