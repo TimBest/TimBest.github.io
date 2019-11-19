@@ -6,27 +6,51 @@ interface ADoorIs {
   text: string;
   className: string;
 }
-
+// a beginning, a transition, reception, security
 const aDoorIs: ADoorIs[] = [
   {
-    text: "a portal",
-    className: "portal"
-  },
-  {
-    text: "an opportunity",
-    className: "opportunity"
-  },
-  {
-    text: "a portal",
-    className: "portal"
-  },
-  {
-    text: "a mystery",
-    className: "mystery"
+    text: "Janus",
+    className: "five"
   },
   {
     text: "a home",
-    className: "home"
+    className: "six"
+  },
+  {
+    text: "an exit",
+    className: "seven"
+  },
+  {
+    text: "the past",
+    className: "eight"
+  },
+  {
+    text: "a portal",
+    className: "eight"
+  },
+  {
+    text: "a passage",
+    className: "nine"
+  },
+  {
+    text: "a barrier",
+    className: "nine"
+  },
+  {
+    text: "a mystery",
+    className: "nine"
+  },
+  {
+    text: "the future",
+    className: "eleven"
+  },
+  {
+    text: "an entrance",
+    className: "eleven"
+  },
+  {
+    text: "an opportunity",
+    className: "fourteen"
   },
 ]
 
@@ -99,7 +123,7 @@ export default class Adoorable extends React.Component<Props, State> {
             <div className="open-quote">❝</div>
             <div className="text">did you follow Tim? OR AN INSTAGRAM ACCOUNT ABOUT DOORS THAT MOVES INTO THE META OF DOORS????</div>
           </div>
-          <div className="author">- Kathrine</div>
+          <div className="author">- Katherine</div>
         </div>
       </div>
     </div>
