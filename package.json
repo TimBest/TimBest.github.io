@@ -5,22 +5,22 @@
   "version": "0.1.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.0.76",
-    "gatsby-image": "^2.0.20",
-    "gatsby-plugin-manifest": "^2.0.9",
-    "gatsby-plugin-offline": "^2.0.16",
-    "gatsby-plugin-react-helmet": "^3.0.2",
-    "gatsby-plugin-sharp": "^2.0.14",
-    "gatsby-plugin-typescript": "^2.0.3",
-    "gatsby-plugin-typescript-checker": "^1.0.3",
-    "gatsby-source-filesystem": "^2.0.8",
-    "gatsby-transformer-sharp": "^2.1.8",
-    "prop-types": "^15.6.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-helmet": "^5.2.0",
-    "styled-components": "^4.1.3",
-    "typescript": "^3.2.2"
+    "gatsby": "^5.13.3",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-manifest": "^5.13.1",
+    "gatsby-plugin-offline": "^6.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
+    "gatsby-plugin-typescript": "^5.13.1",
+    "gatsby-plugin-typescript-checker": "^1.1.1",
+    "gatsby-source-filesystem": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-helmet": "^6.1.0",
+    "sharp": "^0.33.2",
+    "styled-components": "^6.1.8",
+    "typescript": "^5.3.3"
   },
   "keywords": [
     "gatsby"
@@ -33,18 +33,17 @@
     "format": "prettier --write \"src/**/*.js\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
   },
-  "devDependencies": {
-    "@types/react": "^16.7.18",
-    "@types/react-helmet": "^5.0.8",
-    "@types/styled-components": "^4.1.6",
-    "gh-pages": "^2.0.1",
-    "prettier": "^1.15.2"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/gatsbyjs/gatsby-starter-default"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.48",
+    "@types/styled-components": "^5.1.34",
+    "gh-pages": "^6.1.1",
+    "prettier": "^3.2.4"
   }
 }
