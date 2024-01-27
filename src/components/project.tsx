@@ -4,7 +4,6 @@ import styled from 'styled-components'
 interface Props {
   href: string
   title: string
-  status: 'wip' | 'dead' | 'maintained'
   description: string
 }
 
@@ -26,10 +25,6 @@ const Link = styled.a`
   &:focus {
     color: #4e66c4;
   }
-  &[target="_blank"]::after {
-  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-  margin: 0 3px 0 5px;
-}
 `
 
 const Description = styled.p`
@@ -40,7 +35,6 @@ const Badge = styled.div`
   display: none;
   text-align: center;
   color: #fff;
-  background-color: ${props => props.status === 'wip' ? '#000' : '#2f565f'};
 
   padding: 3px 5px;
   border-radius: 4px;
@@ -53,7 +47,6 @@ const Project = ({title, href, status, description}: Props) => (
       <h3>
         <Link href={href} target="_blank">{title}</Link>
       </h3>
-      <Badge status={status}>{status}</Badge>
     </Heading>
     <Description>{description}</Description>
   </Wrapper>

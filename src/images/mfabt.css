@@ -1,4 +1,16 @@
-.background { background-image: url("./snow_fall_stucco.svg"); background-size: contain; height: 100vh; width: 100vw; display: grid; align-items: center; justify-items: center; padding: 10vmin; }
+.background { 
+  background-image: url("./snow_fall_stucco.svg");
+  background-size: contain;
+  height: 100vh;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  padding: 10vmin;
+}
+
+body {
+  margin: 0;
+}
 
 .frame { box-shadow: 0 6px 12px -2px rgba(20, 0, 0, 0.25), 0 3px 7px -3px rgba(0, 0, 0, 0.3); }
 

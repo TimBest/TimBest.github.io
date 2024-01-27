@@ -14,6 +14,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-image`,
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-manifest`,

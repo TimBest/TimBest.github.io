@@ -1,5 +1,4 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import SEO from '../components/seo'
 import Project from '../components/project'
 import ContentSection from '../components/ui/container'
@@ -11,6 +10,7 @@ import dots from '../images/dot.svg'
 import houndstooth from '../images/Houndstooth.svg'
 import isometric from '../images/with_lines_pattern.svg'
 import lines from '../images/triangles.svg'
+import { Card } from '../components/card'
 
 const SectionTitle = styled.h2`
   padding-bottom: 1rem;
@@ -26,27 +26,7 @@ const Linka = styled.a`
   &:focus {
     color: #4e66c4;
   }
-  &[target="_blank"]::after {
-  content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
-  margin: 0 3px 0 5px;
 `
-
-interface CardProps {
-  href: string
-  title: string
-  image: string
-}
-
-const Card = ({href, title, image}: CardProps) => (
-  <Link className="card" to={href}>
-    <div className="card-image">
-      <img src={image}/>
-    </div>
-    <div className="card-content">
-      {title}
-    </div>
-  </Link>
-);
 
 const IndexPage = () => (
   <div id="index">
@@ -58,62 +38,61 @@ const IndexPage = () => (
       <ContentSection>
         <SectionTitle>Projects</SectionTitle>
         <Project
-          href="https://github.com/TimBest/tessellation-sketchplugin"
-          title="Tessellation SketchPlugin"
-          status="wip"
-          description={`
-            A sketch plugin to aid in the development of svg tessellations
-          `}
-        />
-        <Project
           href="http://generalset.io/"
           title="GeneralSet.io"
-          status="wip"
           description={`
-            An adaption of the game SET to work with any arbitratry features
-            (shape, color, shadding, etc.)
+            An adaption of the game SET to work with any arbitrary features
+            (shape, color, shading, etc.)
           `}
         />
         <Project
-          href="http://startupslikeme.gitlab.io/"
-          title="StartupsLike.me"
-          status="dead"
+          href="https://simplereport.gov/"
+          title="SimpleReport"
           description={`
-            An email service that uses a recomendation engine to send you 3 startups that you might
-            like every week
+          A better way to report COVID-19 tests 
           `}
         />
         <Project
-          href="http://timbest.net/projects/composers_couch/"
-          title="ComposersCouch.com"
-          status="dead"
+          href="https://modelmaker.titanic.design/"
+          title="Site Model Maker"
+          description={`
+            Tool for architects to quickly make 3d printable sites models.
+          `}
+        />
+        <Project
+          href="/composerscouch/"
+          title="ComposersCouch"
           description={`
             A Web service to improve how Fans, Musicians and Venues connect
-          `}
-        />
-        <Project
-          href="https://github.com/TimBest/django-multi-form-view"
-          title="Django MultiFormView"
-          status="maintained"
-          description={`
-            Django class based views for using more than one form in a single view
           `}
         />
       </ContentSection>
       <ContentSection>
         <SectionTitle>One Day Builds</SectionTitle>
         <div className="patterns">
-          <Card href="/houndstooth/" title="Houndstooth" image={houndstooth}/>
-          <Card href="/lines/" title="Lines" image={lines}/>
-          <Card href="/isometric/" title="Isometric" image={isometric}/>
-          <Card href="/dots/" title="Carnival Dots" image={dots}/>
+          <Card href="/houndstooth/" title="Houndstooth" image={<img src={houndstooth}/>}/>
+          <Card href="/lines/" title="Lines" image={<img src={lines}/>}/>
+          <Card href="/isometric/" title="Isometric" image={<img src={isometric}/>}/>
+          <Card href="/dots/" title="Carnival Dots" image={<img src={dots}/>}/>
         </div>
       </ContentSection>
       <ContentSection>
         <SectionTitle>Blog</SectionTitle>
-        <Linka href="https://onesignal.com/blog/modernizing-our-frontend-part-1-coffeescript-typescript/" target="_blank">
-          Modernizing OneSignal's Frontend
-        </Linka>
+        <div style={{paddingBottom: 15}}>
+          <Linka href="https://blog.timothy.best/" target="_blank">
+            The great migration
+          </Linka>
+        </div>
+        <div style={{paddingBottom: 15}}>
+          <Linka href="https://medium.com/the-u-s-digital-service/why-we-serve-tim-best-a66ece730d46" target="_blank">
+            Why We Serve: Tim Best
+          </Linka>
+        </div>
+        <div style={{paddingBottom: 15}}>
+          <Linka href="https://onesignal.com/blog/modernizing-our-frontend-part-1-coffeescript-typescript/" target="_blank">
+            Modernizing OneSignal's Frontend
+          </Linka>
+        </div>
       </ContentSection>
     </div>
     <footer className="footer">
