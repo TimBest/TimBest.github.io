@@ -8,9 +8,8 @@ const ContentSection = styled.section`
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  &:first-child {
-    padding-top: 4rem;
-  }
+  padding-top: 2rem;
+  
 `
 
 export default ContentSection

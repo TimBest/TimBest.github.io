@@ -26,7 +26,7 @@ const StyledCard = styled(Link)`
 const CardImage = styled.img`
   height: 180px;
   width: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   background: #f7f7f7;
   margin-left: auto;
