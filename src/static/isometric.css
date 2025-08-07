@@ -2,16 +2,6 @@
 .paper h1 { text-align: center; color: #58c858; font-size: 3em; }
 .paper p { text-align: center; color: #58c858; font-size: 1.5em; }
 
-.grid { display: grid; grid-template-columns: 200px 200px; overflow: hidden; height: 230.9401076759px; color: #252525; }
-.grid .cell { height: 230.9401076759px; }
-.grid .cell .shape { width: 200px; height: 230.9401076759px; }
-.grid .cell:nth-child(even) .shape { float: left; shape-outside: polygon(0 0, 100% 0, 0 50%, 100% 100%, 0 100%); clip-path: polygon(0 0, 100% 0, 0 50%, 100% 100%, 0 100%); }
-.grid .cell:nth-child(even) .content { background-color: #58c858; height: 230.9401076759px; clip-path: polygon(0 50%, 100% 0, 100% 100%); }
-.grid .cell:nth-child(odd) .shape { float: right; shape-outside: polygon(100% 0, 0 0, 100% 50%, 0 100%, 100% 100%); clip-path: polygon(100% 0, 0 0, 100% 50%, 0 100%, 100% 100%); }
-.grid .cell:nth-child(odd) .content { background-color: #bfcfe5; height: 230.9401076759px; clip-path: polygon(0 0, 100% 50%, 0 100%); }
-.grid .row1 { position: relative; top: -115.4700538379px; left: -200px; }
-.grid .row2 { position: relative; top: -230.9401076759px; }
-
 .flex { height: 53.8860251244vw; overflow: hidden; background-color: #333; }
 .flex .row { display: flex; color: #252525; height: 1.9245008973vw; top: -1.9245008973vw; }
 .flex .row .cell { height: 3.8490017946vw; }

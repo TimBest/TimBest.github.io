@@ -1,132 +1,94 @@
 import * as React from 'react'
 import SEO from '../components/seo'
-import '../images/adoorable.css'
+import '../static/adoorable.css'
 
 interface ADoorIs {
   text: string;
   className: string;
 }
-// a beginning, a transition, reception, security
+
+const insta = "https://www.instagram.com/an.adoorable.world/"
 const aDoorIs: ADoorIs[] = [
-  {
-    text: "Janus",
-    className: "five"
-  },
-  {
-    text: "a home",
-    className: "six"
-  },
-  {
-    text: "an exit",
-    className: "seven"
-  },
-  {
-    text: "the past",
-    className: "eight"
-  },
-  {
-    text: "a portal",
-    className: "eight"
-  },
-  {
-    text: "a passage",
-    className: "nine"
-  },
-  {
-    text: "a barrier",
-    className: "nine"
-  },
-  {
-    text: "a mystery",
-    className: "nine"
-  },
-  {
-    text: "the future",
-    className: "eleven"
-  },
-  {
-    text: "an entrance",
-    className: "eleven"
-  },
-  {
-    text: "an opportunity",
-    className: "fourteen"
-  },
+  { text: "Janus", className: "five" },
+  { text: "a home", className: "six" },
+  { text: "an exit", className: "seven" },
+  { text: "the past", className: "eight" },
+  { text: "a portal", className: "eight" },
+  { text: "a passage", className: "nine" },
+  { text: "a barrier", className: "nine" },
+  { text: "a mystery", className: "nine" },
+  { text: "the future", className: "eleven" },
+  { text: "an entrance", className: "eleven" },
+  { text: "an opportunity", className: "fourteen" },
 ]
 
-interface Props {} 
 
-interface State {
-  descriptor: ADoorIs;
-} 
+interface QuoteProps {
+  text: string;
+  author: string;
+}
 
-export default class Adoorable extends React.Component<Props, State> {
-  insta = "https://www.instagram.com/a_door.able/"
+const Quote: React.FC<QuoteProps> = ({ text, author }) => (
+  <div className="quote">
+    <div className="body">
+      <div className="open-quote">❝</div>
+      <div className="text">{text}</div>
+    </div>
+    <div className="author">- {author}</div>
+  </div>
+)
 
-  constructor(props: Props) {
-    super(props)
-    this.state = {
-      descriptor: aDoorIs[Math.floor(Math.random()*aDoorIs.length)]
-    }
+
+const getRandomDescriptor = (exclude?: ADoorIs) => {
+  if (aDoorIs.length < 2) {
+    return aDoorIs[0]
   }
+  let descriptor = exclude
+  while (descriptor === exclude) {
+    descriptor = aDoorIs[Math.floor(Math.random() * aDoorIs.length)]
+  }
+  return descriptor!
+}
 
-  componentDidMount() {
-    window.setInterval(() => {
-      if (aDoorIs.length < 2) {
-        return
-      }
-      let descriptor = this.state.descriptor
-      while (descriptor === this.state.descriptor) {
-        descriptor = aDoorIs[Math.floor(Math.random()*aDoorIs.length)]
 
-      }
-      this.setState({descriptor})
+const Adoorable: React.FC = () => {
+  const [descriptor, setDescriptor] = React.useState<ADoorIs>(
+    aDoorIs[Math.floor(Math.random() * aDoorIs.length)]
+  )
+
+  React.useEffect(() => {
+    const interval = window.setInterval(() => {
+      setDescriptor(prev => getRandomDescriptor(prev))
     }, 4000)
-  }
+    return () => clearInterval(interval)
+  }, [])
 
-  render =() => (
+  return (
     <div className="adoorable">
-      <SEO title="@a_door.able"/>
+      <SEO title="@an.adoorable.world"/>
       <div className="container">
         <div className="subtitle">
           <h2>A door is </h2>
-          <div className={`typewriter ${this.state.descriptor.className}`}>{this.state.descriptor.text}</div>
+          <div className={`typewriter ${descriptor.className}`}>{descriptor.text}</div>
         </div>
         <p>
-        <a href={this.insta} target="_blank">@a_door.able</a> is an instagram profile with a curated list of the BEST doors. Follow me and part take
+          <a href={insta} target="_blank" rel="noopener noreferrer">@an.adoorable.world</a> is an instagram profile with a curated list of the BEST doors. Follow me and part take
           on a journey as we explore the doors of this world to find the truth of what it means to be a door.
         </p>
         <h3>What the fans are saying</h3>
-        <div className="quote">
-          <div className="body">
-            <div className="open-quote">❝</div>
-            <div className="text">Lol this is the most Tim thing I have heard!!</div>
-          </div>
-          <div className="author">- Amit</div>
-        </div>
-        <div className="quote">
-          <div className="body">
-            <div className="open-quote">❝</div>
-            <div className="text">Hah</div>
-          </div>
-          <div className="author">- Jake</div>
-        </div>
-        <div className="quote">
-          <div className="body">
-            <div className="open-quote">❝</div>
-            <div className="text">All of those are amazing</div>
-          </div>
-          <div className="author">- John</div>
-        </div>
-        <div className="quote">
-          <div className="body">
-            <div className="open-quote">❝</div>
-            <div className="text">did you follow Tim? OR AN INSTAGRAM ACCOUNT ABOUT DOORS THAT MOVES INTO THE META OF DOORS????</div>
-          </div>
-          <div className="author">- Katherine</div>
-        </div>
+        <Quote text="Lol this is the most Tim thing I have heard!!" author="Amit" />
+        <Quote text="A picture with YOU in it! Yay! " author="Leslie" />
+        <Quote text="did you follow Tim? OR AN INSTAGRAM ACCOUNT ABOUT DOORS?!?!" author="Katherine" />
+        <Quote text="Matches your Instagram username on multiple levels" author="Nick" />
+        <Quote text="Hah" author="Jake" />
+        <Quote text="All of those are amazing" author="John" />
+        <Quote text="😮" author="Steve" />
+        <Quote text="The colors and textures in this one are really captivating !" author="Jayna" />
+        <Quote text="*" author="Roland" />
+        <Quote text="Beautiful" author="Liz" />
       </div>
     </div>
   )
 }
 
+export default Adoorable

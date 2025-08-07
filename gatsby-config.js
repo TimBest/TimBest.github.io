@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Timonthy Best`,
+    title: `Timothy Best`,
     description: `Timothy Best's website`,
     author: `Timothy Best`,
   },
@@ -8,8 +8,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        name: `static`,
+        path: `${__dirname}/src/static`,
       },
     },
     `gatsby-transformer-sharp`,
@@ -25,7 +25,7 @@ module.exports = {
         background_color: `#852237`,
         theme_color: `#852237`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/static/icon.png`, // This path is relative to the root of the site.
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality

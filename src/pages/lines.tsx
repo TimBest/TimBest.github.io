@@ -1,6 +1,6 @@
 import * as React from 'react'
 import SEO from '../components/seo'
-import '../images/lines.css'
+import '../static/lines.css'
 
 function lines(backgroundSize: number, fill: string, rotation: number, rotationCenter: number): string[] {
   return [

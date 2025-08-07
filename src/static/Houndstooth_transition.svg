@@ -6,25 +6,25 @@
       <feGaussianBlur in="SourceGraphic" stdDeviation=".08"/>
     </filter>
     <pattern id="stitch1" x="0" y="0" width=".01" height=".01">
-      <path d="M0 0 V4 H4 V0 Z" fill="#081d1f"/>
+      <path d="M0 0 V4 H4 V0 Z" fill="#6C4CBD"/>
       <path
         d="M1.2 .15 H2.85 V2.55 H2 V1.6 H1.2 Z"
-        fill="#2f565f"
+        fill="#5603AD"
         filter="url(#blur)"
       />
     </pattern>
     <pattern id="stitch2" x="0" y="0" width=".01" height=".01">
-      <path d="M0 0 V4 H4 V0 Z" fill="#2f565f"/>
+      <path d="M0 0 V4 H4 V0 Z" fill="#5603AD"/>
       <path
         d="M.15 1.25 H.75 V2.25 H1.3 V2.85 H.15 Z"
-        fill="#081d1f"
+        fill="#6C4CBD"
         filter="url(#blur)"
       />
     </pattern>
-    <linearGradient id="Gradient" x1="0" x2="0" y1="0" y2="1">
-      <stop stop-opacity="0" offset="0%" stop-color="#2f565f"/>
-      <stop stop-opacity="1" offset="30%" stop-color="#2f565f"/>
-    </linearGradient>
+      <linearGradient id="Gradient" x1="0" x2="0" y1="0" y2="1">
+        <stop stop-opacity="0" offset="0%" stop-color="#5603AD"/>
+        <stop stop-opacity="1" offset="35%" stop-color="#5603AD"/>
+      </linearGradient>
   </defs>
   <path d="M0 0 V400 H400 V0 Z" fill="url(#stitch1)"/>
   <path

@@ -31,17 +31,7 @@ const Description = styled.p`
   margin: 0.7rem 0 1.5rem 0;
 `
 
-const Badge = styled.div`
-  display: none;
-  text-align: center;
-  color: #fff;
-
-  padding: 3px 5px;
-  border-radius: 4px;
-  text-transform: uppercase;
-`
-
-const Project = ({title, href, status, description}: Props) => (
+const Project = ({title, href, description}: Props) => (
   <Wrapper>
     <Heading>
       <h3>

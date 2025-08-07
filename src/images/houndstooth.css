@@ -1,8 +1,0 @@
-.houndstooth { background-color: #fff; background-image: url("./Houndstooth.svg"); background-repeat: repeat; background-size: 200px; background-position: center bottom; height: 100vh; width: 100vw; display: grid; align-items: center; justify-items: center; }
-
-.houndstooth-transition { background-color: #fff; background-image: url("./Houndstooth_transition.svg"); background-repeat: repeat; background-size: 200px; background-position: center top; height: 100px; }
-
-.green-section { background-color: #2f565f; height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; }
-.green-section p { color: #fff; }
-
-.title { font-family: "Montserrat", "Open Sans", sans-serif; font-size: 90px; color: #fff; text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1); }

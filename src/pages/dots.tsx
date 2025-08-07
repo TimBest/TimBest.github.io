@@ -4,7 +4,7 @@ import Dots from '../components/dots'
 import ColorPicker from '../components/forms/colorPicker'
 import PaddingSliders from '../components/forms/paddingSliders'
 import OffsetSlider from '../components/forms/offsetSlider'
-import '../images/dots.css'
+import '../static/dots.css'
 
 
 interface Props {
