@@ -1,6 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Name from './Name'
+import { lighten } from 'polished'
 
 type Props = {
   label: string
@@ -23,20 +24,20 @@ const Switch = styled.span<{ color: string; checked: boolean }>`
   width: 40px;
   height: 22px;
   background: ${({ checked, color }) => (checked ? color : '#000000')};
-  border: 2px solid ${({ checked }) => (checked ? '#fff' : '#444')};
-  box-shadow: ${({ checked, color }) => (checked ? `0 0 5px ${color}` : 'none')};
+  border: 2px solid ${({ checked, color }) => (checked ? lighten(0.1, color) : '#444')};
+  box-shadow: ${({ checked, color }) => (checked ? `0 0 2px ${color}` : 'none')};
   border-radius: 22px;
   transition: background 0.2s;
   vertical-align: middle;
 `
 
-const Slider = styled.span<{ checked: boolean }>`
+const Slider = styled.span<{ color: string; checked: boolean }>`
   position: absolute;
   top: 2px;
   left: ${({ checked }) => (checked ? '20px' : '2px')};
   width: 18px;
   height: 18px;
-  background: ${({ checked }) => (checked ? '#fff' : '#888')};;
+  background: ${({ checked, color }) => (checked ? lighten(0.4, color) : '#333')};
   border-radius: 50%;
   transition: left 0.2s;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
@@ -61,7 +62,7 @@ const Toggle: React.FC<Props> = ({ label, checked, onChange, color }) => (
         role="switch"
       />
       <Switch color={color} checked={checked}>
-        <Slider checked={checked} />
+        <Slider color={color} checked={checked} />
       </Switch>
     </span>
   </Label>

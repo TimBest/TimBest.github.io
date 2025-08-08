@@ -60,6 +60,25 @@ interface Props {
   color: string
 }
 
+const TILE_SIZE = 70
+
+function getGridSize(width: number, height: number) {
+  return {
+    rows: Math.ceil(height / TILE_SIZE),
+    cols: Math.ceil(width / TILE_SIZE),
+  }
+}
+
+function seededRandom(seed: number) {
+  // Mulberry32 PRNG
+  return function () {
+    let t = (seed += 0x6d2b79f5)
+    t = Math.imul(t ^ (t >>> 15), t | 1)
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61)
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
+  }
+}
+
 const Tiler: React.FC<Props> = ({
   rotationCenter,
   rotationGranularity,
@@ -69,6 +88,10 @@ const Tiler: React.FC<Props> = ({
     width: 100,
     height: 100,
   })
+
+  // Store the shape/rotation indices for each tile
+  const [tileIndices, setTileIndices] = React.useState<number[][] | null>(null)
+  const [rotationIndices, setRotationIndices] = React.useState<number[][] | null>(null)
 
   React.useEffect(() => {
     function updateDimensions() {
@@ -82,15 +105,48 @@ const Tiler: React.FC<Props> = ({
     return () => window.removeEventListener('resize', updateDimensions)
   }, [])
 
+  React.useEffect(() => {
+    // Precompute indices for shapes and rotations
+    const { rows, cols } = getGridSize(dimensions.width, dimensions.height)
+    // Use a seed based on dimensions to keep it stable between renders
+    const seed = dimensions.width * 100000 + dimensions.height
+    const rand = seededRandom(seed)
+    const shapeIndices: number[][] = []
+    const rotIndices: number[][] = []
+    for (let i = 0; i < rows; i++) {
+      shapeIndices[i] = []
+      rotIndices[i] = []
+      for (let j = 0; j < cols; j++) {
+        shapeIndices[i][j] = Math.floor(rand() * lines(0, '', 0, 0).length)
+        rotIndices[i][j] = Math.floor(rand() * rotationGranularity)
+      }
+    }
+    setTileIndices(shapeIndices)
+    setRotationIndices(rotIndices)
+  }, [dimensions.width, dimensions.height, rotationGranularity])
+
+  const { rows, cols } = getGridSize(dimensions.width, dimensions.height)
+
+  // Ensure tileIndices and rotationIndices are initialized and match the current grid size
+  if (
+    !tileIndices ||
+    !rotationIndices ||
+    tileIndices.length !== rows ||
+    rotationIndices.length !== rows ||
+    tileIndices.some(rowArr => rowArr.length !== cols) ||
+    rotationIndices.some(rowArr => rowArr.length !== cols)
+  ) {
+    return null
+  }
+
   const lineArray: JSX.Element[] = []
-  for (let i = 0; i < dimensions.height; i = i + 70) {
+  for (let i = 0; i < rows; i++) {
     let row = ''
-    for (let j = 0; j < dimensions.width; j = j + 70) {
+    for (let j = 0; j < cols; j++) {
       const rotation =
-        Math.floor(Math.random() * rotationGranularity) *
-        (360 / rotationGranularity)
-      const shapes = lines(70, '#1c1b26', rotation, rotationCenter)
-      row += shapes[Math.floor(Math.random() * shapes.length)]
+        rotationIndices[i][j] * (360 / rotationGranularity)
+      const shapes = lines(TILE_SIZE, '#1c1b26', rotation, rotationCenter)
+      row += shapes[tileIndices[i][j]]
     }
     lineArray.push(
       <Row

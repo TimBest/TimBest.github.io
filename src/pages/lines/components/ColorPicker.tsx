@@ -1,5 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
+import { darken, lighten } from 'polished'
 import Name from './Name'
 
 type Props = {
@@ -8,13 +9,15 @@ type Props = {
   onChange: (color: string) => void
 }
 
+const Wrapper = styled.label`
+  display: flex;
+  align-items: center;
+  gap: 6px;
+`
 const Label = styled.label`
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
 `
-
 const HiddenRadio = styled.input.attrs({ type: 'radio' })`
   width: 20px;
   height: 20px;
@@ -23,19 +26,16 @@ const HiddenRadio = styled.input.attrs({ type: 'radio' })`
   opacity: 0;
   pointer-events: none;
 `
-
 const ColorCircle = styled.span<{ selected: boolean; color: string }>`
   display: inline-block;
   width: 24px;
   height: 24px;
-  background: ${({ color }) => color};
-  border-radius: 3px;
-  border: ${({ selected }) => (selected ? '2px solid #fff' : '2px solid #444')};
+  background: ${({ selected, color }) => (selected ? color : darken(0.3, color))};
+  border: 1px solid ${({ selected, color }) => (selected ? lighten(0.1, color) : '#333')};
   box-shadow: ${({ selected, color }) => (selected ? `0 0 5px ${color}` : 'none')};
   position: relative;
   cursor: pointer;
 `
-
 const OverlayRadio = styled.input.attrs({ type: 'radio', readOnly: true })`
   position: absolute;
   opacity: 0;
@@ -50,7 +50,7 @@ const ColorPicker: React.FC<Props> = ({
   value,
   onChange,
 }) => (
-  <>
+  <Wrapper>
     <Name color={value}>Color</Name>
     {colors.map((c) => (
       <Label key={c}>
@@ -73,6 +73,6 @@ const ColorPicker: React.FC<Props> = ({
         </ColorCircle>
       </Label>
     ))}
-  </>
+  </Wrapper>
 )
 export default ColorPicker
