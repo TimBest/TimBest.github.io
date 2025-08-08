@@ -3,25 +3,26 @@ import styled from 'styled-components'
 import Name from './Name'
 import { lighten } from 'polished'
 
-const WIDTH = "70px";
-const TOP_MARGIN = "5px";
+const SEGMENT_VALUES = [1, 2, 4, 8, 16, 45, 90, 180, 360]
+const SEGMENT_WIDTH = 11;
+const SEGMENT_GAP = 3;
+const WIDTH = `${SEGMENT_VALUES.length * SEGMENT_WIDTH + (SEGMENT_VALUES.length - 1) * SEGMENT_GAP}px`;
 
-const Label = styled.label`
-  width: ${WIDTH};
+const SegmentBar = styled.div`
+    display: flex;
+    align-items: center;
+    gap: ${SEGMENT_GAP}px;
 `
 const Segment = styled.span<{ color: string; active: boolean }>`
-  margin-top: ${TOP_MARGIN};
   display: inline-block;
   height: 20px;
-  width: 11px;
-  margin-right: 3px;
+  min-width: ${SEGMENT_WIDTH}px;
   background: ${({ color, active }) => (active ? `${lighten(0.2, color)}` : '#444')};
-
 `
 const Input = styled.input`
   position: absolute;
   left: 0;
-  top: ${TOP_MARGIN};
+  top: 0;
   border-radius: 6px;
   height: 20px;
   margin: 0;
@@ -40,27 +41,25 @@ const Input = styled.input`
     width: 11px;
   }
     &::-moz-range-track {
-            background: transparent;
-            height: 100%;
-        }
-           &:: -moz-range-thumb {
-            background: transparent; /* Changed to fully transparent */
-            border: none;
-            height: 20px;
-            width: 11px;
-        }
-            &::-ms-track {
-            background: transparent;
-            border-color: transparent;
-            color: transparent;
-            height: 100%;
-        }
+      background: transparent;
+      height: 100%;
+    }
+      &:: -moz-range-thumb {
+      background: transparent; /* Changed to fully transparent */
+      border: none;
+      height: 20px;
+      width: 11px;
+    }
+      &::-ms-track {
+      background: transparent;
+      border-color: transparent;
+      color: transparent;
+      height: 100%;
+    }
 `
 const Wrapper = styled.div`
   position: relative;
 `
-
-const SEGMENT_VALUES = [1, 2, 4, 8, 360]
 
 const Range: React.FC<{
   color: string
@@ -74,14 +73,19 @@ const Range: React.FC<{
   }
 
   return (
-    <Label>
-      <Name color={color}>
+    <label>
+      <div>
+              <Name color={color}>
         {label}:{value}
       </Name>
+      </div>
+      <div>
       <Wrapper>
-        {SEGMENT_VALUES.map(v => (
-          <Segment key={v} color={color} active={v <= value}/>
-        ))}
+        <SegmentBar>
+          {SEGMENT_VALUES.map(v => (
+            <Segment key={v} color={color} active={v <= value}/>
+          ))}
+        </SegmentBar>
         <Input
           type="range"
           value={SEGMENT_VALUES.indexOf(value)}
@@ -91,7 +95,9 @@ const Range: React.FC<{
           step={1}
         />
       </Wrapper>
-    </Label>
+      </div>
+
+    </label>
   )
 }
 

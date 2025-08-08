@@ -9,7 +9,9 @@ type Props = {
   onChange: (color: string) => void
 }
 
-const Wrapper = styled.label`
+const Wrapper = styled.div`
+`
+const RadioGroup = styled.div`
   display: flex;
   align-items: center;
   gap: 6px;
@@ -52,27 +54,30 @@ const ColorPicker: React.FC<Props> = ({
 }) => (
   <Wrapper>
     <Name color={value}>Color</Name>
-    {colors.map((c) => (
-      <Label key={c}>
-        <HiddenRadio
-          name="color-radio"
-          value={c}
-          checked={value === c}
-          onChange={() => onChange(c)}
-        />
-        <ColorCircle
-          color={c}
-          selected={value === c}
-          onClick={() => onChange(c)}
-        >
-          <OverlayRadio
+    <RadioGroup>
+      {colors.map((c) => (
+        <Label key={c}>
+          <HiddenRadio
             name="color-radio"
             value={c}
             checked={value === c}
+            onChange={() => onChange(c)}
           />
-        </ColorCircle>
-      </Label>
-    ))}
+          <ColorCircle
+            color={c}
+            selected={value === c}
+            onClick={() => onChange(c)}
+          >
+            <OverlayRadio
+              name="color-radio"
+              value={c}
+              checked={value === c}
+            />
+          </ColorCircle>
+        </Label>
+      ))}
+    </RadioGroup>
+
   </Wrapper>
 )
 export default ColorPicker
