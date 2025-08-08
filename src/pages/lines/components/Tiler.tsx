@@ -1,6 +1,20 @@
 import * as React from 'react'
-import SEO from '../components/seo'
-import '../static/lines.css'
+import styled from 'styled-components'
+
+const Container = styled.div`
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+`
+const Row = styled.div`
+  white-space: nowrap;
+`
+const SvgWrapper = styled.div`
+  & svg {
+    margin-right: -4px;
+    margin-bottom: -4px;
+  }
+`
 
 function lines(backgroundSize: number, fill: string, rotation: number, rotationCenter: number): string[] {
   return [
@@ -51,96 +65,55 @@ function lines(backgroundSize: number, fill: string, rotation: number, rotationC
 }
 
 interface Props {
-  rotationCenter: number
-  rotationGranularity: number
+  rotationCenter: number;
+  rotationGranularity: number;
+  color: string;
 }
 
-interface State {
-  width: number;
-  height: number;
-}
 
-class Lines extends React.Component<Props, State> {
-  colors: string[] = ['#55cc94', '#9455cc', '#55c8cc', '#cc558c', '#cc9455']
-  color: string = this.colors[Math.floor(Math.random()*this.colors.length)]
 
-  constructor(props: Props) {
-    super(props)
-    this.state = {
-      width: 100,
-      height: 100
+const Tiler: React.FC<Props> = ({ rotationCenter, rotationGranularity, color }) => {
+  const [dimensions, setDimensions] = React.useState({ width: 100, height: 100 })
+
+  React.useEffect(() => {
+    function getWidth() {
+      return window.innerWidth || document.body.clientWidth
     }
-  }
-
-  componentDidMount() {
-    window.addEventListener("resize", this.updateDimensions.bind(this))
-    this.setState({
-      width: this.getWidth(),
-      height: this.getHeight()
-    })
-  }
-
-
-  getHeight() {
-    return window.innerHeight || document.body.clientHeight
-  }
-
-  getWidth() {
-    return window.innerWidth || document.body.clientWidth
-  }
-
-  /**
-   * Calculate & Update state of new dimensions
-   */
-  updateDimensions() {
-    // TODO: this only needs to update state when width or height changes more then the shape size
-    this.setState({ width: this.getWidth(), height: this.getHeight() })
-  }
-
-  render() {
-    const lineArray: JSX.Element[] = []
-
-    for (var i = 0; i < this.state.height; i = i + 70) {
-      let row = ""
-      for (var j = 0; j < this.state.width; j = j + 70) {
-        var rotation = Math.floor(Math.random()*this.props.rotationGranularity) * (360/this.props.rotationGranularity)
-        var shapes = lines(70, '#1c1b26', rotation, this.props.rotationCenter)
-        row += (shapes[Math.floor(Math.random()*shapes.length)])
-      }
-      lineArray.push(
-        <div
-          className="row"
-          dangerouslySetInnerHTML={{__html: row}}
-          style={{backgroundColor: this.color}}
-        />
-      )
+    function getHeight() {
+      return window.innerHeight || document.body.clientHeight
     }
-    return (
-      <div className="lines">
-       {lineArray}
-      </div>
-    );
+    function updateDimensions() {
+      setDimensions({ width: getWidth(), height: getHeight() })
+    }
+    updateDimensions()
+    window.addEventListener('resize', updateDimensions)
+    return () => window.removeEventListener('resize', updateDimensions)
+  }, [])
+
+  const lineArray: JSX.Element[] = []
+  for (let i = 0; i < dimensions.height; i = i + 70) {
+    let row = ""
+    for (let j = 0; j < dimensions.width; j = j + 70) {
+      const rotation = Math.floor(Math.random() * rotationGranularity) * (360 / rotationGranularity)
+      const shapes = lines(70, '#1c1b26', rotation, rotationCenter)
+      row += shapes[Math.floor(Math.random() * shapes.length)]
+    }
+    lineArray.push(
+      <Row
+        key={i}
+        style={{ backgroundColor: color }}
+        dangerouslySetInnerHTML={{ __html: row }}
+      />
+    )
   }
+
+  return (
+    <Container>
+      <SvgWrapper>
+        {lineArray}
+      </SvgWrapper>
+    </Container>
+  )
 }
 
-
-const LinesPage = () =>  (
-  <div>
-    <SEO title="lines"/>
-    <Lines
-      rotationCenter={200}
-      rotationGranularity={4}
-    />
-    <Lines
-      rotationCenter={35}
-      rotationGranularity={4}
-    />
-    <Lines
-      rotationCenter={35}
-      rotationGranularity={360}
-    />
-  </div>
-)
-
-
-export default LinesPage
+export default Tiler
