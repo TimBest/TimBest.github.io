@@ -1,17 +1,17 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import ht from "../static/Houndstooth.svg"
-import htTransition from "../static/Houndstooth_transition.svg"
+import ht from "../../static/index/Houndstooth.svg"
+import htTransition from "../../static/index/Houndstooth_transition.svg"
 
 const Houndstooth = styled.div`
   background-image: url(${ht});
   background-repeat: repeat;
   background-size: 200px;
   background-position: center bottom;
-  min-height: 100vh;
+  min-height: 500px;
   min-width: 100vw;
   width: 100vw;
-  height: 100vh;
+  height: 70vh;
   display: grid;
   align-items: center;
   justify-items: center;

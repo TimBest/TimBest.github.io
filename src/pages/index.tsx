@@ -1,27 +1,32 @@
 import * as React from 'react'
-import SEO from '../components/seo'
-import ContentSection from '../components/container'
 import styled from 'styled-components'
 
-import '../index.css'
-
+import '../static/index.css'
 import composersCouch from '../static/composers_couch/homescreen.png'
-import modelMaker from '../static/modelMaker.jpg'
-import simpleReport from '../static/simpleReport.png'
-import generalSet from '../static/generalSet.png'
-import travel from '../static/travel.jpg'
-import bird from '../static/bird.jpg'
-import door from '../static/door.jpg'
-import dots from '../static/dot.svg'
+import modelMaker from '../static/index/modelMaker.jpg'
+import simpleReport from '../static/index/simpleReport.png'
+import generalSet from '../static/index/generalSet.png'
+import travel from '../static/index/travel.jpg'
+import bird from '../static/index/bird.jpg'
+import door from '../static/index/door.jpg'
+import dots from '../static/index/dot.svg'
 import isometric from '../static/with_lines_pattern.svg'
-import lines from '../static/triangles.svg'
-import Card from '../components/Card'
-import TitleCard from '../components/TitleCard'
+import lines from '../static/index/triangles.svg'
+
+import SEO from '../components/seo'
+import ContentSection from '../components/index/Container'
+import Card from '../components/index/Card'
+import TitleCard from '../components/index/TitleCard'
+
 
 const Footer = styled.footer`
   width: 100%;
   background: #f8f8fa;
   padding: 40px;
+
+  @media (max-width: 600px) {
+    padding: 24px 8px;
+  }
 `
 
 const FooterContent = styled.div`
@@ -94,7 +99,7 @@ const IndexPage = () => (
           href="/composerscouch/"
           title="ComposersCouch"
           image={composersCouch}
-          description="A Web service to improve how Fans, Musicians and Venues connect"
+          description="A web service to improve how Fans, Musicians and Venues connect"
         />
       </ContentSection>
       <ContentSection>

@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat-SemiBold.ttf') format('truetype');
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #39364c;
+  margin: 0;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family:
+    Open Sans,
+    Segoe UI,
+    sans-serif;
+  color: #394972;
+  background-color: #f6f9f4;
+  height: 100%;
+}

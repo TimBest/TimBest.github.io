@@ -9,7 +9,12 @@ const ContentSection = styled.section`
   margin-left: auto;
   margin-right: auto;
   padding-top: 2rem;
-  
+
+  @media (max-width: 600px) {
+    padding: 0 1rem 1rem 1rem;
+    padding-top: 1rem;
+    gap: 1.5rem;
+  }
 `
 
 export default ContentSection
