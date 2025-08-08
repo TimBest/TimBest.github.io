@@ -11,79 +11,71 @@ const Row = styled.div`
 `
 const SvgWrapper = styled.div`
   & svg {
-    margin-right: -4px;
     margin-bottom: -4px;
   }
 `
 
-function lines(backgroundSize: number, fill: string, rotation: number, rotationCenter: number): string[] {
+function lines(
+  backgroundSize: number,
+  fill: string,
+  rotation: number,
+  rotationCenter: number
+): string[] {
   return [
-    `
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M12 5 H395 V388 Z" fill="${fill}"/>
+    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M12 5 H395 V388 Z" fill="${fill}"/>
       <path d="M5 12 V395 H388 Z" fill="${fill}"/>
-    </g></svg>
-    `,
-    `
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
+    </g></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
       <path d="M8.5 200 L395 12 V388 Z" fill="${fill}"/>
       <path d="M5 212 V395 H388 Z" fill="${fill}"/>
-    </g></svg>
-    `,
-    `
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
+    </g></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
       <path d="M12 195 H395 V12 Z" fill="${fill}"/>
       <path d="M12 205 H395 V388 Z" fill="${fill}"/>
       <path d="M5 212 V395 H388 Z" fill="${fill}"/>
-    </g></svg>
-    `,
-    `
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M12 5 H395 V188 Z" fill="${fill}"/>
+    </g></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M12 5 H395 V188 Z" fill="${fill}"/>
       <path d="M5 12 V195 H388 Z" fill="${fill}"/>
       <path d="M12 205 H395 V388 Z" fill="${fill}"/>
       <path d="M5 212 V395 H388 Z" fill="${fill}"/>
-    </g></svg>
-    `,
-    `
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 5 V395 h90 V5 Z" fill="${fill}"/>
+    </g></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 5 V395 h90 V5 Z" fill="${fill}"/>
       <path d="M105 5 V395 h90 V5 Z" fill="${fill}"/>
       <path d="M205 5 V395 h90 V5 Z" fill="${fill}"/>
       <path d="M305 5 V395 h90 V5 Z" fill="${fill}"/>
-    </g></svg>
-    `,
-    `
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 5 V395 h123.3 V5 Z" fill="${fill}"/>
+    </g></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 5 V395 h123.3 V5 Z" fill="${fill}"/>
       <path d="M138.3 5 V395 h123.3 V5 Z" fill="${fill}"/>
       <path d="M271.6 5 V395 h123.3 V5 Z" fill="${fill}"/>
-    </g></svg>
-    `,
-    `
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 5 V395 h190 V5 Z" fill="${fill}"/>
+    </g></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 5 V395 h190 V5 Z" fill="${fill}"/>
       <path d="M205 5 V395 h190 V5 Z" fill="${fill}"/>
-    </g></svg>
-    `,
-  ];
+    </g></svg>`,
+  ]
 }
 
 interface Props {
-  rotationCenter: number;
-  rotationGranularity: number;
-  color: string;
+  rotationCenter: number
+  rotationGranularity: number
+  color: string
 }
 
-
-
-const Tiler: React.FC<Props> = ({ rotationCenter, rotationGranularity, color }) => {
-  const [dimensions, setDimensions] = React.useState({ width: 100, height: 100 })
+const Tiler: React.FC<Props> = ({
+  rotationCenter,
+  rotationGranularity,
+  color,
+}) => {
+  const [dimensions, setDimensions] = React.useState({
+    width: 100,
+    height: 100,
+  })
 
   React.useEffect(() => {
-    function getWidth() {
-      return window.innerWidth || document.body.clientWidth
-    }
-    function getHeight() {
-      return window.innerHeight || document.body.clientHeight
-    }
     function updateDimensions() {
-      setDimensions({ width: getWidth(), height: getHeight() })
+      setDimensions({
+        width: window.innerWidth || document.body.clientWidth,
+        height: window.innerHeight || document.body.clientHeight,
+      })
     }
     updateDimensions()
     window.addEventListener('resize', updateDimensions)
@@ -92,9 +84,11 @@ const Tiler: React.FC<Props> = ({ rotationCenter, rotationGranularity, color }) 
 
   const lineArray: JSX.Element[] = []
   for (let i = 0; i < dimensions.height; i = i + 70) {
-    let row = ""
+    let row = ''
     for (let j = 0; j < dimensions.width; j = j + 70) {
-      const rotation = Math.floor(Math.random() * rotationGranularity) * (360 / rotationGranularity)
+      const rotation =
+        Math.floor(Math.random() * rotationGranularity) *
+        (360 / rotationGranularity)
       const shapes = lines(70, '#1c1b26', rotation, rotationCenter)
       row += shapes[Math.floor(Math.random() * shapes.length)]
     }
@@ -109,9 +103,7 @@ const Tiler: React.FC<Props> = ({ rotationCenter, rotationGranularity, color }) 
 
   return (
     <Container>
-      <SvgWrapper>
-        {lineArray}
-      </SvgWrapper>
+      <SvgWrapper>{lineArray}</SvgWrapper>
     </Container>
   )
 }
