@@ -17,14 +17,18 @@ const IBMPlexMonoFont = createGlobalStyle`
   }
 `
 const Wrapper = styled.div`
-  height: 100vh;
-  min-height: 100%;
+  min-height: 100vh;
+  height: 100%;
   padding: 4em;
   color: #d4d4d4;
   font-family: 'IBM Plex Mono', monospace;
   background-color: #1e1e1e;
   line-height: 1.3;
   margin: -8px;
+  
+  @media (max-width: 600px) {
+      padding: 2em;
+  }
 `
 const Container = styled.div`
   max-width: 500px;
@@ -32,17 +36,9 @@ const Container = styled.div`
 const StyledLink = styled.a`
   color: #388cc8;
 `
-const H2 = styled.h2`
-  color: #9cdcfe;
-  font-size: 24px;
-`
 const H3 = styled.h3`
   color: #9cdcfe;
   padding: 10px 0 20px;
-`
-const Subtitle = styled.div`
-  display: flex;
-  font-size: 24px;
 `
 
 const Adoorable: React.FC = () => {
@@ -51,26 +47,23 @@ const Adoorable: React.FC = () => {
       <IBMPlexMonoFont />
       <SEO title="@an.adoorable.world" />
       <Container>
-        <Subtitle>
-          <H2 as="h2">A door is </H2>
-          <Typewriter
-            words={[
-              'Janus',
-              'a home',
-              'an exit',
-              'the past',
-              'a portal',
-              'a passage',
-              'a barrier',
-              'a mystery',
-              'the future',
-              'an entrance',
-              'an opportunity',
-            ]}
-            width={14.4}
-            speed={80}
-          />
-        </Subtitle>
+        <Typewriter
+          pretext="A door is"
+          words={[
+            'Janus',
+            'a home',
+            'an exit',
+            'the past',
+            'a portal',
+            'a passage',
+            'a barrier',
+            'a mystery',
+            'the future',
+            'an entrance',
+            'an opportunity',
+          ]}
+          speed={80}
+        />
         <p>
           <StyledLink
             href="https://www.instagram.com/an.adoorable.world/"

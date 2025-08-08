@@ -68,7 +68,7 @@ const IndexPage = () => (
           image={bird}
         />
         <Card
-          href="https://timothy.best/adoorable"
+          href="/adoorable/"
           title="Doors"
           image={door}
         />

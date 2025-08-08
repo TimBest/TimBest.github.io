@@ -1,6 +1,20 @@
 import * as React from 'react'
 import styled, { keyframes } from 'styled-components'
 
+const MOBILE = "max-width: 400px";
+const CHAR_WIDTH = 14.4;
+
+const H2 = styled.h2`
+  color: #9cdcfe;
+  font-size: 24px;
+`
+const Subtitle = styled.div`
+  display: flex;
+  font-size: 24px;
+  @media (${MOBILE}) {
+    display: inline-block;
+  }
+`
 const writer = (width: number) => keyframes`
   from { width: 0; }
   to { width: ${width}px; }
@@ -16,17 +30,20 @@ const Text = styled.div<{ speed: number; width: number; steps: number }>`
   border-right: 3px solid rgba(255, 255, 255, 0.75);
   white-space: nowrap;
   overflow: hidden;
-  margin: 0 3px 0 14px;
   width: ${({ width }) => `${width}px`};
   animation: ${({ width }) => writer(width)}
     ${({ speed, steps }) => `${speed}ms steps(${steps}) 1s 1 normal both,`}
     ${blinkTextCursor} 1200ms steps(44) infinite normal;
+  margin: 0 3px 0 14px;
+  @media (${MOBILE}) {
+    margin: 0 3px 0 0;
+  }
 `
 
 interface Props {
+  pretext: string;
   words: string[]
   speed: number
-  width: number
 }
 
 const getRandomWord = (words: string[], exclude?: string) => {
@@ -40,7 +57,7 @@ const getRandomWord = (words: string[], exclude?: string) => {
   return descriptor!
 }
 
-const Typewriter: React.FC<Props> = ({ words, speed, width }) => {
+const Typewriter: React.FC<Props> = ({ pretext, words, speed }) => {
   const [word, setWord] = React.useState<string>(
     words[Math.floor(Math.random() * words.length)]
   )
@@ -53,13 +70,17 @@ const Typewriter: React.FC<Props> = ({ words, speed, width }) => {
   }, [])
 
   return (
-    <Text
-      speed={speed * word.length}
-      width={width * word.length}
-      steps={word.length}
-    >
-      {word}
-    </Text>
+    <Subtitle>
+      <H2 as="h2">{pretext}</H2>
+      <Text
+        speed={speed * word.length}
+        width={CHAR_WIDTH * word.length}
+        steps={word.length}
+      >
+        {word}
+      </Text>
+    </Subtitle>
+
   )
 }
 
