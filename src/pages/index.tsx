@@ -19,7 +19,6 @@ import TitleCard from '../components/index/TitleCard'
 
 
 const Footer = styled.footer`
-  width: 100%;
   background: #f8f8fa;
   padding: 40px;
 
@@ -77,12 +76,6 @@ const IndexPage = () => (
       </ContentSection>
       <ContentSection>
         <Card
-          href="http://generalset.io/"
-          title="GeneralSet.io"
-          image={generalSet}
-          description="An adaption of the card game Set to work with any arbitrary features (shape, color, shading, etc.)"
-        />
-        <Card
           href="https://simplereport.gov/"
           image={simpleReport}
           title="SimpleReport"
@@ -93,6 +86,12 @@ const IndexPage = () => (
           title="Site Model Maker"
           image={modelMaker}
           description="Tool for architects to quickly make 3d printable sites models."
+        />
+        <Card
+          href="http://generalset.io/"
+          title="GeneralSet.io"
+          image={generalSet}
+          description="An adaption of the card game Set to work with any arbitrary features (shape, color, shading, etc.)"
         />
         <Card
           href="/composerscouch/"
@@ -108,9 +107,11 @@ const IndexPage = () => (
         <Card href="/lines/" title="Lines" image={lines} />
         <Card href="/isometric/" title="Isometric" image={isometric} />
         <Card href="/dots/" title="Carnival Dots" image={dots} />
-        <ContentSection>
-          <Header>Links</Header>
-        </ContentSection>
+      </ContentSection>
+      <ContentSection>
+        <Header>Links</Header>
+      </ContentSection>
+      <ContentSection>
         <Card
           href="https://medium.com/the-u-s-digital-service/why-we-serve-tim-best-a66ece730d46"
           title="Why We Serve: Tim Best"

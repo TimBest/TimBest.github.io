@@ -17,8 +17,6 @@ const Houndstooth = styled.div`
   background-size: 200px;
   background-position: center bottom;
   min-height: 500px;
-  min-width: 100vw;
-  width: 100vw;
   height: 70vh;
   display: grid;
   align-items: center;
@@ -31,8 +29,6 @@ const Transition = styled.div`
   background-repeat: repeat;
   background-size: 200px;
   background-position: center top;
-  min-width: 100vw;
-  width: 100vw;
   height: 100px;
 `
 const Title = styled.div`
