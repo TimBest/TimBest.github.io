@@ -16,12 +16,13 @@ module.exports = {
       resolve: `gatsby-plugin-page-creator`,
       options: {
         path: `${__dirname}/src/pages`,
-        ignore: [`*/components/*`],
+        ignore: [`*/components/**/*`],
       },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-image`,
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-typescript`,
     {
       resolve: `gatsby-plugin-manifest`,

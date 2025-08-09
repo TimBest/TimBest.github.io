@@ -28,7 +28,9 @@ function lines(
         <path d="M5 12 V395 H388 Z" fill="${fill}"/>
       </g>
     </svg>`,
-    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
+    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}">
+      <g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">
+      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
       <path d="M8.5 200 L395 12 V388 Z" fill="${fill}"/>
       <path d="M5 212 V395 H388 Z" fill="${fill}"/>
     </g></svg>`,
