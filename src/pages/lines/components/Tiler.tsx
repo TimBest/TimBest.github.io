@@ -141,7 +141,7 @@ const Tiler: React.FC<Props> = ({
     let row = ''
     for (let j = 0; j < cols; j++) {
       const rotation = Math.floor(Math.random()*rotationGranularity) * (360/rotationGranularity)
-      const shapes = lines(TILE_SIZE, '#1c1b26', rotation, rotationCenter)
+      const shapes = lines(TILE_SIZE, '#1a1a2e', rotation, rotationCenter)
       row += shapes[tileIndices[i][j]]
     }
     lineArray.push(

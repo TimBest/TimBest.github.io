@@ -1,8 +1,16 @@
 import * as React from 'react'
-import styled from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
+
 import ht from "../../static/index/Houndstooth.svg"
 import htTransition from "../../static/index/Houndstooth_transition.svg"
+import Montserrat from './Montserrat-SemiBold.ttf'
 
+const MontserratFont = createGlobalStyle`
+  @font-face {
+    font-family: 'Montserrat';
+    src: local('Montserrat'), url(${Montserrat}) format('truetype');
+  }
+`
 const Houndstooth = styled.div`
   background-image: url(${ht});
   background-repeat: repeat;
@@ -50,6 +58,7 @@ type Props = {
 const TitleCard: React.FC<Props> = ({ children }) => {
   return (
     <>
+      <MontserratFont />
       <Houndstooth>
         <div>
           <Title>Timothy.Best</Title>

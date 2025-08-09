@@ -1,7 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
 
-import '../static/index.css'
 import composersCouch from '../static/composers_couch/homescreen.png'
 import modelMaker from '../static/index/modelMaker.jpg'
 import simpleReport from '../static/index/simpleReport.png'
