@@ -1,6 +1,6 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import Name from './Name'
+import Name, { MARGIN_BOTTOM } from './Name'
 import { lighten } from 'polished'
 
 const SEGMENT_VALUES = [1, 2, 4, 8, 16, 45, 90, 180, 360]
@@ -14,6 +14,7 @@ const SegmentBar = styled.div`
     gap: ${SEGMENT_GAP}px;
 `
 const Segment = styled.span<{ color: string; active: boolean }>`
+  margin-top: ${MARGIN_BOTTOM};
   display: inline-block;
   height: 20px;
   min-width: ${SEGMENT_WIDTH}px;
@@ -22,7 +23,7 @@ const Segment = styled.span<{ color: string; active: boolean }>`
 const Input = styled.input`
   position: absolute;
   left: 0;
-  top: 0;
+  top: ${MARGIN_BOTTOM};
   border-radius: 6px;
   height: 20px;
   margin: 0;
@@ -74,12 +75,9 @@ const Range: React.FC<{
 
   return (
     <label>
-      <div>
-              <Name color={color}>
+      <Name color={color}>
         {label}:{value}
       </Name>
-      </div>
-      <div>
       <Wrapper>
         <SegmentBar>
           {SEGMENT_VALUES.map(v => (
@@ -95,8 +93,6 @@ const Range: React.FC<{
           step={1}
         />
       </Wrapper>
-      </div>
-
     </label>
   )
 }

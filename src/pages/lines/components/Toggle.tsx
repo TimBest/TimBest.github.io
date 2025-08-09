@@ -11,13 +11,10 @@ type Props = {
 }
 
 const Label = styled.label`
-  display: flex;
-  align-items: center;
+  display: grid;
   margin-right: 1rem;
   cursor: pointer;
-  gap: 0.5rem;
 `
-
 const Switch = styled.span<{ color: string; checked: boolean }>`
   position: relative;
   display: inline-block;
@@ -30,7 +27,6 @@ const Switch = styled.span<{ color: string; checked: boolean }>`
   transition: background 0.2s;
   vertical-align: middle;
 `
-
 const Slider = styled.span<{ color: string; checked: boolean }>`
   position: absolute;
   top: 2px;
@@ -42,7 +38,6 @@ const Slider = styled.span<{ color: string; checked: boolean }>`
   transition: left 0.2s;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 `
-
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   opacity: 0;
   width: 0;

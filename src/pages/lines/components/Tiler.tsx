@@ -22,9 +22,12 @@ function lines(
   rotationCenter: number
 ): string[] {
   return [
-    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M12 5 H395 V388 Z" fill="${fill}"/>
-      <path d="M5 12 V395 H388 Z" fill="${fill}"/>
-    </g></svg>`,
+    `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}">
+      <g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">
+        <path d="M12 5 H395 V388 Z" fill="${fill}"/>
+        <path d="M5 12 V395 H388 Z" fill="${fill}"/>
+      </g>
+    </svg>`,
     `<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 400 400" height="${backgroundSize}" width="${backgroundSize}"><g transform="rotate(${rotation}, ${rotationCenter}, ${rotationCenter})">      <path d="M5 188 V5 H388 Z" fill="${fill}"/>
       <path d="M8.5 200 L395 12 V388 Z" fill="${fill}"/>
       <path d="M5 212 V395 H388 Z" fill="${fill}"/>
@@ -91,7 +94,6 @@ const Tiler: React.FC<Props> = ({
 
   // Store the shape/rotation indices for each tile
   const [tileIndices, setTileIndices] = React.useState<number[][] | null>(null)
-  const [rotationIndices, setRotationIndices] = React.useState<number[][] | null>(null)
 
   React.useEffect(() => {
     function updateDimensions() {
@@ -112,29 +114,22 @@ const Tiler: React.FC<Props> = ({
     const seed = dimensions.width * 100000 + dimensions.height
     const rand = seededRandom(seed)
     const shapeIndices: number[][] = []
-    const rotIndices: number[][] = []
     for (let i = 0; i < rows; i++) {
       shapeIndices[i] = []
-      rotIndices[i] = []
       for (let j = 0; j < cols; j++) {
         shapeIndices[i][j] = Math.floor(rand() * lines(0, '', 0, 0).length)
-        rotIndices[i][j] = Math.floor(rand() * rotationGranularity)
       }
     }
     setTileIndices(shapeIndices)
-    setRotationIndices(rotIndices)
-  }, [dimensions.width, dimensions.height, rotationGranularity])
+  }, [dimensions.width, dimensions.height])
 
   const { rows, cols } = getGridSize(dimensions.width, dimensions.height)
 
   // Ensure tileIndices and rotationIndices are initialized and match the current grid size
   if (
     !tileIndices ||
-    !rotationIndices ||
     tileIndices.length !== rows ||
-    rotationIndices.length !== rows ||
-    tileIndices.some(rowArr => rowArr.length !== cols) ||
-    rotationIndices.some(rowArr => rowArr.length !== cols)
+    tileIndices.some(rowArr => rowArr.length !== cols)
   ) {
     return null
   }
@@ -143,8 +138,7 @@ const Tiler: React.FC<Props> = ({
   for (let i = 0; i < rows; i++) {
     let row = ''
     for (let j = 0; j < cols; j++) {
-      const rotation =
-        rotationIndices[i][j] * (360 / rotationGranularity)
+      const rotation = Math.floor(Math.random()*rotationGranularity) * (360/rotationGranularity)
       const shapes = lines(TILE_SIZE, '#1c1b26', rotation, rotationCenter)
       row += shapes[tileIndices[i][j]]
     }

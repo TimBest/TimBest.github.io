@@ -10,6 +10,7 @@ type Props = {
 }
 
 const Wrapper = styled.div`
+  display: inline-grid;
 `
 const RadioGroup = styled.div`
   display: flex;

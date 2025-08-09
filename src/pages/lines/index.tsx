@@ -64,9 +64,6 @@ const LinesPage = () => {
         />
       </div>
       <Tiler rotationCenter={rotationCenter} rotationGranularity={rotationGranularity} color={color} />
-      {/* <Tiler rotationCenter={CENTER_ON} rotationGranularity={4} color={color} />
-      <Tiler rotationCenter={CENTER_OFF} rotationGranularity={4} color={color} />
-      <Tiler rotationCenter={CENTER_OFF} rotationGranularity={360} color={color} /> */}
     </Wrapper>
   )
 }
