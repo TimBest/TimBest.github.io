@@ -16,16 +16,19 @@ const SegmentBar = styled.div`
 const Segment = styled.span<{ color: string; active: boolean }>`
   margin-top: ${MARGIN_BOTTOM};
   display: inline-block;
-  height: 20px;
+  border-radius: 0 4px;
+  height: 26px;
   min-width: ${SEGMENT_WIDTH}px;
   background: ${({ color, active }) => (active ? `${lighten(0.2, color)}` : '#444')};
+  box-shadow: ${({ active, color }) => (active ? `0 0 1px ${color}` : 'none')};
+
 `
 const Input = styled.input`
   position: absolute;
   left: 0;
   top: ${MARGIN_BOTTOM};
-  border-radius: 6px;
-  height: 20px;
+  border-radius: 0px;
+  height: 26px;
   margin: 0;
   width: ${WIDTH};
   -webkit-appearance: none;
@@ -68,7 +71,7 @@ const Range: React.FC<{
   value: number
   onChange: (v: number) => void
 }> = ({ color, label, value, onChange }) => {
-  const setValue = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const setValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const v = Number(e.target.value)
     onChange(SEGMENT_VALUES[v])
   }

@@ -12,6 +12,8 @@ const Row = styled.div`
 const SvgWrapper = styled.div`
   & svg {
     margin-bottom: -4px;
+    margin-top: 1px;
+
   }
 `
 

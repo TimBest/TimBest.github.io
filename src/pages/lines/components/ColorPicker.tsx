@@ -35,7 +35,7 @@ const ColorCircle = styled.span<{ selected: boolean; color: string }>`
   height: 24px;
   background: ${({ selected, color }) => (selected ? color : darken(0.3, color))};
   border: 1px solid ${({ selected, color }) => (selected ? lighten(0.1, color) : '#333')};
-  box-shadow: ${({ selected, color }) => (selected ? `0 0 5px ${color}` : 'none')};
+  box-shadow: ${({ selected, color }) => (selected ? `0 0 1px ${color}` : 'none')};
   position: relative;
   cursor: pointer;
 `
