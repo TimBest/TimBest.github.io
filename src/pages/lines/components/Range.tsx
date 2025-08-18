@@ -13,14 +13,14 @@ const SegmentBar = styled.div`
     align-items: center;
     gap: ${SEGMENT_GAP}px;
 `
-const Segment = styled.span<{ color: string; active: boolean }>`
+const Segment = styled.span<{ color: string; checked: boolean }>`
   margin-top: ${MARGIN_BOTTOM};
   display: inline-block;
   border-radius: 0 4px;
   height: 26px;
   min-width: ${SEGMENT_WIDTH}px;
-  background: ${({ color, active }) => (active ? `${lighten(0.2, color)}` : '#444')};
-  box-shadow: ${({ active, color }) => (active ? `0 0 1px ${color}` : 'none')};
+  background: ${({ color, checked }) => (checked ? `${lighten(0.2, color)}` : '#444')};
+  box-shadow: ${({ checked, color }) => (checked ? `0 0 1px ${color}` : 'none')};
 
 `
 const Input = styled.input`
@@ -84,7 +84,7 @@ const Range: React.FC<{
       <Wrapper>
         <SegmentBar>
           {SEGMENT_VALUES.map(v => (
-            <Segment key={v} color={color} active={v <= value}/>
+            <Segment key={v} color={color} checked={(v <= value)}/>
           ))}
         </SegmentBar>
         <Input

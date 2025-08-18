@@ -12,7 +12,6 @@ type Props = {
 
 const Label = styled.label`
   display: grid;
-  margin-right: 1rem;
   cursor: pointer;
 `
 const Switch = styled.span<{ color: string; checked: boolean }>`
@@ -23,7 +22,6 @@ const Switch = styled.span<{ color: string; checked: boolean }>`
   background: transparent;
   border: 2px solid ${({ checked, color }) => (checked ? lighten(0.1, color) : '#444')};
   box-shadow: ${({ checked, color }) => (checked ? `0 0 1px ${color}` : 'none')};
-  // border-radius: 22px;
   transition: background 0.2s;
   vertical-align: middle;
 `
@@ -34,7 +32,6 @@ const Slider = styled.span<{ color: string; checked: boolean }>`
   width: 18px;
   height: 18px;
   background: ${({ checked, color }) => (checked ? lighten(0.1, color) : '#333')};
-  // border-radius: 50%;
   transition: left 0.2s;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 `

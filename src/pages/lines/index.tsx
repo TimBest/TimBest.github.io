@@ -8,7 +8,10 @@ import ColorPicker from './components/ColorPicker'
 import Toggle from './components/Toggle'
 import SevenSegment from './components/Seven-Segment.ttf'
 
+export const backgroundColor = '#1a1a2e';
 const colors = ['#55cc94', '#9455cc', '#55c8cc', '#cc558c', '#cc9455']
+const CENTER_ON = 200
+const CENTER_OFF = 35
 
 const SevenSegmentFont = createGlobalStyle`
   @font-face {
@@ -23,9 +26,17 @@ const Wrapper = styled.div`
   font-family: 'Seven Segment', monospace;
   overflow: hidden;
 `
-
-const CENTER_ON = 200
-const CENTER_OFF = 35
+const Form = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: ${backgroundColor};
+  padding: 1rem;
+  @media (max-width: 600px) {
+    display: grid;
+    gap: 1rem;
+  }
+`
 
 const LinesPage = () => {
   const [color, setColor] = React.useState(
@@ -40,19 +51,11 @@ const LinesPage = () => {
     <Wrapper>
       <SevenSegmentFont />
       <SEO title="lines" />
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '1rem',
-          background: '#1a1a2e',
-          padding: '1rem',
-        }}
-      >
+      <Form>
         <ColorPicker colors={colors} value={color} onChange={setColor} />
         <Toggle
           color={color}
-          label="Centered"
+          label="Center"
           checked={center}
           onChange={setCenter}
         />
@@ -62,8 +65,12 @@ const LinesPage = () => {
           value={rotationGranularity}
           onChange={setRotationGranularity}
         />
-      </div>
-      <Tiler rotationCenter={rotationCenter} rotationGranularity={rotationGranularity} color={color} />
+      </Form>
+      <Tiler
+        rotationCenter={rotationCenter}
+        rotationGranularity={rotationGranularity}
+        color={color}
+      />
     </Wrapper>
   )
 }
