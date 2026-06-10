@@ -1,9 +1,10 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Name, { MARGIN_BOTTOM } from './Name'
-import { lighten } from 'polished'
+import { lighten, darken, desaturate } from 'polished'
+import SevenSegmentDisplay from './SevenSegmentDisplay'
 
-const SEGMENT_VALUES = [1, 2, 4, 8, 16, 45, 90, 180, 360]
+const SEGMENT_VALUES = [1, 2, 4, 6, 8, 16, 45, 180]
 const SEGMENT_WIDTH = 11;
 const SEGMENT_GAP = 3;
 const WIDTH = `${SEGMENT_VALUES.length * SEGMENT_WIDTH + (SEGMENT_VALUES.length - 1) * SEGMENT_GAP}px`;
@@ -19,7 +20,7 @@ const Segment = styled.span<{ color: string; checked: boolean }>`
   border-radius: 0 4px;
   height: 26px;
   min-width: ${SEGMENT_WIDTH}px;
-  background: ${({ color, checked }) => (checked ? `${lighten(0.2, color)}` : '#444')};
+  background: ${({ color, checked }) => (checked ? `${lighten(0.1, color)}` : `${darken(0.3, desaturate(0.4,color))}`)};
   box-shadow: ${({ checked, color }) => (checked ? `0 0 1px ${color}` : 'none')};
 
 `
@@ -79,7 +80,7 @@ const Range: React.FC<{
   return (
     <label>
       <Name color={color}>
-        {label}:{value}
+        {label} <SevenSegmentDisplay length={3} value={value}/>
       </Name>
       <Wrapper>
         <SegmentBar>

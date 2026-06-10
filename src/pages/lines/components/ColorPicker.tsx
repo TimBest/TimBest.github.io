@@ -1,11 +1,12 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { darken, lighten } from 'polished'
+import { darken, desaturate, lighten } from 'polished'
 import Name from './Name'
 
 type Props = {
   colors: string[]
   value: string
+  label: string
   onChange: (color: string) => void
 }
 
@@ -33,7 +34,7 @@ const ColorCircle = styled.span<{ selected: boolean; color: string }>`
   display: inline-block;
   width: 24px;
   height: 24px;
-  background: ${({ selected, color }) => (selected ? color : darken(0.3, color))};
+  background: ${({ selected, color }) => (selected ? color : darken(0.3, desaturate(0.4, color)))};
   border: 1px solid ${({ selected, color }) => (selected ? lighten(0.1, color) : '#333')};
   box-shadow: ${({ selected, color }) => (selected ? `0 0 1px ${color}` : 'none')};
   position: relative;
@@ -51,10 +52,11 @@ const OverlayRadio = styled.input.attrs({ type: 'radio', readOnly: true })`
 const ColorPicker: React.FC<Props> = ({
   colors,
   value,
+  label,
   onChange,
 }) => (
   <Wrapper>
-    <Name color={value}>Color</Name>
+    <Name color={value}>{label}</Name>
     <RadioGroup>
       {colors.map((c) => (
         <Label key={c}>

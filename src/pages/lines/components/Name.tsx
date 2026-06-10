@@ -5,8 +5,7 @@ export const MARGIN_BOTTOM = "5px";
 
 const Name = styled.span<{color: string}>`
   color: ${({ color }) => saturate(1, color)};
-  font-weight: bold;
-  letter-spacing: 2px;
+  text-transform: lowercase;
   margin-bottom: ${MARGIN_BOTTOM};
 `
 

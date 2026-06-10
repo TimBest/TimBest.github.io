@@ -1,7 +1,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Name from './Name'
-import { lighten } from 'polished'
+import { lighten, darken, desaturate } from 'polished'
 
 type Props = {
   label: string
@@ -20,7 +20,7 @@ const Switch = styled.span<{ color: string; checked: boolean }>`
   width: 40px;
   height: 22px;
   background: transparent;
-  border: 2px solid ${({ checked, color }) => (checked ? lighten(0.1, color) : '#444')};
+  border: 2px solid ${({ checked, color }) => (checked ? lighten(0.1, color) : `${darken(0.3, desaturate(0.4,color))}`)};
   box-shadow: ${({ checked, color }) => (checked ? `0 0 1px ${color}` : 'none')};
   transition: background 0.2s;
   vertical-align: middle;
@@ -31,7 +31,7 @@ const Slider = styled.span<{ color: string; checked: boolean }>`
   left: ${({ checked }) => (checked ? '20px' : '2px')};
   width: 18px;
   height: 18px;
-  background: ${({ checked, color }) => (checked ? lighten(0.1, color) : '#333')};
+  background: ${({ checked, color }) => (checked ? lighten(0.1, color) : `${darken(0.3, desaturate(0.4,color))}`)};
   transition: left 0.2s;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 `
