@@ -2,6 +2,7 @@ import * as React from 'react'
 import styled from 'styled-components'
 
 import composersCouch from '../static/composers_couch/homescreen.png'
+import gol from '../static/gol.png'
 import modelMaker from '../static/index/modelMaker.jpg'
 import simpleReport from '../static/index/simpleReport.png'
 import generalSet from '../static/index/generalSet.png'
@@ -92,6 +93,12 @@ const IndexPage = () => (
           title="GeneralSet.io"
           image={generalSet}
           description="An adaption of the card game Set to work with any arbitrary features (shape, color, shading, etc.)"
+        />
+        <Card
+          href="https://gol.timothy.best/"
+          title="Einstein's Game"
+          image={gol}
+          description="Conway's Game of Life implemented with aperiodic monotile tiling"
         />
         <Card
           href="/composerscouch/"
