@@ -1,10 +1,10 @@
-import { saturate } from 'polished'
 import styled from 'styled-components'
+import { defaultColor } from './Constants';
 
 export const MARGIN_BOTTOM = "5px";
 
-const Name = styled.span<{color: string}>`
-  color: ${({ color }) => saturate(1, color)};
+const Name = styled.span<{hue: string}>`
+  color: ${({ hue }) => defaultColor(hue)};
   text-transform: lowercase;
   margin-bottom: ${MARGIN_BOTTOM};
 `

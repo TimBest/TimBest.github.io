@@ -1,37 +1,37 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Name from './Name'
-import { lighten, darken, desaturate } from 'polished'
+import { defaultColor, disabledColor, lightColor } from './Constants'
 
 type Props = {
   label: string
   checked: boolean
   onChange: (checked: boolean) => void
-  color: string
+  hue: string
 }
 
 const Label = styled.label`
   display: grid;
   cursor: pointer;
 `
-const Switch = styled.span<{ color: string; checked: boolean }>`
+const Switch = styled.span<{ hue: string; checked: boolean }>`
   position: relative;
   display: inline-block;
   width: 40px;
   height: 22px;
   background: transparent;
-  border: 2px solid ${({ checked, color }) => (checked ? lighten(0.1, color) : `${darken(0.3, desaturate(0.4,color))}`)};
-  box-shadow: ${({ checked, color }) => (checked ? `0 0 1px ${color}` : 'none')};
+  border: 2px solid ${({ checked, hue }) => (checked ? lightColor(hue) : disabledColor(hue))};
+  box-shadow: ${({ checked, hue }) => (checked ? `0 0 1px ${defaultColor(hue)}` : 'none')};
   transition: background 0.2s;
   vertical-align: middle;
 `
-const Slider = styled.span<{ color: string; checked: boolean }>`
+const Slider = styled.span<{ hue: string; checked: boolean }>`
   position: absolute;
   top: 2px;
   left: ${({ checked }) => (checked ? '20px' : '2px')};
   width: 18px;
   height: 18px;
-  background: ${({ checked, color }) => (checked ? lighten(0.1, color) : `${darken(0.3, desaturate(0.4,color))}`)};
+  background: ${({ checked, hue }) => (checked ? lightColor(hue) : disabledColor(hue))};
   transition: left 0.2s;
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 `
@@ -42,9 +42,9 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;
 `
 
-const Toggle: React.FC<Props> = ({ label, checked, onChange, color }) => (
+const Toggle: React.FC<Props> = ({ label, checked, onChange, hue }) => (
   <Label>
-    <Name color={color}>{label}</Name>
+    <Name hue={hue}>{label}</Name>
     <span style={{ position: 'relative', display: 'inline-block' }}>
       <HiddenCheckbox
         checked={checked}
@@ -53,8 +53,8 @@ const Toggle: React.FC<Props> = ({ label, checked, onChange, color }) => (
         aria-checked={checked}
         role="switch"
       />
-      <Switch color={color} checked={checked}>
-        <Slider color={color} checked={checked} />
+      <Switch hue={hue} checked={checked}>
+        <Slider hue={hue} checked={checked} />
       </Switch>
     </span>
   </Label>

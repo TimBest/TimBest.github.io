@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Shapes from './Shapes'
 import { backgroundColor } from '..'
 import { seededRandom } from '../../../utils'
+import { defaultColor } from './Constants'
 
 const Container = styled.div<{color: string}>`
   height: 100vh;
@@ -23,7 +24,7 @@ const SvgWrapper = styled.div`
 interface Props {
   rotationCenter: number
   rotationGranularity: number
-  color: string
+  hue: string
 }
 
 interface Indices {
@@ -60,7 +61,7 @@ const getIndices = (rows: number, cols: number, rotationGranularity: number) => 
 const Tiler: React.FC<Props> = ({
   rotationCenter,
   rotationGranularity,
-  color,
+  hue,
 }) => {
   const [dimensions, setDimensions] = React.useState({
     width: 1000,
@@ -90,7 +91,7 @@ const Tiler: React.FC<Props> = ({
   }
 
   return (
-    <Container color={color}>
+    <Container color={defaultColor(hue)}>
       <SvgWrapper>
         {tileIndices.map((row, i) => {
           return (

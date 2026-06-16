@@ -1,8 +1,8 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Name, { MARGIN_BOTTOM } from './Name'
-import { lighten, darken, desaturate } from 'polished'
 import SevenSegmentDisplay from './SevenSegmentDisplay'
+import { defaultColor, disabledColor, lightColor } from './Constants'
 
 const SEGMENT_VALUES = [1, 2, 4, 6, 8, 16, 45, 180]
 const SEGMENT_WIDTH = 11;
@@ -14,14 +14,14 @@ const SegmentBar = styled.div`
     align-items: center;
     gap: ${SEGMENT_GAP}px;
 `
-const Segment = styled.span<{ color: string; checked: boolean }>`
+const Segment = styled.span<{ hue: string; checked: boolean }>`
   margin-top: ${MARGIN_BOTTOM};
   display: inline-block;
   border-radius: 0 4px;
   height: 26px;
   min-width: ${SEGMENT_WIDTH}px;
-  background: ${({ color, checked }) => (checked ? `${lighten(0.1, color)}` : `${darken(0.3, desaturate(0.4,color))}`)};
-  box-shadow: ${({ checked, color }) => (checked ? `0 0 1px ${color}` : 'none')};
+  background: ${({ hue, checked }) => (checked ? lightColor(hue) : disabledColor(hue))};
+  box-shadow: ${({ checked, hue }) => (checked ? `0 0 1px ${defaultColor(hue)}` : 'none')};
 
 `
 const Input = styled.input`
@@ -67,11 +67,11 @@ const Wrapper = styled.div`
 `
 
 const Range: React.FC<{
-  color: string
+  hue: string
   label: string
   value: number
   onChange: (v: number) => void
-}> = ({ color, label, value, onChange }) => {
+}> = ({ hue, label, value, onChange }) => {
     const setValue = (e: React.ChangeEvent<HTMLInputElement>) => {
     const v = Number(e.target.value)
     onChange(SEGMENT_VALUES[v])
@@ -79,13 +79,13 @@ const Range: React.FC<{
 
   return (
     <label>
-      <Name color={color}>
+      <Name hue={hue}>
         {label} <SevenSegmentDisplay length={3} value={value}/>
       </Name>
       <Wrapper>
         <SegmentBar>
           {SEGMENT_VALUES.map(v => (
-            <Segment key={v} color={color} checked={(v <= value)}/>
+            <Segment key={v} hue={hue} checked={(v <= value)}/>
           ))}
         </SegmentBar>
         <Input

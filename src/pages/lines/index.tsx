@@ -8,9 +8,9 @@ import ColorPicker from './components/ColorPicker'
 import Toggle from './components/Toggle'
 import DSEG7Classic from './components/DSEG7Classic-Regular.ttf'
 import GeistMono from './components/GeistMono-VariableFont_wght.ttf'
+import { HUES } from './components/Constants'
 
 export const backgroundColor = '#1a1a2e';
-const colors = ['#57ccd0', '#5bcc93', '#d59a5d', '#ef79a6', '#c284fc']
 const CENTER_ON = 200
 const CENTER_OFF = 35
 
@@ -49,7 +49,7 @@ const Form = styled.div`
 `
 
 const LinesPage = () => {
-  const [color, setColor] = React.useState(() => colors[0])
+  const [hue, setHue] = React.useState(() => HUES[0])
   const [center, setCenter] = React.useState(true)
   const [rotationGranularity, setRotationGranularity] = React.useState(4)
 
@@ -62,19 +62,18 @@ const LinesPage = () => {
       <SEO title="lines" />
       <Form>
         <ColorPicker
-          colors={colors}
-          value={color}
-          label="color"
-          onChange={setColor}
+          value={hue}
+          label="Color"
+          onChange={setHue}
         />
         <Toggle
-          color={color}
+          hue={hue}
           label="center"
           checked={center}
           onChange={setCenter}
         />
         <Range
-          color={color}
+          hue={hue}
           label="rotation"
           value={rotationGranularity}
           onChange={setRotationGranularity}
@@ -83,7 +82,7 @@ const LinesPage = () => {
       <Tiler
         rotationCenter={rotationCenter}
         rotationGranularity={rotationGranularity}
-        color={color}
+        hue={hue}
       />
     </Wrapper>
   )

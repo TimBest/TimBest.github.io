@@ -1,13 +1,12 @@
 import * as React from 'react'
 import styled from 'styled-components'
-import { darken, desaturate, lighten } from 'polished'
-import Name from './Name'
+import Name from './Name';
+import { defaultColor, disabledColor, HUES } from './Constants';
 
 type Props = {
-  colors: string[]
   value: string
   label: string
-  onChange: (color: string) => void
+  onChange: (hue: string) => void
 }
 
 const Wrapper = styled.div`
@@ -30,13 +29,13 @@ const HiddenRadio = styled.input.attrs({ type: 'radio' })`
   opacity: 0;
   pointer-events: none;
 `
-const ColorCircle = styled.span<{ selected: boolean; color: string }>`
+const ColorCircle = styled.span<{ selected: boolean; hue: string }>`
   display: inline-block;
   width: 24px;
   height: 24px;
-  background: ${({ selected, color }) => (selected ? color : darken(0.3, desaturate(0.4, color)))};
-  border: 1px solid ${({ selected, color }) => (selected ? lighten(0.1, color) : '#333')};
-  box-shadow: ${({ selected, color }) => (selected ? `0 0 1px ${color}` : 'none')};
+  background: ${({ selected, hue }) => (selected ? defaultColor(hue) : disabledColor(hue))};
+  border: 1px solid ${({ selected, hue }) => (selected ? defaultColor(hue) : '#333')};
+  box-shadow: ${({ selected, hue }) => (selected ? `0 0 1px ${defaultColor(hue)}` : 'none')};
   position: relative;
   cursor: pointer;
 `
@@ -50,31 +49,30 @@ const OverlayRadio = styled.input.attrs({ type: 'radio', readOnly: true })`
 `
 
 const ColorPicker: React.FC<Props> = ({
-  colors,
   value,
   label,
   onChange,
 }) => (
   <Wrapper>
-    <Name color={value}>{label}</Name>
+    <Name hue={value}>{label}</Name>
     <RadioGroup>
-      {colors.map((c) => (
-        <Label key={c}>
+      {HUES.map((h) => (
+        <Label key={h}>
           <HiddenRadio
             name="color-radio"
-            value={c}
-            checked={value === c}
-            onChange={() => onChange(c)}
+            value={h}
+            checked={value === h}
+            onChange={() => onChange(h)}
           />
           <ColorCircle
-            color={c}
-            selected={value === c}
-            onClick={() => onChange(c)}
+            hue={h}
+            selected={value === h}
+            onClick={() => onChange(h)}
           >
             <OverlayRadio
               name="color-radio"
-              value={c}
-              checked={value === c}
+              value={h}
+              checked={value === h}
             />
           </ColorCircle>
         </Label>
